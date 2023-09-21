@@ -27,7 +27,6 @@ function App() {
   //     <div className="forth">{forthString}</div>
   //   </div>
   // )
-  
   // #2
   // const [name, setName] = useState("Ilhan")
   // const [numbers, setNumbers] = useState([12, 6, 35, 15, 21, 22, 30, 9, 99])
@@ -36,11 +35,47 @@ function App() {
   //   <div className="container">
   //     {<input type="text" value={name} onChange={(e) => setName(e.target.value)} />}
   //     <button onClick={() => alert(`Hello ${name}`)}>Hello</button>
-  //     <input placeholder="Add Number" vlaue = {newNumber} onChange={(e) => setNewNumber(e.target.value)}/>
+  //     <input placeholder="Add Number" value = {newNumber} onChange={(e) => setNewNumber(e.target.value)}/>
   //     <button onClick={() => setNumbers((prev) => [...prev, +newNumber])}>Add number</button>
   //     {console.log(numbers)}
   //   </div>
   // )
+
+  // #3
+  //   const [me, setMe] = useState({
+  //     firstName: "Ilhan",
+  //     lastName: "Buhic",
+  //   })
+  //   {console.log(me, setMe)}
+  //   return <input type="text" value={me.lastName} onChange={(e) => setMe({...me})}/>
+
+  // #1 Home exercise
+    const [title, setTitle] = useState('')
+
+    return (
+      <div className="container">
+        <h2>Adding a person</h2>
+        <form>
+          <label>Blog Title:</label>
+          <input 
+          type = 'text'
+          required
+          value = {title}
+          onChange={(e) => setTitle(e.target.value)}
+          />
+          <label>Blog Body:</label>
+          <textarea required></textarea>
+          <label>Blog author:</label>
+          <select>
+            <option value = 'ilhan'>Ilhan</option>
+            <option value = 'emina'>Emina</option>
+          </select>
+          <button>Add blog</button>
+        </form>
+
+      </div>
+
+    )
 }
 
 export default App
