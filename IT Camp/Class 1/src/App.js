@@ -27,55 +27,59 @@ function App() {
   //     <div className="forth">{forthString}</div>
   //   </div>
   // )
+
   // #2
-  // const [name, setName] = useState("Ilhan")
   // const [numbers, setNumbers] = useState([12, 6, 35, 15, 21, 22, 30, 9, 99])
   // const [newNumber, setNewNumber] = useState("")
   // return (
   //   <div className="container">
-  //     {<input type="text" value={name} onChange={(e) => setName(e.target.value)} />}
-  //     <button onClick={() => alert(`Hello ${name}`)}>Hello</button>
   //     <input placeholder="Add Number" value = {newNumber} onChange={(e) => setNewNumber(e.target.value)}/>
   //     <button onClick={() => setNumbers((prev) => [...prev, +newNumber])}>Add number</button>
-  //     {console.log(numbers)}
   //   </div>
   // )
 
   // #3
-  //   const [me, setMe] = useState({
-  //     firstName: "Ilhan",
-  //     lastName: "Buhic",
-  //   })
-  //   {console.log(me, setMe)}
-  //   return <input type="text" value={me.lastName} onChange={(e) => setMe({...me})}/>
+    // const [me, setMe] = useState({
+    //   firstName: "Ilhan",
+    //   lastName: "Buhic",
+    // })
+    // console.log(me)
+    // // {console.log(me, setMe)}
+    // return <input type="text" value={me.lastName} onChange={(e) => setMe({...me, lastName: e.target.value})}/>
 
   // #1 Home exercise
-    const [title, setTitle] = useState('')
+    // const [title, setTitle] = useState('')
+    // const [body, setBody] = useState('')
+    // const [author, setAuthor] = useState('')
 
-    return (
-      <div className="container">
-        <h2>Adding a person</h2>
-        <form>
-          <label>Blog Title:</label>
-          <input 
-          type = 'text'
-          required
-          value = {title}
-          onChange={(e) => setTitle(e.target.value)}
-          />
-          <label>Blog Body:</label>
-          <textarea required></textarea>
-          <label>Blog author:</label>
-          <select>
-            <option value = 'ilhan'>Ilhan</option>
-            <option value = 'emina'>Emina</option>
-          </select>
-          <button>Add blog</button>
-        </form>
-
-      </div>
-
-    )
+    // return (
+    //   <div className="create">
+    //     <h2>Add a new blog</h2>
+    //     <form>
+    //       <label>Blog Title:</label>
+    //       <input 
+    //       type = 'text'
+    //       required
+    //       value = {title}
+    //       onChange={(e) => setTitle(e.target.value)}
+    //       />
+    //       <label>Blog Body:</label>
+    //       <textarea 
+    //       required
+    //       value = {body}
+    //       onChange={(e) => setBody(e.target.value)}
+    //       ></textarea>
+    //       <label>Blog author:</label>
+    //       <select 
+    //       value = {author}
+    //       onChange={(e) => setAuthor(e.target.value)}>
+    //         <option value = 'ilhan' >Ilhan</option>
+    //         <option value = 'emina'>Emina</option>
+    //       </select>
+    //       <button>Add blog</button>
+    //     </form>
+    //   </div>
+    // )
 }
 
 export default App
