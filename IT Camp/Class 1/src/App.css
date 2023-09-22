@@ -76,3 +76,16 @@
 }
 /* ---------- #1 Home exercise ---------- */
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container input {
+  display: block;
+  padding: 5px 0;
+  margin: 10px 0;
+}
+
+
