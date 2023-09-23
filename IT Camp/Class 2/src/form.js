@@ -14,18 +14,22 @@ function Form() {
     <div className="main">
       <input
         placeholder="First name"
+        value = {user.firstName}
         onChange={(e) => setUser({ ...user, firstName: e.target.value })}
       />
       <input
         placeholder="Last name"
+        value = {user.lastName}
         onChange={(e) => setUser({ ...user, lastName: e.target.value })}
       />
       <input
         placeholder="Birth year"
+        value = {user.birthYear}
         onChange={(e) => setUser({ ...user, birthYear: e.target.value })}
       />
       <input
         placeholder="Profession"
+        value = {user.profession}
         onChange={(e) => setUser({ ...user, profession: e.target.value })}
       />
       <button
@@ -41,6 +45,7 @@ function Form() {
       >
         Submit
       </button>
+      {console.log(user.firstName, user.lastName, user.birthYear, user.profession)}
 
       {users.map((user, index) => {
         return (
