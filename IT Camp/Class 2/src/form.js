@@ -53,6 +53,7 @@ function Form() {
   //     >
   //       Submit
   //     </button>
+  //     {console.log(users)}
 
   //     {users.map((user, index) => {
   //       return (
@@ -72,44 +73,100 @@ function Form() {
     firstLastName: "",
     years: 0,
     placeOfBirth: "",
-    educationDegree: "",
+    educationDegree: "Primary school",
     profession: "",
     hobby: "",
-    relationshipStatus: [],
+    relationshipStatus: 'Yes'
   })
+
+  // ***** Handling Select Change *****
+  // State to store the selected option's text content
+  const [_, setSelectedOptionText] = useState("")
+
+  // Function to handle changes in the select element
+  const handleSelectChange = (e) => {
+    const selectedOption = e.target.options[e.target.selectedIndex]
+    setSelectedOptionText(selectedOption.textContent)
+    setIlhan({ ...ilhan, [e.target.name]: selectedOption.textContent })
+  }
+  // ***** Handling Select Change *****
+
+  const handleSubmit = (e) => {
+    setIlhan({ ...ilhan, [e.target.name]: e.target.value })
+  }
 
   return (
     <div className="container">
       <input
         placeholder="First and last name"
         value={ilhan.firstLastName}
-        onChange={(e) => 
-        setIlhan({ ...ilhan, firstLastName: e.target.value })}
+        name="firstLastName"
+        // onChange={(e) => setIlhan({ ...ilhan, firstLastName: e.target.value })}
+        onChange={handleSubmit}
       />
-     <input 
-     placeholder="Years"
-     value = {ilhan.years}
-     onChange={(e) => 
-      setIlhan({...ilhan, years: parseInt(e.target.value) || 0})}
-     />
-     <input 
-     placeholder="Place of Birth"
-     value = {ilhan.placeOfBirth}
-     onChange={(e) => setIlhan({...ilhan, placeOfBirth: e.target.value})}
-     />
-     <select
-     value = {ilhan.educationDegree}
-     onChange={(e) => setIlhan({...ilhan, educationDegree: e.target.value})}
-     >
-      <option value = 'option1'selected >Primary school</option>
-      <option value = 'option2'>High school</option>
-      <option value = 'option3'>Currently a student</option>
-      <option value = 'option4'>Bachelor's degree</option>
-     </select>
+      <input
+        placeholder="Years"
+        value={ilhan.years}
+        name="years"
+        // onChange={(e) =>
+        // setIlhan({ ...ilhan, years: parseInt(e.target.value) || 0 })
+        // }
+        onChange={handleSubmit || 0}
+      />
+      <input
+        placeholder="Place of Birth"
+        value={ilhan.placeOfBirth}
+        name="placeOfBirth"
+        // onChange={(e) => setIlhan({ ...ilhan, placeOfBirth: e.target.value })}
+        onChange={handleSubmit}
+      />
+      <select
+        value={ilhan.educationDegree}
+        name="educationDegree"
+        // onChange={(e) =>
+        //   setIlhan({
+        //     ...ilhan,
+        //     educationDegree:
+        //       e.target.options[e.target.selectedIndex].textContent,
+        //   })
+        // }
+        onChange={handleSelectChange}
+      >
+        <option value="option1">Primary school</option>
+        <option value="option2">High school</option>
+        <option value="option3">Currently a student</option>
+        <option value="option4">Bachelor's degree</option>
+      </select>
 
-     <button
-     onClick = {() => {console.log(ilhan)}}
-     >Submit</button>
+      <input 
+      placeholder="Profession"
+      value={ilhan.profession}
+      name="profession"
+      onChange={handleSubmit}
+      />
+      <input 
+      placeholder="Hobby"
+      value={ilhan.hobby}
+      name="hobby"
+      onChange={handleSubmit}
+      />
+      <select
+      value={ilhan.relationshipStatus}
+      name="relationshipStatus"
+      onChange={handleSelectChange}
+      >
+        <option value="option1">Yes</option>
+        <option value="option1">No</option>
+        <option value="option1">Maybe</option>
+      </select>
+
+      <button
+        onClick={() => {
+          console.log(ilhan)
+        }}
+      >
+        Submit
+      </button>
     </div>
   )
 }
