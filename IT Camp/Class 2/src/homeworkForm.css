@@ -47,6 +47,7 @@ button {
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s; /* Smooth transition for background color */
+  margin-bottom: 15px;
 }
 
 button:hover {
@@ -60,6 +61,7 @@ select:focus {
   outline: none;
   background-color: #fff; /* White background on focus */
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Soft blue shadow on focus */
+
 }
 
 /* Optional: Style placeholders and labels as needed */
@@ -70,10 +72,10 @@ select:focus {
 /* Optional: Add more styles for labels, error messages, or other elements as needed */
 
 .ilhan {
-  width: 100%;
-  height: 100vh; /* 100% of the viewport height for vertical centering */
+  width: 20%;
+  height: 50%; /* 100% of the viewport height for vertical centering */
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: flex-start; /* Center horizontally */
   align-items: center; /* Center vertically */
   flex-direction: column; /* Stack children vertically */
 
@@ -90,6 +92,7 @@ select:focus {
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(225, 225, 225, 0.3);
   transition: backdrop-filter 0.5s ease;
+  position: relative;
 }
 
 .ilhan p {
@@ -104,4 +107,11 @@ select:focus {
 
 .ilhan p:last-child {
   font-style: italic; /* Italicize the last paragraph */
+}
+
+.back{
+  position: absolute;
+  bottom: 0;
+  left: 4;
+
 }
