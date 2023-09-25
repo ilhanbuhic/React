@@ -1,0 +1,107 @@
+/* Container styles */
+/* Container styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #0c7075;
+}
+
+/* Form styles */
+form {
+  width: 100%;
+  max-width: 400px; /* Limit form width for better readability */
+  padding: 20px;
+  background-color: #ffffff; /* Form background color */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  border: 2px solid red;
+}
+
+/* Input and select styles */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px;
+  font-size: 18px;
+  color: #333; /* Text color */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #072E33; /* Cool blue background color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #0F969C; /* Darker blue on hover */
+}
+
+/* Focus styles for input and select elements */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  background-color: #fff; /* White background on focus */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Soft blue shadow on focus */
+}
+
+/* Optional: Style placeholders and labels as needed */
+::placeholder {
+  color: #999; /* Placeholder text color */
+}
+
+/* Optional: Add more styles for labels, error messages, or other elements as needed */
+
+.ilhan {
+  width: 100%;
+  height: 100vh; /* 100% of the viewport height for vertical centering */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack children vertically */
+
+  /* Background and text styles */
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark gray text color */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for a subtle depth effect */
+  backdrop-filter: blur(10px);
+  background-color: rgba(225, 225, 225, 0.5);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(225, 225, 225, 0.3);
+  transition: backdrop-filter 0.5s ease;
+}
+
+.ilhan p {
+  margin: 10px 0; /* Spacing between paragraphs */
+}
+
+/* Optional: Add styles for specific elements within the div, if needed */
+.ilhan p:first-child {
+  font-size: 24px; /* Larger font size for the first paragraph */
+  font-weight: bold;
+}
+
+.ilhan p:last-child {
+  font-style: italic; /* Italicize the last paragraph */
+}

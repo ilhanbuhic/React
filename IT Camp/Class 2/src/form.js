@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./form.css"
+import "./homeworkForm.css"
 
 function Form() {
   // const [users, setUsers] = useState([])
@@ -70,14 +70,20 @@ function Form() {
 
   //#Homework
   const [ilhan, setIlhan] = useState({
-    firstLastName: "",
+    firstName: "",
+    lastName: "",
     years: 0,
     placeOfBirth: "",
     educationDegree: "Primary school",
     profession: "",
     hobby: "",
-    relationshipStatus: 'Yes'
+    relationshipStatus: "Yes",
   })
+
+  const [showDiv, setShowDiv] = useState(false)
+
+
+  // ***** Hiding container *****
 
   // ***** Handling Select Change *****
   // State to store the selected option's text content
@@ -98,13 +104,23 @@ function Form() {
   return (
     <div className="container">
       <input
-        placeholder="First and last name"
-        value={ilhan.firstLastName}
-        name="firstLastName"
+        type="text"
+        placeholder="First name"
+        value={ilhan.firstName}
+        name="firstName"
         // onChange={(e) => setIlhan({ ...ilhan, firstLastName: e.target.value })}
         onChange={handleSubmit}
       />
       <input
+        type="text"
+        placeholder="Last name"
+        value={ilhan.lastName}
+        name="lastName"
+        // onChange={(e) => setIlhan({ ...ilhan, firstLastName: e.target.value })}
+        onChange={handleSubmit}
+      />
+      <input
+        type="text"
         placeholder="Years"
         value={ilhan.years}
         name="years"
@@ -114,6 +130,7 @@ function Form() {
         onChange={handleSubmit || 0}
       />
       <input
+        type="text"
         placeholder="Place of Birth"
         value={ilhan.placeOfBirth}
         name="placeOfBirth"
@@ -121,6 +138,7 @@ function Form() {
         onChange={handleSubmit}
       />
       <select
+        type="text"
         value={ilhan.educationDegree}
         name="educationDegree"
         // onChange={(e) =>
@@ -138,22 +156,25 @@ function Form() {
         <option value="option4">Bachelor's degree</option>
       </select>
 
-      <input 
-      placeholder="Profession"
-      value={ilhan.profession}
-      name="profession"
-      onChange={handleSubmit}
+      <input
+        type="text"
+        placeholder="Profession"
+        value={ilhan.profession}
+        name="profession"
+        onChange={handleSubmit}
       />
-      <input 
-      placeholder="Hobby"
-      value={ilhan.hobby}
-      name="hobby"
-      onChange={handleSubmit}
+      <input
+        type="text"
+        placeholder="Hobby"
+        value={ilhan.hobby}
+        name="hobby"
+        onChange={handleSubmit}
       />
       <select
-      value={ilhan.relationshipStatus}
-      name="relationshipStatus"
-      onChange={handleSelectChange}
+        type="text"
+        value={ilhan.relationshipStatus}
+        name="relationshipStatus"
+        onChange={handleSelectChange}
       >
         <option value="option1">Yes</option>
         <option value="option1">No</option>
@@ -162,11 +183,24 @@ function Form() {
 
       <button
         onClick={() => {
-          console.log(ilhan)
+          setShowDiv(true)
         }}
       >
         Submit
       </button>
+
+      {showDiv && (
+        <div className="ilhan">
+          <p>{ilhan.firstName}</p>
+          <p>{ilhan.lastName}</p>
+          <p>{ilhan.years}</p>
+          <p>{ilhan.placeOfBirth}</p>
+          <p>{ilhan.educationDegree}</p>
+          <p>{ilhan.profession}</p>
+          <p>{ilhan.hobby}</p>
+          <p>{ilhan.relationshipStatus}</p>
+        </div>
+      )}
     </div>
   )
 }
