@@ -213,6 +213,7 @@ function Form() {
           </button>
         </div>
       )}
+    {console.log(test)}
     </>
   )
 }
