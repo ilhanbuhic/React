@@ -3,48 +3,8 @@ import React, { useState } from 'react';
 
 function App() {
 
-  // #3
-    // const [me, setMe] = useState({
-    //   firstName: "Ilhan",
-    //   lastName: "Buhic",
-    // })
-    // console.log(me)
-    // // {console.log(me, setMe)}
-    // return <input type="text" value={me.lastName} onChange={(e) => setMe({...me, lastName: e.target.value})}/>
 
-  // #1 Home exercise
-    // const [title, setTitle] = useState('')
-    // const [body, setBody] = useState('')
-    // const [author, setAuthor] = useState('')
-
-    // return (
-    //   <div className="create">
-    //     <h2>Add a new blog</h2>
-    //     <form>
-    //       <label>Blog Title:</label>
-    //       <input 
-    //       type = 'text'
-    //       required
-    //       value = {title}
-    //       onChange={(e) => setTitle(e.target.value)}
-    //       />
-    //       <label>Blog Body:</label>
-    //       <textarea 
-    //       required
-    //       value = {body}
-    //       onChange={(e) => setBody(e.target.value)}
-    //       ></textarea>
-    //       <label>Blog author:</label>
-    //       <select 
-    //       value = {author}
-    //       onChange={(e) => setAuthor(e.target.value)}>
-    //         <option value = 'ilhan' >Ilhan</option>
-    //         <option value = 'emina'>Emina</option>
-    //       </select>
-    //       <button>Add blog</button>
-    //     </form>
-    //   </div>
-    // )
+ 
 
     // #Homework
 
