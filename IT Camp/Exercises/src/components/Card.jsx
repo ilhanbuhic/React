@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Card() {
   const [defaultData, setDefaultData] = useState([])
@@ -9,39 +9,27 @@ export default function Card() {
       .then((res) => res.json())
       .then((data) => {
         setDefaultData(data?.products)
-        console.log(data?.products)
+        const filtered = data?.products?.slice(0, 8)
+        setFilteredData(filtered)
       })
   }
 
   return (
-    <div
-      className='cardContainer'
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <button
-        onClick={() => {
-          getData()
-        }}
-      >
-        Get Data
-      </button>
-      <button
-        onClick={() => {
-          {
-            setFilteredData(defaultData.filter((_data, index) => index < 8))
-          }
-          console.log(filteredData)
-        }}
-      >
-        Filtered data
-      </button>
+    <div className='cardContainer'>
+      <div className='cards'>
+        {filteredData.length > 0 && (
+          <div>
+            {filteredData.map((product) => (
+              <div key={product.id} className='card'>
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
+                <p>Price: {product.price}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      <button style = {{display: 'flex'}} onClick={getData}>Get Data</button>
     </div>
   )
-  {
-  }
 }
