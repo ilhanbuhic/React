@@ -8,13 +8,7 @@ import './App.css'
 // import BlogMaker from './components/Class-1/Practice 4/practice-4'
 // import AboutMeForm from './components/Class-2/Practice 1/practice-1'
 import Item from './components/Class-3/Practice 1/Item'
-
-const products = [
-  { name: 'Cips', isBought: true },
-  { name: 'Kola', isBought: false },
-  { name: 'Protein', isBought: true },
-  { name: 'Vitamin', isBought: false },
-]
+import RenderingItems from './components/Class-3/Practice 1/RenderingItems'
 
 function App() {
   return (
@@ -25,25 +19,7 @@ function App() {
         {/* <MeSetter /> */}
         {/* <BlogMaker /> */}
         {/* <AboutMeForm /> */}
-        <div className='App'>
-          <header className='App-header'>
-            <p>Groceries</p>
-            <ul>
-              {/* Bad example */}
-              {/* <Item name='Cips' isBought={true} />
-              <Item name='Kola' />
-              <Item name='Protein' />
-              <Item name='Vitamin' /> */}
-              {/* Bad example */}
-
-              {/* Good examole */}
-              {products.map((el, index) => (
-                <Item key={index} name={el.name} isBought={el.isBought} />
-              ))}
-              {/* Good examole */}
-            </ul>
-          </header>
-        </div>
+        <RenderingItems />
       </header>
     </div>
   )
