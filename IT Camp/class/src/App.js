@@ -35,7 +35,7 @@ function App() {
               <Item name='Protein' />
               <Item name='Vitamin' /> */}
               {/* Bad example */}
-``
+
               {/* Good examole */}
               {products.map((el, index) => (
                 <Item key={index} name={el.name} isBought={el.isBought} />
