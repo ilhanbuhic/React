@@ -21,6 +21,7 @@ export default function Card() {
           <div>
             {filteredData.map((product) => (
               <div key={product.id} className='card'>
+                <img src={product.thumbnail} alt='' />
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
                 <p>Price: {product.price}</p>
@@ -29,7 +30,9 @@ export default function Card() {
           </div>
         )}
       </div>
-      <button style = {{display: 'flex'}} onClick={getData}>Get Data</button>
+      <button style={{ display: 'flex' }} onClick={getData}>
+        Get Data
+      </button>
     </div>
   )
 }
