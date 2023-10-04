@@ -35,7 +35,12 @@ export default function Card() {
             </>
           )}
         </div>
-  ``    </div>
+        {!filteredData.length ? (
+          <button style={{ display: 'flex' }} onClick={getData}>
+            Get Data
+          </button>
+        ) : null}
+      </div>
     </div>
   )
 }
