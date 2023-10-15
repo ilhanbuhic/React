@@ -9,6 +9,7 @@ import './App.css'
 // import AboutMeForm from './components/Class-2/Practice 1/practice-1'
 import Item from './components/Class-3/Practice 1/Item'
 import RenderingItems from './components/Class-3/Practice 1/RenderingItems'
+import UseEffect from './components/Class-4/Practice 1/UseEffect'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         {/* <MeSetter /> */}
         {/* <BlogMaker /> */}
         {/* <AboutMeForm /> */}
-        <RenderingItems />
+        {/* <RenderingItems /> */}
+        <UseEffect />
       </header>
     </div>
   )
