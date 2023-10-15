@@ -32,4 +32,27 @@ export function Cards() {
       })
   }, [currentPage])
 
-
+  return (
+    <div className='mainContainer'>
+      <div
+        className='container'
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        {defaultData?.length > 0 ? (
+          defaultData?.map((post, index) => <Posts key={index} posts={post} />)
+        ) : (
+          <h1>No data</h1>
+        )}
+      </div>
+      <Pagination
+        pages={totalPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+    </div>
+  )
+}
