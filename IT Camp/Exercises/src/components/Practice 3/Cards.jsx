@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Posts from './Posts'
 import { Pagination } from './Pagination'
-import { handleScrollDown } from './HandleScrollDown'
 import './Cards.css'
 import './Pagination.css'
 import './Post.css'
@@ -9,7 +8,7 @@ import './ScrollDownArrow.css'
 import useScroll from '../../hooks/useScroll'
 
 export function Cards() {
-  const { showArrow, setShowArrow, scrollToBottom } = useScroll()
+  const { showArrow, setShowArrow } = useScroll()
   const [defaultData, setDefaultData] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [currentPage, setCurrentPage] = useState(0)
@@ -46,7 +45,7 @@ export function Cards() {
         <div
           className='arrowbtn arrowbtn-down'
           onClick={() => {
-            scrollToBottom()
+            setShowArrow(true)
           }}
         ></div>
       )}

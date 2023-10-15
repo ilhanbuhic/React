@@ -4,10 +4,7 @@ const useScroll = () => {
   const [showArrow, setShowArrow] = useState(true)
 
   const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth', // Postavite 'smooth' za glatko skrolanje
-    })
+    window.scrollTo(0, document.documentElement.scrollHeight, 'smooth')
   }
 
   useEffect(() => {
