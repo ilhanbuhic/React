@@ -4,7 +4,10 @@ const useScroll = () => {
   const [showArrow, setShowArrow] = useState(true)
 
   const scrollToBottom = () => {
-    window.scrollTo(0, document.documentElement.scrollHeight, 'smooth')
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    })
   }
 
   useEffect(() => {

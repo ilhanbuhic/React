@@ -8,7 +8,7 @@ import './ScrollDownArrow.css'
 import useScroll from '../../hooks/useScroll'
 
 export function Cards() {
-  const { showArrow, setShowArrow } = useScroll()
+  const { showArrow, setShowArrow, scrollToBottom} = useScroll()
   const [defaultData, setDefaultData] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [currentPage, setCurrentPage] = useState(0)
@@ -45,7 +45,7 @@ export function Cards() {
         <div
           className='arrowbtn arrowbtn-down'
           onClick={() => {
-            setShowArrow(true)
+            scrollToBottom()
           }}
         ></div>
       )}
