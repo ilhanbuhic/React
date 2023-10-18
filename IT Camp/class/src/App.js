@@ -11,6 +11,8 @@ import Item from './components/Class-3/Practice 1/Item'
 import RenderingItems from './components/Class-3/Practice 1/RenderingItems'
 import UseEffect from './components/Class-4/Practice 1/UseEffect'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AboutUsPage from './pages/AboutUsPage'
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
         <div className='container'>
           <BrowserRouter>
             <Routes>
-              <Route path = '/' element = {<h1>Welcome to this page</h1>}/>
+              <Route path = '/' element = {<HomePage />}/>
+              <Route path = '/about' element = {<AboutUsPage />}/>
             </Routes>
           </BrowserRouter>
         </div>
