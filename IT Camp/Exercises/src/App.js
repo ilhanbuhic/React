@@ -8,7 +8,8 @@ import React from 'react'
 // import { Cards } from './components/Practice 3/Cards'
 // ---------- Practice 4 ----------
 import './components/Practice 4/CSS/defaultSettings.css'
-import Hero from './components/Practice 4/Navbar'
+import Hero from './components/Practice 4/Header'
+import Course from './components/Practice 4/Course'
 // ---------- Practice 4 ----------
 
 
@@ -19,6 +20,7 @@ function App() {
     {/* <ButtonContainer /> */}
     {/* <Cards /> */}
     <Hero />
+    <Course />
     </div>
 }
 
