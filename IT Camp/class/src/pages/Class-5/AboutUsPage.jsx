@@ -10,7 +10,7 @@ function AboutUsPage() {
       {/* <Link style={{ color: '#fff' }} to={'/'}>
         Go to HOME
       </Link> */}
-      <button onClick={() => navigate('/')}>HOME</button>
+      <button style = {{padding: '20px 40px', borderRadius: '10px'} }onClick={() => navigate('/')}>HOME</button>
     </div>
   )
 }

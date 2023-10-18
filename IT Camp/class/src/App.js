@@ -11,8 +11,8 @@ import Item from './components/Class-3/Practice 1/Item'
 import RenderingItems from './components/Class-3/Practice 1/RenderingItems'
 import UseEffect from './components/Class-4/Practice 1/UseEffect'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import AboutUsPage from './pages/AboutUsPage'
+import HomePage from './pages/Class-5/HomePage'
+import ReactRouterDom from './components/Class-5/Practice 1/React-Router-Dom'
 
 function App() {
   return (
@@ -25,14 +25,7 @@ function App() {
         {/* <AboutMeForm /> */}
         {/* <RenderingItems /> */}
         {/* <UseEffect /> */}
-        <div className='container'>
-          <BrowserRouter>
-            <Routes>
-              <Route path = '/' element = {<HomePage />}/>
-              <Route path = '/about' element = {<AboutUsPage />}/>
-            </Routes>
-          </BrowserRouter>
-        </div>
+       <ReactRouterDom />
       </header>
     </div>
   )
