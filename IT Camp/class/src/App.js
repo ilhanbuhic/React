@@ -10,6 +10,7 @@ import './App.css'
 import Item from './components/Class-3/Practice 1/Item'
 import RenderingItems from './components/Class-3/Practice 1/RenderingItems'
 import UseEffect from './components/Class-4/Practice 1/UseEffect'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
@@ -21,7 +22,14 @@ function App() {
         {/* <BlogMaker /> */}
         {/* <AboutMeForm /> */}
         {/* <RenderingItems /> */}
-        <UseEffect />
+        {/* <UseEffect /> */}
+        <div className='container'>
+          <BrowserRouter>
+            <Routes>
+              <Route path = '/' element = {<h1>Welcome to this page</h1>}/>
+            </Routes>
+          </BrowserRouter>
+        </div>
       </header>
     </div>
   )

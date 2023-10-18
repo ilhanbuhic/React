@@ -41,8 +41,10 @@ export function Cards() {
 
   return (
     <div className='mainContainer'>
+      <h1 style={{fontSize: '3.2rem'}}>Ilhan Posts</h1>
       {showArrow && (
         <div
+        style={{marginTop: '70px'}}
           className='arrowbtn arrowbtn-down'
           onClick={() => {
             scrollToBottom()
