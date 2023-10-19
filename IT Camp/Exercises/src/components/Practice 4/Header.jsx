@@ -3,28 +3,27 @@ import './CSS/header.css'
 
 function NavBar() {
   const navLinks = [
-    {text: 'Home', href: '#home'},
-    {text: 'About', href: '#about'},
-    {text: 'Course', href: '#course'},
-    {text: 'Blog', href: '#blog'},
-    {text: 'Contact', href: '#contact'},
+    { text: 'Home', href: '#home' },
+    { text: 'Course', href: '#course' },
+    { text: 'Campus', href: '#campus' },
+    // { text: 'Blog', href: '#blog' },
+    // { text: 'Contact', href: '#contact' },
   ]
-
 
   return (
     <header>
       <nav className='navbar'>
         <a href='#'>
-          <img className='logo' src='../eduford_img/img/logo.png' alt='logo' />
+          <img className='logo' src='eduford_img/img/logo.png' alt='logo' />
         </a>
         <div className='nav-links'>
           <i className='fas fa-times' id='close-menu-btn'></i>
           <ul>
-           {navLinks.map((link, index) => (
-            <li key = {index}>
-              <a href = {link.href}>{link.text}</a>
-            </li>
-           ))}
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.href}>{link.text}</a>
+              </li>
+            ))}
             <a href='#'>
               <button className='btn1'>Contact Us</button>
             </a>
