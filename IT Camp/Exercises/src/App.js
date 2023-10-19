@@ -8,10 +8,11 @@ import { React, useEffect } from 'react'
 // import { Cards } from './components/Practice 3/Cards'
 // ---------- Practice 4 ----------
 import './components/Practice 4/CSS/defaultSettings.css'
-import Hero from './components/Practice 4/Header'
+import Header from './components/Practice 4/Header'
 import Course from './components/Practice 4/Course'
 import Campus from './components/Practice 4/Campus'
 import Facilities from './components/Practice 4/Facilities'
+import Testemonials from './components/Practice 4/Testemonials'
 // ---------- Practice 4 ----------
 
 function App() {
@@ -20,10 +21,11 @@ function App() {
       {/* <Card /> */}
       {/* <ButtonContainer /> */}
       {/* <Cards /> */}
-      <Hero />
+      <Header />
       <Course />
       <Campus />
       <Facilities />
+      <Testemonials />
     </div>
   )
 }

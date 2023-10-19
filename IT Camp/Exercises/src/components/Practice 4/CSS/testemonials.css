@@ -1,0 +1,48 @@
+.testemonials {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .testemonials h3 {
+    font-size: 26px;
+  }
+  .testemonials p {
+    font-size: 18px;
+  }
+  .testemonials-col {
+    display: flex;
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+  }
+  .testemonials-col img {
+    height: 60px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+  }
+  .testemonials-col p {
+    padding: 0;
+  }
+  .testemonials-col h3 {
+    margin-top: 15px;
+    text-align: left;
+  }
+  .testemonials-col .fas,
+  .far {
+    color: var(--main-color);
+  }
+  @media (max-width: 700px) {
+    .testemonials-col img {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+    .testemonials-col h3 {
+      font-size: 20px;
+    }
+  }

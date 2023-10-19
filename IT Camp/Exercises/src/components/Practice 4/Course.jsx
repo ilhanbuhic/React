@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './CSS/course.css'
 
 function Course() {
-  const courses = [
+  const courseData = [
     {
       title: 'Intermediate',
       description:
@@ -27,10 +27,10 @@ function Course() {
       <h1>Course We Offer</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, in?</p>
       <div class='row'>
-        {courses.map((course, index) => (
+        {courseData.map((data, index) => (
           <div className='course-col' key={index}>
-            <h3>{course.title}</h3>
-            <p>{course.description}</p>
+            <h3>{data.title}</h3>
+            <p>{data.description}</p>
           </div>
         ))}
       </div>
