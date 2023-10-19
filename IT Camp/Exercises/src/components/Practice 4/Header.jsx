@@ -6,6 +6,8 @@ function NavBar() {
     { text: 'Home', href: '#home' },
     { text: 'Course', href: '#course' },
     { text: 'Campus', href: '#campus' },
+    { text: 'Facilities', href: '#facilities' },
+
     // { text: 'Blog', href: '#blog' },
     // { text: 'Contact', href: '#contact' },
   ]

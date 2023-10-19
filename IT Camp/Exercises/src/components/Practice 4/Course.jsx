@@ -23,7 +23,7 @@ function Course() {
   ]
 
   return (
-    <section class='course' id='course'>
+    <section className='course' id='course'>
       <h1>Course We Offer</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, in?</p>
       <div class='row'>

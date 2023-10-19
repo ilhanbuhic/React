@@ -11,6 +11,7 @@ import './components/Practice 4/CSS/defaultSettings.css'
 import Hero from './components/Practice 4/Header'
 import Course from './components/Practice 4/Course'
 import Campus from './components/Practice 4/Campus'
+import Facilities from './components/Practice 4/Facilities'
 // ---------- Practice 4 ----------
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Hero />
       <Course />
       <Campus />
+      <Facilities />
     </div>
   )
 }
