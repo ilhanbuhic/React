@@ -16,7 +16,9 @@ function ContactUs() {
       >
         <h1>ERROR 404</h1>
         <h3>NOT FOUND</h3>
-        <h6 onClick={() => navigate('/')}>Return back</h6>
+        <h6 onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          Return back
+        </h6>
       </div>
     </>
   )

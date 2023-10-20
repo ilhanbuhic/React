@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './CSS/header.css'
-import ContactUs from './ContactUs'
+import ContactUs from '../../pages/ContactUs'
 
 function NavBar() {
   const navigate = useNavigate()
