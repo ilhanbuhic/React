@@ -1,8 +1,8 @@
 import React from 'react'
-import './CSS/testemonials.css'
+import './CSS/testimonials.css'
 
-function Testemonials() {
-  const testemonialData = [
+function Testimonials() {
+  const testimonialData = [
     {
       imgSrc: './eduford_img/img/user1.jpg',
       imgAlt: 'User 1',
@@ -23,11 +23,11 @@ function Testemonials() {
   ]
 
   return (
-    <section className='testemonials'>
+    <section className='testimonials'>
       <h3>What Our Students Say</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, in?</p>
       <div className='row'>
-        <div className='testemonials-col'>
+        <div className='testimonials-col'>
           <img src='./eduford_img/img/user1.jpg' alt='User 1' />
           <div>
             <p>
@@ -43,7 +43,7 @@ function Testemonials() {
             <i className='far fa-star'></i>
           </div>
         </div>
-        <div className='testemonials-col'>
+        <div className='testimonials-col'>
           <img src='./eduford_img/img/user2.jpg' alt='User 2' />
           <div>
             <p>
@@ -64,4 +64,4 @@ function Testemonials() {
   )
 }
 
-export default Testemonials
+export default Testimonials

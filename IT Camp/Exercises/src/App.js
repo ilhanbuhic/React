@@ -1,4 +1,5 @@
 import { React, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 
 // import './components/Practice 1/Card.css'
 // import './components/Practice 2/css/flex-container.css'
@@ -13,6 +14,8 @@ import Course from './components/Practice 4/Course'
 import Campus from './components/Practice 4/Campus'
 import Facilities from './components/Practice 4/Facilities'
 import Testemonials from './components/Practice 4/Testemonials'
+import ContactUs from './components/Practice 4/ContactUs'
+import HomePage from './components/Practice 4/HomePage'
 // ---------- Practice 4 ----------
 
 function App() {
@@ -21,11 +24,19 @@ function App() {
       {/* <Card /> */}
       {/* <ButtonContainer /> */}
       {/* <Cards /> */}
-      <Header />
-      <Course />
+      
+      <BrowserRouter>
+      <HomePage />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/contact-us' element={<ContactUs />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Course />
       <Campus />
       <Facilities />
-      <Testemonials />
+      <Testemonials /> */}
     </div>
   )
 }

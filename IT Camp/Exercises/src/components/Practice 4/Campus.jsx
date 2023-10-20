@@ -22,7 +22,7 @@ function Campus() {
         {campusData.map((data, index) => (
           <div key={index} className='campus-col'>
             <img src={data.imgSrc} alt={data.imgAlt} />
-            {campusTitles.map((data, index) => (
+            {campusTitles?.map((data, index) => (
               <div key={index} className='layer'>
                 <h3>{data.title}</h3>
               </div>

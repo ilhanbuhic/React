@@ -1,7 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './CSS/header.css'
+import ContactUs from './ContactUs'
 
 function NavBar() {
+  const navigate = useNavigate()
+
   const navLinks = [
     { text: 'Home', href: '#home' },
     { text: 'Course', href: '#course' },
@@ -26,9 +31,9 @@ function NavBar() {
                 <a href={link.href}>{link.text}</a>
               </li>
             ))}
-            <a href='#'>
-              <button className='btn1'>Contact Us</button>
-            </a>
+            <button className='btn1' onClick={() => navigate('/contact-us')}>
+              Contact Us
+            </button>
           </ul>
         </div>
         <i className='fas fa-bars' id='menu-btn'></i>
