@@ -26,7 +26,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/contact-us' element={<ContactUs />} />
         </Routes>
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   )
 }
