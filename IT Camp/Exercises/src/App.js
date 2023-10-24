@@ -1,5 +1,11 @@
 import { React } from 'react'
-import { BrowserRouter, Routes, Route, Router, useNavigate } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Router,
+  useNavigate,
+} from 'react-router-dom'
 
 // import './components/Practice 1/Card.css'
 // import './components/Practice 2/css/flex-container.css'
@@ -17,8 +23,8 @@ import { BrowserRouter, Routes, Route, Router, useNavigate } from 'react-router-
 import Navbar from './components/Practice 5/Navbar/Navbar'
 import './components/Practice 5/HomePage/defaultSettings.css'
 import { HomePage } from './components/Practice 5/HomePage/HomePage'
-import Post from './components/Practice 5/Posts/Post'
-import Product from './components/Practice 5/Navbar/Products/Product'
+import Product from './components/Practice 5/Products/Product'
+import { Cards } from './components/Practice 5/Posts/Cards/Cards'
 // ---------- Practice 5 ----------
 
 function App() {
@@ -38,13 +44,13 @@ function App() {
 
       {/* // ---------- Practice 5 ---------- */}
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
-          <Route path = '/post' element = {<Post />}></Route>
-          <Route path = '/' element = {<HomePage />}></Route>
-          <Route path = '/' element = {<HomePage />}></Route>
-          <Route path = '/products' element = {<Product />}></Route>
-
+          <Route path='/posts' element={<Cards />}></Route>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/products' element={<Product />}></Route>
+          <Route path = '/posts/:id' element ></Route>
         </Routes>
       </BrowserRouter>
       {/* // ---------- Practice 5 ---------- */}
@@ -53,3 +59,4 @@ function App() {
 }
 
 export default App
+
