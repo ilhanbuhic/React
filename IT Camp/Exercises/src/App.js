@@ -23,7 +23,7 @@ import {
 import Navbar from './components/Practice 5/Navbar/Navbar'
 import './components/Practice 5/HomePage/defaultSettings.css'
 import { HomePage } from './components/Practice 5/HomePage/HomePage'
-import Product from './components/Practice 5/Products/Product'
+import Product from './components/Practice 5/Product/Product'
 import { Cards } from './components/Practice 5/Posts/Cards/Cards'
 // ---------- Practice 5 ----------
 
@@ -50,7 +50,7 @@ function App() {
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/products' element={<Product />}></Route>
-          <Route path = '/posts/:id' element ></Route>
+          <Route path='/posts/:id' element></Route>
         </Routes>
       </BrowserRouter>
       {/* // ---------- Practice 5 ---------- */}
@@ -59,4 +59,3 @@ function App() {
 }
 
 export default App
-

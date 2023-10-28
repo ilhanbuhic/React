@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Post } from '../Posts/Post'
 import { Pagination } from '../Pagination/Pagination'
+import '../../.env/STATIC_LINK'
 import '../Cards/Cards.css'
 import '../Pagination/Pagination.css'
 import '../Posts/Post.css'
 import './ScrollDownArrow.css'
 import useScroll from '../../../../hooks/useScroll'
+import { STATIC_LINK } from '../../.env/STATIC_LINK'
 
 export function Cards() {
   const { showArrow, setShowArrow, scrollToBottom } = useScroll()
@@ -21,7 +23,7 @@ export function Cards() {
 
   useEffect(() => {
     // Fetching the total number of pages
-    fetch(`https://dummyjson.com/posts?select=title,reactions,userId`)
+    fetch(`${STATIC_LINK}/posts?select=title,reactions,userId`)
       .then((res) => res.json())
       .then((data) => {
         setTotalPages(data?.total / PAGES_COEFFICIENT)
@@ -29,7 +31,7 @@ export function Cards() {
 
     // Fetching the data for the current page
     fetch(
-      `https://dummyjson.com/posts?limit=${PAGES_COEFFICIENT}&skip=${String(
+      `${STATIC_LINK}/posts?limit=${PAGES_COEFFICIENT}&skip=${String(
         currentPage * PAGES_COEFFICIENT
       )}&select=title,reactions,userId`
     )
@@ -43,14 +45,14 @@ export function Cards() {
     <div className='mainContainer'>
       <h1 style={{ fontSize: '3.2rem' }}>Ilhan Posts</h1>
       {showArrow && (
-      <div
-        style={{ marginTop: '130px' }}
-        className='arrowbtn arrowbtn-down'
-        onClick={() => {
-          scrollToBottom()
-        }}
-      ></div>
-      )} 
+        <div
+          style={{ marginTop: '130px' }}
+          className='arrowbtn arrowbtn-down'
+          onClick={() => {
+            scrollToBottom()
+          }}
+        ></div>
+      )}
       <div
         className='container'
         style={{

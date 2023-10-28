@@ -12,6 +12,7 @@
     text-decoration: none;
     color: #fff;
     font-size: 24px;
+    cursor: pointer;
   }
   
   .navbar-nav {
@@ -27,6 +28,7 @@
     text-decoration: none;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
   }
   
   .nav-item a:hover {

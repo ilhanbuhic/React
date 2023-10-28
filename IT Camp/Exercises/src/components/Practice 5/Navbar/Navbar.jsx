@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='navbar-brand'>
-        <a >Your Logo</a>
+        <a onClick={() => navigate('/')}>Your Logo</a>
       </div>
       <ul className='navbar-nav'>
         <li className='nav-item'>
