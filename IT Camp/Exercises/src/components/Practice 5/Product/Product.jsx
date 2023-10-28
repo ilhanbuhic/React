@@ -27,7 +27,7 @@ export const Product = () => {
         <div key={product.id}>
           <h5>{product.title}</h5>
           <img
-            style={{ width: '20px', height: '20px' }}
+            style={{ width: '50px', height: '50px' }}
             src={product.images[0]}
             alt=''
           />
