@@ -1,0 +1,24 @@
+.productContainer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.productContainer .product {
+    border: 1px solid black;
+    min-height: 150px;
+    flex-grow: 1;
+    flex-basis: 300px;
+
+}
+
+
+.productContainer img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}

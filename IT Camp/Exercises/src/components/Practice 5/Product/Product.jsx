@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import '../.env/STATIC_LINK'
 import { STATIC_LINK } from '../.env/STATIC_LINK'
+import '../Product/Product.css'
 
 export const Product = () => {
   const [data, setData] = useState([])
@@ -24,13 +25,9 @@ export const Product = () => {
   return (
     <div className='productContainer'>
       {data?.map((product) => (
-        <div key={product.id}>
+        <div className = 'product' key={product.id}>
           <h5>{product.title}</h5>
-          <img
-            style={{ width: '50px', height: '50px' }}
-            src={product.images[0]}
-            alt=''
-          />
+          <img src={product.images[0]} alt='' />
         </div>
       ))}
     </div>
