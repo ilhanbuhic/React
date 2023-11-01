@@ -108,7 +108,61 @@ export default function RecipeReviewCard() {
 //           data?.author !== 'wsj' && (
 //             <div className='postcard' key={data.id}>
 //               <p>{data.author}</p>
-//               <p>{formatDate(data.publishedAt)}</p>
+//               <p>{formatDate(data.publishedAt)}</<Card sx={{ maxWidth: 345 }}>
+                <CardHeader
+                avatar={<Avatar src={news_icon} aria-label='recipe'></Avatar>}
+                action={
+                  <IconButton aria-label='settings'>
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+                className='cardHeader'
+                title={data.author}
+                subheader={formatDate(data.publishedAt)}
+              />
+              <CardMedia
+                component='img'
+                height='194'
+                image={data.urlToImage}
+                alt='Paella dish'
+              />
+              <CardContent>
+                <Typography variant='body2' color='text.secondary'>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: data.content.replace(
+                        /\[\+\d+ chars\]/,
+                        '<span class="read-more">Read more</span>'
+                      ),
+                    }}
+                  ></p>
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <IconButton
+                  ref={iconButtonRef}
+                  onClick={handleClick}
+                  className='like'
+                  aria-label='add to favorites'
+                >
+                  <FavoriteIcon />
+                </IconButton>
+                <IconButton aria-label='share'>
+                  <ShareIcon />
+                </IconButton>
+                <ExpandMore
+                  expand={expanded}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label='show more'
+                >
+                  <ExpandMoreIcon />
+                </ExpandMore>
+              </CardActions>
+              <Collapse in={expanded} timeout='auto' unmountOnExit>
+                <CardContent></CardContent>
+              </Collapse>
+            </Card>p>
 //               <p>{data.content.replace(/\[\+\d+ chars\]/, 'Read more')}</p>
 //             </div>
 //           )
