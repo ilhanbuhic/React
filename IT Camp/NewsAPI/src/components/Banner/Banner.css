@@ -2,7 +2,7 @@
     width: 100%;
     margin-top: .2rem;
     min-height: 400px;
-    background-image: url('../../../public/images/news-banner.jpg');
+    background-image: url('../images/news-banner.jpg');
     background-size: cover;
     background-position: center;
   }

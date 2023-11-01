@@ -1,22 +1,69 @@
-import { React, useState, useEffect } from 'react'
+import * as React from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { styled } from '@mui/material/styles'
+import Card from '@mui/material/Card'
+import CardHeader from '@mui/material/CardHeader'
+import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Collapse from '@mui/material/Collapse'
+import Avatar from '@mui/material/Avatar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import { red } from '@mui/material/colors'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ShareIcon from '@mui/icons-material/Share'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
+import '../Postcards/Postcards.css'
 import axios from 'axios'
+import news_icon from '../../images/news-icon.webp'
 
-export const Postcards = () => {
-  const [data, setData] = useState([])
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props
+  return <IconButton {...other} />
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}))
 
+export default function RecipeReviewCard() {
   const formatDate = (publishedAt) => {
     const options = {
       year: 'numeric',
       month: 'long',
       day: '2-digit',
       hour: '2-digit',
+      minute: '2-digit',
       second: '2-digit',
     }
-    const formattedDate = new Date(publishedAt).toLocaleDateString(
-      undefined,
-      options
-    )
-    return formattedDate
+    return new Date(publishedAt).toLocaleDateString(undefined, options)
+  }
+
+  const [data, setData] = useState([])
+
+  const iconButtonRef = useRef(null)
+  const [originalColor, setOriginalColor] = useState(null)
+
+  const handleClick = () => {
+    // Get the computed style of the element
+    const elementStyle = window.getComputedStyle(iconButtonRef.current)
+    // Get the color property from the computed style
+    let color = elementStyle.getPropertyValue('color')
+
+    if (color === 'red') {
+      // Restore the original color
+      if (originalColor) {
+        iconButtonRef.current.style.color = originalColor
+      }
+    } else {
+      // Store the original color and set the color to red
+      setOriginalColor(color)
+      iconButtonRef.current.style.color = 'red'
+    }
   }
 
   useEffect(() => {
@@ -26,21 +73,27 @@ export const Postcards = () => {
       )
       .then((response) => {
         console.log(response.data.articles)
-        setData(response.data.articles)
+        setData(response.data.articles.slice(0, 5))
       })
       .catch((error) => {
         throw new Error(error)
       })
   }, [])
 
+  const [expanded, setExpanded] = React.useState(false)
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded)
+  }
+
   return (
     <div className='postcards-container'>
       {data?.map(
         (data) =>
-          data.author !== 'wsj' && (
+          data &&
+          data?.author !== 'wsj' && (
             <div className='postcard' key={data.id}>
-              <h3>{data.author}</h3>
-              <h4>{data.content.replace(/\[\+\d+ chars\]/, 'Read more')}</h4>
+              
             </div>
           )
       )}
@@ -48,4 +101,20 @@ export const Postcards = () => {
   )
 }
 
-export default Postcards
+//   return (
+//     <div className='postcards-container'>
+//       {data?.map(
+//         (data) => data &&
+//           data?.author !== 'wsj' && (
+//             <div className='postcard' key={data.id}>
+//               <p>{data.author}</p>
+//               <p>{formatDate(data.publishedAt)}</p>
+//               <p>{data.content.replace(/\[\+\d+ chars\]/, 'Read more')}</p>
+//             </div>
+//           )
+//       )}
+//     </div>
+//   )
+// }
+
+// export default Postcards
