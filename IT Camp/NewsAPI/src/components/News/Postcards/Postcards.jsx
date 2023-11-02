@@ -1,6 +1,4 @@
-import * as React from 'react'
-import { useState, useEffect, useRef } from 'react'
-import { styled } from '@mui/material/styles'
+import React, { useState, useEffect, useRef } from 'react'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardMedia from '@mui/material/CardMedia'
@@ -10,27 +8,14 @@ import Collapse from '@mui/material/Collapse'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import { red } from '@mui/material/colors'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import '../Postcards/Postcards.css'
 import axios from 'axios'
 import news_icon from '../../images/news-icon.webp'
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props
-  return <IconButton {...other} />
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}))
-
-export default function RecipeReviewCard() {
+const MyCard = () => {
   const formatDate = (publishedAt) => {
     const options = {
       year: 'numeric',
@@ -44,9 +29,28 @@ export default function RecipeReviewCard() {
   }
 
   const [data, setData] = useState([])
-
+  const [expanded, setExpanded] = React.useState(false)
   const iconButtonRef = useRef(null)
   const [originalColor, setOriginalColor] = useState(null)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const maxLeft = 155
+  const handleScroll = () => {
+    const card = document.querySelector('.postcards-container')
+    if (card) {
+      const scrollPosition = window.scrollY
+      // Calculate the new left position to gradually center the card
+      const newLeft = -100 + (scrollPosition / window.innerHeight) * maxLeft
+      card.style.left = `${newLeft}%`
+    }
+  }
 
   const handleClick = () => {
     // Get the computed style of the element
@@ -67,6 +71,7 @@ export default function RecipeReviewCard() {
   }
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
     axios
       .get(
         'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e7cdfdb1358a4f1d9079d743a3f945e5'
@@ -78,13 +83,12 @@ export default function RecipeReviewCard() {
       .catch((error) => {
         throw new Error(error)
       })
+
+    return () => {
+      // Clean up the scroll event listener when the component unmounts
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
-
-  const [expanded, setExpanded] = React.useState(false)
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded)
-  }
 
   return (
     <div className='postcards-container'>
@@ -93,7 +97,7 @@ export default function RecipeReviewCard() {
           data &&
           data?.author !== 'wsj' && (
             <div className='postcard' key={data.id}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card className='scrolling-card'>
                 <CardHeader
                   avatar={<Avatar src={news_icon} aria-label='recipe'></Avatar>}
                   action={
@@ -109,7 +113,7 @@ export default function RecipeReviewCard() {
                   component='img'
                   height='194'
                   image={data.urlToImage}
-                  alt='Paella dish'
+                  alt='News Image'
                 />
                 <CardContent>
                   <Typography variant='body2' color='text.secondary'>
@@ -135,14 +139,6 @@ export default function RecipeReviewCard() {
                   <IconButton aria-label='share'>
                     <ShareIcon />
                   </IconButton>
-                  <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label='show more'
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
                 </CardActions>
                 <Collapse in={expanded} timeout='auto' unmountOnExit>
                   <CardContent></CardContent>
@@ -155,20 +151,4 @@ export default function RecipeReviewCard() {
   )
 }
 
-//   return (
-//     <div className='postcards-container'>
-//       {data?.map(
-//         (data) => data &&
-//           data?.author !== 'wsj' && (
-//             <div className='postcard' key={data.id}>
-//               <p>{data.author}</p>
-//               <p>{formatDate(data.publishedAt)}</p>
-//               <p>{data.content.replace(/\[\+\d+ chars\]/, 'Read more')}</p>
-//             </div>
-//           )
-//       )}
-//     </div>
-//   )
-// }
-
-// export default Postcards
+export default MyCard

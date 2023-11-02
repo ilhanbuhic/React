@@ -27,6 +27,9 @@
     cursor: pointer;
 }
 
+.cardHeader {
+    /* margin-bottom: 160px; */
+}
 
 .cardHeader .MuiCardHeader-title {
     font-size: 1.4rem;
@@ -39,4 +42,18 @@
 .like.MuiIconButton-root {
     /* color: red; */
 }
+
+.postcards-container {
+    position: relative;
+    left: 0%;
+    transition: left 0.4s ease; /* Add a transition for smooth movement */
+  }
+  
+  /* Add media query to reset left when screen size is smaller */
+  @media (max-width: 768px) {
+    .postcards-container {
+      left: 0;
+      transition: none;
+    }
+  }
 
