@@ -35,7 +35,7 @@
 
 }
 
-.read-more {
+.read-more a {
     color: blue;
     text-decoration: underline;
     font-size: 1rem;
@@ -51,6 +51,7 @@
     font-size: 1.1rem;
 }
 
-.like.MuiIconButton-root {
-    /* color: red; */
-}
+
+.like.red {
+    color: red;
+  }

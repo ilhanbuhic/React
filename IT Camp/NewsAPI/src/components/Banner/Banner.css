@@ -15,7 +15,8 @@
   background-attachment: fixed;
   background-size: 100%; /* Adjust the value to control the zoom level */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 10rem;
   align-items: center;
   color: white;
   font-size: 10rem;
