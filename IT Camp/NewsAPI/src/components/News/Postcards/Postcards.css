@@ -15,13 +15,13 @@
     overflow: auto;
     transition: left 0.5s ease; /* Add a smooth transition effect */
     visibility: hidden;
-  
 }
 
 .postcards-container.show {
     left: 2%;
-    top: 6.9%;
+    top: 6%;
     visibility: visible;
+    animation: slideIn 1.5s ease-in-out
   }
 
 .postcard {
@@ -54,4 +54,14 @@
 
 .like.red {
     color: red;
+}
+
+@keyframes slideIn {
+    0% {
+      left: -100%; /* Start with left at -100% */
+    }
+    150% {
+      left: 0; /* End with left at 0 (or the desired value) */
+    }
   }
+  

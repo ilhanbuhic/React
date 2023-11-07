@@ -8,7 +8,7 @@ function App() {
     <Navbar />
     <Banner />
     <News />
-  </div>
+    </div>
 }
 
 export default App

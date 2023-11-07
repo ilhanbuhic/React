@@ -16,12 +16,14 @@
   background-size: 100%; /* Adjust the value to control the zoom level */
   display: flex;
   justify-content: flex-end;
-  padding-right: 10rem;
+  padding-top: 5rem;
+  padding-right: 2rem;
   align-items: center;
   color: white;
   font-size: 10rem;
   font-weight: 800;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-in-out;
 
   /* Add an overlay using a pseudo-element */
   &::before {
@@ -34,4 +36,15 @@
     background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control darkness */
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with opacity 0 (completely transparent) */
+  }
+  to {
+    opacity: 1; /* End with opacity 1 (fully visible) */
+  }
+}
+
+
 

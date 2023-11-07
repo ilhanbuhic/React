@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.navbar {
+    h1 {
+        font-size: 2.2rem;
+        cursor: pointer;
+    }
+
+    a,
+    summary {
+        font-size: 2.2rem;
+        padding-inline: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.banner-title {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(4rem, 5vw, 7rem);
+    font-weight: 400;
+    letter-spacing: 7px;
+    text-align: center;
+    color: #dbdbdb;
+    // animation: 1s ease-in-out 2s forwards;
+}
+
+.search-bar-input {
+    box-sizing: content-box;
+    box-sizing: border-box; /* Add box-sizing property */
+    font-size: 1.3rem;
+    width: 0px;
+    height: 25px;
+    cursor: pointer;
+    transition: width 0.5s;
+
+    &.extended {
+        width: 120px;
+    }
+
+    &:focus {
+        width: 120px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
