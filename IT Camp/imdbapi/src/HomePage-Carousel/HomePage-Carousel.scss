@@ -1,13 +1,19 @@
 .container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 50rem;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    width: fit-content;
     height: 600px;
-    padding: 50px;
+    border-radius: 30px;
+    // padding: 50px;
     background-color: #f5f5f5;
     box-shadow: 0 30px 50px #dbdbdb;
+    // z-index: 1;
+    overflow: hidden;
 }
 #slide {
     width: max-content;
@@ -38,16 +44,16 @@
     box-shadow: none;
 }
 .item:nth-child(3) {
-    left: 50%;
+    left: 49%;
 }
 .item:nth-child(4) {
-    left: calc(50% + 220px);
+    left: calc(49% + 220px);
 }
 .item:nth-child(5) {
-    left: calc(50% + 440px);
+    left: calc(49% + 440px);
 }
 .item:nth-child(n + 6) {
-    left: calc(50% + 660px);
+    left: calc(49% + 660px);
     opacity: 0;
 }
 .item .content {
@@ -110,5 +116,5 @@
     transition: 0.5s;
 }
 .buttons button:hover {
-    background-color: #bac383;
+    background-color: #dedede;
 }

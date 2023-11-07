@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+
 import '../Navbar/Navbar.scss'
 
 export const Navbar = () => {
@@ -29,7 +31,6 @@ export const Navbar = () => {
   return (
     <div className='navbar-container'>
       <div className='navbar p-3 items-start bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
-        {' '}
         <div className='flex-1'>
           <h1 className='normal-case text-xl'>Ilhan</h1>
         </div>

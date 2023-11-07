@@ -2,6 +2,7 @@ import Navbar from './Navbar/Navbar'
 import './Navbar/Navbar.scss'
 import './HomePage-Carousel/HomePage-Carousel'
 import HomePageCarousel from './HomePage-Carousel/HomePage-Carousel'
+// import { Hero } from './Hero/Hero'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header className='App-header'>
         <Navbar />
       </header>
+      {/* <Hero /> */}
       <HomePageCarousel />
     </div>
   )
