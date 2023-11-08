@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Offer_1/Offer_1.scss'
+import '../../assets/img/'
 
 export const Offer_2 = () => {
   return (
@@ -10,7 +11,7 @@ export const Offer_2 = () => {
           <p>Save your favorites easily and always have something to watch.</p>
         </div>
         <div className='offer_1-img'>
-          <img src='../../../public/assets/img/tv.png' alt='dsadsadsa' />
+          <img src= '/../assets/img/tv.png' alt='dsadsadsa' />
         </div>
       </div>
     </div>

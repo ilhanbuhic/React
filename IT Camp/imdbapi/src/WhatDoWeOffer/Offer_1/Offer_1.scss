@@ -1,12 +1,32 @@
 .offer_1-container {
-    margin-top: 20rem;
+    margin-top: .8rem;
 }
 
 .offer_1 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 30vh;
+    // border: 1px solid red;
+    gap: 8rem;
+    // height: 30vh;
     // align-items: center;
     // margin-top: 20rem;
+    .offer_1-content {
+        max-width: 25%;
+        // border: 1px solid red;
+    }
+    h3 {
+        font-size: 5rem;
+        font-weight: 800;
+    }
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    img {
+        // border: 1px solid red;
+        width: 80%;
+        height: 80%;
+        // float: right;
+    }
 }

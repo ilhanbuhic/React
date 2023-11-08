@@ -12,8 +12,8 @@ export const Offer_1 = () => {
             players, and more.
           </p>
         </div>
-        <div className="offer_1-img">
-            <img src="../../../public/assets/img/tv.png" alt="dsadsadsa" />
+        <div className='offer_1-img'>
+          <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt='dsadsadsa' />
         </div>
       </div>
     </div>

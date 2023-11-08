@@ -10,9 +10,9 @@ function App() {
   return (
     <div className='App bg-primary'> 
     {/* w-full h-auto bg-cover bg-center */}
-      <header className='App-header'>
+      {/* <header className='App-header'> */}
         <Navbar />
-      </header>
+      {/* </header> */}
       <HomePageCarousel />
       <WhatDoWeOffer />
     </div>

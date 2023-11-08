@@ -9,8 +9,8 @@ module.exports = {
     themes: [
       {
         ilhanLight: {
-          primary: '##147eff',
-          secondary: '#7d919b',
+          primary: '#232323',
+          secondary: '#000000',
           accent: '#eb6b47',
           neutral: '#23282f',
           'base-100': '#212121',
@@ -20,8 +20,8 @@ module.exports = {
           error: '#ab3d30',
         },
         ilhanDark: {
-          primary: '##147eff',
-          secondary: '#3c0672',
+          primary: '#232323',
+          secondary: '#000000',
           accent: '#331df7',
           neutral: '#3905e3',
           'base-100': '#333848',
