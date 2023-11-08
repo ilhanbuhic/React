@@ -1,8 +1,11 @@
-.offer_2-container {
+.offer_4-container {
+    display: flex;
+    justify-content: center;
     margin-top: .2rem;
+    height: 70vh;
 }
 
-.offer_2 {
+.offer_4 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -10,7 +13,7 @@
     gap: 8rem;
     flex-grow: 1;
 
-    .offer_2-content {
+    .offer_4-content {
         padding-left: 3rem;
         min-width: 40%; /* Remove the max-width property */
         width: 500px; /* Adjust the width to your preference */

@@ -3,7 +3,7 @@ import '../Offer_1/Offer_1.scss'
 
 export const Offer_1 = () => {
   return (
-    <div className='offer_1-container'>
+    <div className='offer_1-container bg-secondary'>
       <div className='offer_1'>
         <div className='offer_1-content'>
           <h3>Enjoy on your TV</h3>
