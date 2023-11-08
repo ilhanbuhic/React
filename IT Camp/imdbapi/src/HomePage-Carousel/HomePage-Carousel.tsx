@@ -14,14 +14,6 @@ const HomePageCarousel = () => {
     document.getElementById('slide')?.prepend(lists[lists.length - 1])
   }
 
-  useEffect(() => {
-    axios
-      .get('https://www.omdbapi.com/?i=tt3896198&apikey=ba62406a')
-      .then((response) => {
-        console.log(response.data)
-      })
-  })
-
   return (
     <div className='carousel-container bg-secondary'>
       <div className='container bg-secondary'>

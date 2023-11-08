@@ -63,6 +63,29 @@
     }
 }
 
+svg {
+    margin-left: 3rem;
+    color: #fff;
+}
+
+.select-language {
+    width: 40px;
+    height: 30px;
+    font-size: 1.5rem;
+}
+
+.select-language:focus {
+    border: none;
+    outline: none;
+}
+
+.language-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
