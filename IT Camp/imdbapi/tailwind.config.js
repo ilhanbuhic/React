@@ -9,7 +9,7 @@ module.exports = {
     themes: [
       {
         ilhanLight: {
-          primary: '#1c4f82',
+          primary: '##147eff',
           secondary: '#7d919b',
           accent: '#eb6b47',
           neutral: '#23282f',
@@ -20,7 +20,7 @@ module.exports = {
           error: '#ab3d30',
         },
         ilhanDark: {
-          primary: '#48ce7d',
+          primary: '##147eff',
           secondary: '#3c0672',
           accent: '#331df7',
           neutral: '#3905e3',

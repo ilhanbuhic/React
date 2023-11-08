@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
     margin-top: 10rem;
-    margin-bottom: 50rem;
+    // margin-bottom: 50rem;
     // left: 50%;
     // top: 50%;
     // transform: translate(-50%, -50%);
@@ -44,16 +44,16 @@
     box-shadow: none;
 }
 .item:nth-child(3) {
-    left: 49%;
+    left: 50%;
 }
 .item:nth-child(4) {
-    left: calc(49% + 220px);
+    left: calc(50% + 220px);
 }
 .item:nth-child(5) {
-    left: calc(49% + 440px);
+    left: calc(50% + 440px);
 }
 .item:nth-child(n + 6) {
-    left: calc(49% + 660px);
+    left: calc(50% + 660px);
     opacity: 0;
 }
 .item .content {

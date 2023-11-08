@@ -15,17 +15,21 @@
             font-size: 2.2rem;
             cursor: pointer;
         }
-    
+
         a,
         summary {
             font-size: 2.2rem;
-            padding-inline: 20px;
+            padding-inline: 10px;
+            text-align: center;
+            gap: 1rem;
             padding-top: 10px;
             padding-bottom: 10px;
         }
+        ul {
+            padding-right: 1rem;
+        }
     }
 }
-
 
 .banner-title {
     font-family: "Montserrat", sans-serif;

@@ -10,21 +10,27 @@ export const Navbar = () => {
     setIsInputExtended(!isInputExtended)
   }
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   // ------------------ Loader ------------------
-  document.addEventListener('DOMContentLoaded', function () {
-    const loadingSpinner = document.querySelector<HTMLElement>('.loading')
-    const mainApp = document.querySelector<HTMLElement>('.mainApp')
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   const loadingSpinner = document.querySelector<HTMLElement>('.loading')
+  //   const mainApp = document.querySelector<HTMLElement>('.mainApp')
 
-    if (loadingSpinner && mainApp) {
-      // Hide the loading spinner after a specified delay (in milliseconds)
-      const delay = 2000 // Adjust the delay as needed (e.g., 2000 milliseconds or 2 seconds)
-      loadingSpinner.style.display = 'block'
+  //   if (loadingSpinner && mainApp) {
+  //     // Hide the loading spinner after a specified delay (in milliseconds)
+  //     const delay = 2000 // Adjust the delay as needed (e.g., 2000 milliseconds or 2 seconds)
+  //     loadingSpinner.style.display = 'block'
 
-      setTimeout(() => {
-        loadingSpinner.style.display = 'none'
-      }, delay)
-    }
-  })
+  //     setTimeout(() => {
+  //       loadingSpinner.style.display = 'none'
+  //     }, delay)
+  //   }
+  // })
 
   // ------------------ Loader ------------------
 
