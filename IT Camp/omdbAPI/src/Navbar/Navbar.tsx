@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import '../Navbar/Navbar.scss'
-import axios from 'axios'
 
 export const Navbar = () => {
   const [isInputExtended, setIsInputExtended] = useState(false)
@@ -51,28 +50,6 @@ export const Navbar = () => {
 
   // ------------------ Loader ------------------
 
-  // const axios = require('axios')
-  useEffect(() => {
-    const fetchData = async () => {
-      const options = {
-        method: 'GET',
-        url: 'https://imdb-top-100-movies.p.rapidapi.com/top32',
-        headers: {
-          'X-RapidAPI-Key':
-            '7df19c1283mshf3ab1f54ed25ca4p12301bjsn5d973c253b3a',
-          'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
-        },
-      }
-
-      try {
-        const response = await axios.request(options)
-        console.log(response.data)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    fetchData()
-  }, [])
 
   return (
     <div className='navbar-container'>
