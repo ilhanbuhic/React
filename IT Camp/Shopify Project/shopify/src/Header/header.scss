@@ -1,0 +1,20 @@
+.header-container {
+    height: 10vh;
+    padding: 0 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-container {
+    display: flex;
+    gap: 100px;
+    p {
+        cursor: pointer;
+    }
+}
+
+.icon-container {
+    display: flex;
+    gap: 30px;
+}
