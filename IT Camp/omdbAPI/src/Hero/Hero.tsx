@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Hero/Hero.scss'
 
 export const Hero = () => {
   return (
     <div className='hero-container'>
-      <div className='hero'>
-      </div>
+      <div className='hero'></div>
     </div>
   )
 }

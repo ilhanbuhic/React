@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Navbar/Navbar.scss'
+import axios from 'axios'
 
 export const Navbar = () => {
   const [isInputExtended, setIsInputExtended] = useState(false)
@@ -50,6 +51,29 @@ export const Navbar = () => {
 
   // ------------------ Loader ------------------
 
+  // const axios = require('axios')
+  useEffect(() => {
+    const fetchData = async () => {
+      const options = {
+        method: 'GET',
+        url: 'https://imdb-top-100-movies.p.rapidapi.com/top32',
+        headers: {
+          'X-RapidAPI-Key':
+            '7df19c1283mshf3ab1f54ed25ca4p12301bjsn5d973c253b3a',
+          'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
+        },
+      }
+
+      try {
+        const response = await axios.request(options)
+        console.log(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchData()
+  }, [])
+
   return (
     <div className='navbar-container'>
       <div className='navbar p-3 items-start bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
@@ -62,7 +86,7 @@ export const Navbar = () => {
               onClick={handleButtonClick}
               className='btn  btn-ghost btn-circle'
             >
-                <svg
+              <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-8 w-8'
                 fill='none'
@@ -120,7 +144,7 @@ export const Navbar = () => {
           </select>
         </div>
       </div>
-      <h1 className='banner-title'>Discover the Magic of Cinema</h1>``
+      <h1 className='banner-title'>Discover the Magic of Cinema</h1>
     </div>
   )
 }

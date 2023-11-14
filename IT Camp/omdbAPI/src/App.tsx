@@ -6,8 +6,6 @@ import { OfferOne } from './WhatDoWeOffer/Offer_1/OfferOne'
 import { OfferTwo } from './WhatDoWeOffer/Offer_2/OfferTwo'
 import { OfferThree } from './WhatDoWeOffer/Offer_3/OfferThree'
 import { OfferFour } from './WhatDoWeOffer/Offer_4/OfferFour'
-import axios from 'axios'
-import { useEffect } from 'react'
 
 function App() {
   return (
