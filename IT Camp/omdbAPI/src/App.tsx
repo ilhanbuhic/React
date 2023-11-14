@@ -2,11 +2,10 @@ import Navbar from './Navbar/Navbar'
 import './Navbar/Navbar.scss'
 import './HomePage-Carousel/HomePage-Carousel'
 import HomePageCarousel from './HomePage-Carousel/HomePage-Carousel'
-// import { WhatDoWeOffer } from './WhatDoWeOffer/WhatDoWeOffer'
-import { Offer_1 } from './WhatDoWeOffer/Offer_1/Offer_1'
-import { Offer_2 } from './WhatDoWeOffer/Offer_2/Offer_2'
-import { Offer_3 } from './WhatDoWeOffer/Offer_3/Offer_3'
-import { Offer_4 } from './WhatDoWeOffer/Offer_4/Offer_4'
+import { OfferOne } from './WhatDoWeOffer/Offer_1/OfferOne'
+import { OfferTwo } from './WhatDoWeOffer/Offer_2/OfferTwo'
+import { OfferThree } from './WhatDoWeOffer/Offer_3/OfferThree'
+import { OfferFour } from './WhatDoWeOffer/Offer_4/OfferFour'
 import axios from 'axios'
 import { useEffect } from 'react'
 
@@ -18,10 +17,10 @@ function App() {
       <Navbar />
       {/* </header> */}
       <HomePageCarousel />
-      <Offer_1 />
-      <Offer_2 />
-      <Offer_3 />
-      <Offer_4 />
+      <OfferOne />
+      <OfferTwo />
+      <OfferThree />
+      <OfferFour />
 
       {/* <WhatDoWeOffer /> */}
     </div>

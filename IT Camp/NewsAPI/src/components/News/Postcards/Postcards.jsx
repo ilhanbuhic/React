@@ -11,7 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import axios from 'axios'
-import news_icon from '../../images/news-icon.webp'
+import news_icon from '../../img/news-icon.webp'
 import './Postcards.css'
 
 const MyCard = () => {

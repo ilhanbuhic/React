@@ -1,7 +1,7 @@
 import React from 'react'
-import '../Offer_4/Offer_4.scss'
+import '../Offer_4/OfferFour.scss'
 
-export const Offer_4 = () => {
+export const OfferFour = () => {
   return (
     <div className='offer_4-container bg-secondary'>
       <div className='offer_4'>

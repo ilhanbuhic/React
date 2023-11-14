@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
-import '../HomePage-Carousel/HomePage-Carousel.scss' // Import your local stylesheet
+import '../HomePage-Carousel/HomePage-Carousel.scss'
 import axios from 'axios'
 
 const HomePageCarousel = () => {
@@ -111,7 +111,6 @@ const HomePageCarousel = () => {
         </div>
         <div className='buttons flex justify-center gap-2'>
           <button id='prev' onClick={handlePrevClick}>
-            {/* <i className='fa-solid fa-angle-left'></i> */}
             <HiOutlineArrowSmLeft
               style={{
                 fontSize: 25,
@@ -121,7 +120,6 @@ const HomePageCarousel = () => {
             />
           </button>
           <button id='next' onClick={handleNextClick}>
-            {/* <i className='fa-solid fa-angle-right'></i> */}
             <HiOutlineArrowSmRight
               style={{
                 fontSize: 25,

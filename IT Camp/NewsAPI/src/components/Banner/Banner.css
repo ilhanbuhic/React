@@ -1,50 +1,50 @@
 .banner-container {
-  position: relative;
-  width: 100%;
-  height: 93.3vh;
-  overflow: hidden;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-image: url('../images/news-banner(2).jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: 100%; /* Adjust the value to control the zoom level */
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 5rem;
-  padding-right: 2rem;
-  align-items: center;
-  color: white;
-  font-size: 10rem;
-  font-weight: 800;
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 1.5s ease-in-out;
-
-  /* Add an overlay using a pseudo-element */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    position: relative;
+    width: 100%;
+    height: 93.3vh;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control darkness */
+    background-image: url('../img/news-banner\(2\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%; /* Adjust the value to control the zoom level */
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5rem;
+    padding-right: 2rem;
+    align-items: center;
+    color: white;
+    font-size: 10rem;
+    font-weight: 800;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+  
+    /* Add an overlay using a pseudo-element */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control darkness */
+    }
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Start with opacity 0 (completely transparent) */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with opacity 0 (completely transparent) */
+    }
+    to {
+      opacity: 1; /* End with opacity 1 (fully visible) */
+    }
   }
-  to {
-    opacity: 1; /* End with opacity 1 (fully visible) */
-  }
-}
-
-
-
+  
+  
+  

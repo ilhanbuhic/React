@@ -1,31 +1,22 @@
 .postcards-container {
-    /* max-width: 95%;
-    width: 1500px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    align-items: flex-start;
-    gap: 100px; */
-    /* border: 1px solid blue; */
     position: fixed;
     left: -100%;
     top: 0;
     bottom: 0;
     width: 100%;
     overflow: auto;
-    transition: left 0.5s ease; /* Add a smooth transition effect */
+    transition: left 0.5s ease;
     visibility: hidden;
 }
 
 .postcards-container.show {
     left: 2%;
-    top: 6%;
+    top: 6.8%;
     visibility: visible;
     animation: slideIn 1.5s ease-in-out
   }
 
 .postcard {
-    /* border: 1px solid red; */
     width: 400px;
     margin: 2rem 0;
 }
@@ -58,10 +49,10 @@
 
 @keyframes slideIn {
     0% {
-      left: -100%; /* Start with left at -100% */
+      left: -100%;
     }
     150% {
-      left: 0; /* End with left at 0 (or the desired value) */
+      left: 0;
     }
   }
   

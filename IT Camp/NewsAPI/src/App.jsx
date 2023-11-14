@@ -4,11 +4,13 @@ import Banner from './components/Banner/Banner'
 import News from './components/News/News'
 
 function App() {
-  return <div className='main-container'>
-    <Navbar />
-    <Banner />
-    <News />
+  return (
+    <div className='main-container'>
+      <Navbar />
+      <Banner />
+      <News />
     </div>
+  )
 }
 
 export default App
