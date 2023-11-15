@@ -17,4 +17,8 @@
 .icon-container {
     display: flex;
     gap: 30px;
+    > *{
+        cursor: pointer;
+        font-size: 23px;
+    }
 }
