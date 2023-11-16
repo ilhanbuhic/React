@@ -2,14 +2,20 @@ import React, { useEffect } from 'react'
 import { BsCart3 } from 'react-icons/bs'
 import { FaRegUser } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import Logo from '../../assets/images/logoGreen.jpeg'
 import './header.scss'
 
 function Header() {
   const navigate = useNavigate()
   return (
     <div className='header-container'>
-      <div>
-        <p onClick={() => navigate('/')}>Logo</p>
+      <div style={{ width: '8%' }}>
+        <img
+          onClick={() => navigate('/')}
+          src={Logo}
+          style={{ width: '100%', cursor: 'pointer' }}
+          alt='logo'
+        />
       </div>
       <div className='page-container'>
         <p onClick={() => navigate('/')}>All products</p>
