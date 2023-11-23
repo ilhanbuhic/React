@@ -13,9 +13,27 @@ export const OfferOne = () => {
           </p>
         </div>
         <div className='offer_1-img'>
-          <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt='dsadsadsa' />
+          <img
+            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png'
+            alt='dsadsadsa'
+            className='background-image-offerOne'
+          />
+          <video
+            data-uia='nmhp-card-animation-asset-video'
+            autoPlay
+            playsInline
+            muted
+            loop
+            className='overlay-video-offerOne'
+          >
+            <source
+              src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v'
+              type='video/mp4'
+            />
+          </video>
         </div>
       </div>
     </div>
   )
 }
+
