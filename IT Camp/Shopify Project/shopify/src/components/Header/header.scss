@@ -1,4 +1,4 @@
-.header-container {
+.headerContainer {
     height: 10vh;
     padding: 0 20%;
     display: flex;
@@ -6,15 +6,16 @@
     align-items: center;
 }
 
-.page-container {
+.pageContainer {
     display: flex;
     gap: 100px;
-    p {
-        cursor: pointer;
-    }
 }
 
-.icon-container {
+.pageContainer p {
+    cursor: pointer;
+}
+
+.iconContainer {
     display: flex;
     gap: 30px;
 }

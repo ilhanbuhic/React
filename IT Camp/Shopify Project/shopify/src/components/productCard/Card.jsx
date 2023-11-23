@@ -1,48 +1,34 @@
-import React, { useState } from 'react'
-import '../productCard/card.css'
+import React, { useContext } from 'react'
+import './card.scss'
+import { CartContext } from '../../store/CartContext'
 
 function Card({ product, addToCart }) {
-  const [quantity, setQuantity] = useState(0)
-
-  const maxQuantity = 10
-
-  const increase = () => {
-    if (quantity !== maxQuantity) setQuantity(quantity++)
-  }
-
-  const decrease = () => {
-    if (quantity > 0) setQuantity(quantity--)
-  }
+  const { inCart } = useContext(CartContext)
 
   return (
-    <div className='main-content'>
-      <div className='first-content'>
-        <img src={product.imageURL} alt={product.title} />
+    <div className='container'>
+      <div className='image'>
+        <img src={product.imageURL} alt='' />
       </div>
-      <div className='second-content'>
-        <h4>{product.title}</h4>
-        <h5 id='green-underline'>Remove</h5>
-      </div>
-      <div className='third-content'>
-        <h4>{Number(product.price)}$</h4>
-        <div className='quantity'>
-          <p style={{ cursor: 'pointer' }} onClick={decrease}>
-            -
-          </p>
-          <p>{quantity}</p>
-          <p style={{ cursor: 'pointer' }} onClick={increase}>
-            +
-          </p>
-        </div>
-        <div style={{ width: '40px' }}>
-          {product.discount && <h4>{product.discount}%</h4>}
-        </div>
-        <div
-          className='quantity'
-          onClick={addToCart}
-          style={{ width: '100px', cursor: 'pointer', fontWeight: 'bolder' }}
-        >
-          <p>Add to cart</p>
+      <div className='card-content'>
+        <div className='wrapper'>
+          <div className='title'>{product.title}</div>
+          <p className='price'>{product.price}$</p>
+
+          <div className='btns'>
+            {product.discount && <button disabled>{product.discount}%</button>}
+            {/* <button onClick={addToCart}>Add to cart</button> */}
+            {inCart(product) ? (
+              <button
+                style={{ backgroundColor: 'gray', border: 'none' }}
+                disabled
+              >
+                Already added
+              </button>
+            ) : (
+              <button onClick={addToCart}>Add to cart</button>
+            )}
+          </div>
         </div>
       </div>
     </div>
