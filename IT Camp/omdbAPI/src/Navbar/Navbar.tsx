@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../Navbar/Navbar.scss'
+import { getTopMovies } from '../axios/api'
 
 export const Navbar = () => {
+  const [movies, setMovies] = useState<any>([])
   const [isInputExtended, setIsInputExtended] = useState(false)
 
   const handleButtonClick = () => {
@@ -32,6 +34,16 @@ export const Navbar = () => {
     }
   }, [closeDetails])
 
+  // -------------------------------------------------------------------- //
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTopMovies()
+      setMovies(data)
+    }
+    fetchData()
+  }, [])
+  // -------------------------------------------------------------------- //
+  console.log(movies)
   // ------------------ Loader ------------------
   // document.addEventListener('DOMContentLoaded', function () {
   //   const loadingSpinner = document.querySelector<HTMLElement>('.loading')

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Offer_2/OfferTwo.scss'
+import './OfferTwo.scss'
 
 export const OfferTwo = () => {
   return (
@@ -10,7 +10,10 @@ export const OfferTwo = () => {
           <p>Save your favorites easily and always have something to watch.</p>
         </div>
         <div className='offer_2-img'>
-          <img src= 'https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg' alt='dsadsadsa' />
+          <img
+            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg'
+            alt='dsadsadsa'
+          />
         </div>
       </div>
     </div>

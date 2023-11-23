@@ -1,22 +1,22 @@
 import React from 'react'
-import '../Offer_1/OfferOne.scss'
+import './OfferThree.scss'
 
-export const OfferOne = () => {
+export const OfferThree = () => {
   return (
-    <div className='offer_1-container bg-secondary'>
-      <div className='offer_1'>
-        <div className='offer_1-content'>
+    <div className='offer_3-container bg-secondary'>
+      <div className='offer_3'>
+        <div className='offer_3-content'>
           <h3>Enjoy on your TV</h3>
           <p>
             Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
             players, and more.
           </p>
         </div>
-        <div className='offer_1-img'>
+        <div className='offer_3-img'>
           <img
-            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png'
+            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png'
             alt='dsadsadsa'
-            className='background-image-offerOne'
+            className='background-image-offerThree'
           />
           <video
             data-uia='nmhp-card-animation-asset-video'
@@ -24,10 +24,10 @@ export const OfferOne = () => {
             playsInline
             muted
             loop
-            className='overlay-video-offerOne'
+            className='overlay-video-offerThree'
           >
             <source
-              src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v'
+              src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v'
               type='video/mp4'
             />
           </video>
@@ -36,4 +36,3 @@ export const OfferOne = () => {
     </div>
   )
 }
-

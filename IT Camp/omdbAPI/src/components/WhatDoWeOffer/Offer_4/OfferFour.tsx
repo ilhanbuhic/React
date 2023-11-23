@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Offer_4/OfferFour.scss'
+import './OfferFour.scss'
 
 export const OfferFour = () => {
   return (
@@ -13,7 +13,10 @@ export const OfferFour = () => {
           </p>
         </div>
         <div className='offer_4-img'>
-          <img src="https://occ-0-4093-769.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55" alt='dsadsadsa' />
+          <img
+            src='https://occ-0-4093-769.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55'
+            alt='dsadsadsa'
+          />
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import Navbar from './Navbar/Navbar'
 import './Navbar/Navbar.scss'
-import './HomePage-Carousel/HomePage-Carousel'
-import HomePageCarousel from './HomePage-Carousel/HomePage-Carousel'
-import { OfferOne } from './WhatDoWeOffer/Offer_1/OfferOne'
-import { OfferTwo } from './WhatDoWeOffer/Offer_2/OfferTwo'
-import { OfferThree } from './WhatDoWeOffer/Offer_3/OfferThree'
-import { OfferFour } from './WhatDoWeOffer/Offer_4/OfferFour'
+import './components/HomePage-Carousel/HomePage-Carousel'
+import HomePageCarousel from './components/HomePage-Carousel/HomePage-Carousel'
+import { OfferOne } from './components/WhatDoWeOffer/Offer_1/OfferOne'
+import { OfferTwo } from './components/WhatDoWeOffer/Offer_2/OfferTwo'
+import { OfferThree } from './components/WhatDoWeOffer/Offer_3/OfferThree'
+import { OfferFour } from './components/WhatDoWeOffer/Offer_4/OfferFour'
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import '../Hero/Hero.scss'
+import './Hero.scss'
 
 export const Hero = () => {
   return (
