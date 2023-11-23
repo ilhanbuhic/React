@@ -6,7 +6,7 @@ function Card({ product, addToCart }) {
   const { inCart } = useContext(CartContext)
 
   return (
-    <div className='container'>
+    <div className='container' style={{ marginBottom: 50 }}>
       <div className='image'>
         <img src={product.imageURL} alt='' />
       </div>

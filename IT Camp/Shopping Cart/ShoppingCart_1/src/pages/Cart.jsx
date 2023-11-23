@@ -17,14 +17,12 @@ function Cart() {
               removeFromCart={() => removeFromCart(product.id)}
             />
           ))}
-          <button onClick={() => console.log(totalPrice())}>
-            Daj mi racun
-          </button>
+          <h1>{totalPrice()}$</h1>
         </>
       ) : (
         <div style={{ textAlign: 'center' }}>
-          <h1>Nema proizvoda</h1>
-          <p>Vratite se na pocetnu stranicu.</p>
+          <h1>No products in shopping cart</h1>
+          <p>Go to Home Page</p>
           <button
             style={{
               padding: 10,
@@ -38,7 +36,7 @@ function Cart() {
             }}
             onClick={() => navigate('/')}
           >
-            Pocetna stranica
+            Home Page
           </button>
         </div>
       )}

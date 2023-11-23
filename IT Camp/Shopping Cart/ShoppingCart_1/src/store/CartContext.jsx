@@ -27,26 +27,20 @@ export default function CartContextProvider({ children }) {
     setShoppingCart((prev) => prev.filter((prod) => prod.id !== id))
   }
 
-  // const totalPrice = () => {
-  //   shoppingCart.reduce((prev, curr) => {
-  //     curr.discount ? curr.price * (curr.discount / 100) : curr.price +=
-  //   });
-  // };
+  const calcDiscountedPrice = (prod) => {
+    return prod.price - prod.price * (prod.discount / 100)
+  }
 
   const totalPrice = () => {
-    let total = 0
-
-    shoppingCart.map((prod) => {
-      if (prod.discount) {
-        total += prod.price * (prod.discount / 10)
-        console.log(total, 'if')
-      } else {
-        total += prod.price
-        console.log(total, 'else')
-      }
-    })
-    return total
+    return shoppingCart
+      .reduce(
+        (acc, curr) =>
+          acc + (curr.discount ? calcDiscountedPrice(curr) : curr.price),
+        0
+      )
+      .toFixed(2)
   }
+
   const cartSize = () => shoppingCart.length
 
   const value = {

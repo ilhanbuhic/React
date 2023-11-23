@@ -50,7 +50,6 @@ export const Navbar = () => {
 
   // ------------------ Loader ------------------
 
-
   return (
     <div className='navbar-container'>
       <div className='navbar p-3 items-start bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
