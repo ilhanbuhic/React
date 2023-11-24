@@ -33,12 +33,7 @@ export default function CartContextProvider({ children }) {
 
   const totalPrice = () => {
     return shoppingCart
-      .reduce(
-        (acc, curr) =>
-          acc + (curr.discount ? calcDiscountedPrice(curr) : curr.price),
-        0
-      )
-      .toFixed(2)
+      .reduce((acc, curr) => acc + (curr.discount ? calcDiscountedPrice(curr) : curr.price), 0).toFixed(2)
   }
 
   const cartSize = () => shoppingCart.length

@@ -17,7 +17,7 @@ function Cart() {
               removeFromCart={() => removeFromCart(product.id)}
             />
           ))}
-          <h1>{totalPrice()}$</h1>
+          <h2 style={{display: 'flex', justifyContent: 'flex-end', marginBottom: '20px'}}>Total price: {totalPrice()}$</h2>
         </>
       ) : (
         <div style={{ textAlign: 'center' }}>
