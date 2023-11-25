@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Navbar/Navbar.scss'
 // import { getTopMovies } from '../axios/api'
+import { fetchData } from '../storage/storage'
 
 export const Navbar = () => {
   const [movies, setMovies] = useState<any>([])
@@ -36,6 +37,35 @@ export const Navbar = () => {
   //   fetchData()
   // }, [])
   // console.log(movies)
+
+  useEffect(() => {
+    setMovies(JSON.parse(localStorage.getItem('api') as string))
+    // const storedDataString = localStorage.getItem('api')
+    // if (storedDataString) {
+    //   const storedData = JSON.parse(storedDataString) as {
+    //     data: any
+    //     timestamp: number
+    //   } | null
+      // if (storedData) {
+      //   const { data, timestamp } = storedData
+      //   const shouldFetchData =
+      //     !data || Date.now() - timestamp > 24 * 60 * 60 * 1000
+      //   if (shouldFetchData) {
+      //     fetchData(setMovies)
+      //     console.log(storedData)
+      //   } else {
+      //     setMovies(data)
+      //     console.log(storedData)
+      //   }
+      // }
+    // }
+    // const fetchData = async () => {
+    //   const data = await getTopMovies()
+    //   setMovies(data)
+    // }
+    // setMovies(fetchData)
+  }, [])
+  console.log(movies)
 
   // ------------------ Loader ------------------
   // document.addEventListener('DOMContentLoaded', function () {
