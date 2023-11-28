@@ -19,8 +19,6 @@ function App() {
       <OfferTwo />
       <OfferThree />
       <OfferFour />
-
-      {/* <WhatDoWeOffer /> */}
     </div>
   )
 }

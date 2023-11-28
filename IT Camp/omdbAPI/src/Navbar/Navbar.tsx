@@ -41,32 +41,7 @@ export const Navbar = () => {
   useEffect(() => {
     const data = fetchData()
     setMovies(data)
-    // const storedDataString = localStorage.getItem('api')
-    // if (storedDataString) {
-    //   const storedData = JSON.parse(storedDataString) as {
-    //     data: any
-    //     timestamp: number
-    //   } | null
-    //   if (storedData) {
-    //     const { data, timestamp } = storedData
-    //     const shouldFetchData =
-    //       !data || Date.now() - timestamp > 24 * 60 * 60 * 1000
-    //     if (shouldFetchData) {
-    //       fetchData(setMovies)
-    //       console.log(storedData)
-    //     } else {
-    //       setMovies(data)
-    //       console.log(storedData)
-    //     }
-    //   }
-    // }
-
-    //   const fetchData = async () => {
-    //     const data = await getTopMovies()
-    //     setMovies(data)
-    //   }
   }, [])
-  // console.log(movies)
 
   // ------------------ Loader ------------------
   // document.addEventListener('DOMContentLoaded', function () {
@@ -88,11 +63,22 @@ export const Navbar = () => {
 
   return (
     <div className='navbar-container'>
-      <div className='navbar p-3 items-start bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
-        <div className='flex-1'>
+      <div className='navbar p-3 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
+        <div className='navbar-ls'>
           <h1 className='normal-case text-xl'>Ilhan</h1>
+          <ul className='navbar-links'>
+            <li>
+              <a>Home</a>
+            </li>
+            <li>
+              <a>Latest</a>
+            </li>
+            <li>
+              <a>My List</a>
+            </li>
+          </ul>
         </div>
-        <div className='flex-0'>
+        <div className='navbar-rs'>
           <ul className='menu menu-horizontal gap-2 px-1'>
             <button
               onClick={handleButtonClick}
@@ -120,9 +106,7 @@ export const Navbar = () => {
                 isInputExtended ? 'extended' : ''
               }`}
             />
-            <li>
-              <a>Link</a>
-            </li>
+
             <li>
               <details>
                 <summary>Show</summary>
