@@ -48,10 +48,12 @@ export const fetchData = async () => {
     if (
       storedData &&
       (!storedData.data ||
-        Date.now() - storedData.timestamp > 24 * 60 * 60 * 1000)
+        // Date.now() - storedData.timestamp > 24 * 60 * 60 * 1000)
+      Date.now() - storedData.timestamp > 10 * 24 * 60 * 60 * 1000)
     ) {
       try {
         const data = await getTopMovies()
+        localStorage.removeItem('api')
         if (data) {
           const payload = { data, timestamp: Date.now() }
           localStorage.setItem('api', JSON.stringify(payload))
