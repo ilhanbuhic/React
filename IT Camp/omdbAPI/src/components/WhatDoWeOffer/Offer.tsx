@@ -17,7 +17,7 @@ interface OfferProps {
   description: string
   imageUrl: string
   alt: string
-  videoUrl?: string // Make videoUrl optional
+  videoUrl?: string
   classNamesContainer?: OfferClassNames['container']
   classNameOffer?: OfferClassNames['offer']
   classNameOfferContent?: OfferClassNames['offerContent']

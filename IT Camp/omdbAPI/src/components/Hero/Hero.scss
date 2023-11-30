@@ -1,11 +1,19 @@
 .hero-container {
     margin: 0;
-    // margin-top: -40px;
     padding: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/images/banner.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
-    // animation: fadeIn 1s ease-in-out ;
+    // animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

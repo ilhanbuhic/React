@@ -5,9 +5,8 @@ import './OfferThree.scss'
 export const OfferThree = () => {
   return (
     <Offer
-      title='Enjoy on your TV'
-      description=' Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
-      //         players, and more.'
+      title='Watch everywhere'
+      description='Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.'
       imageUrl='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png'
       videoUrl='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v'
       alt='/'
@@ -20,4 +19,3 @@ export const OfferThree = () => {
     />
   )
 }
-``

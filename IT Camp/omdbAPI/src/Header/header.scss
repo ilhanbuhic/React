@@ -5,6 +5,8 @@
     background-position: top;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1.5s forwards;
+
     &:before {
         content: "";
         position: absolute;
@@ -91,9 +93,13 @@ svg {
 }
 
 .magnifying-glass {
-    margin-left: 3rem;
+    margin: 0;
     color: #fff;
-    stroke: white;
+    stroke: #dedede;
+    stroke-width: 1px;
+    fill: transparent;
+    width: 22px;
+    height: 22px;
 }
 
 .select-language {

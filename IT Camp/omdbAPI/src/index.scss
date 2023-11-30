@@ -12,32 +12,3 @@
 body {
     background-color: #232323;
 }
-
-// .App {
-    // position: absolute;
-    // top: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // opacity: 1;
-    // animation:
-    // slideFromTopToBottom 1s ease-in-out 0.5s forwards,
-    // fadeIn 1.5s ease-in-out 1.5s forwards;
-// }
-
-@keyframes slideFromTopToBottom {
-    0% {
-        top: -100%;
-    }
-    100% {
-        top: 0;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}

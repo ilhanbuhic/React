@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './header.scss'
-// import { getTopMovies } from '../axios/api'
-import { fetchData } from '../storage/storage'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
@@ -9,12 +7,11 @@ export const Navbar = () => {
 
   const [movies, setMovies] = useState<any>([])
   const [isInputExtended, setIsInputExtended] = useState(false)
+  const [closeDetails, setCloseDetails] = useState(false)
 
   const handleButtonClick = () => {
     setIsInputExtended(!isInputExtended)
   }
-
-  const [closeDetails, setCloseDetails] = useState(false)
 
   useEffect(() => {
     const details = document.querySelector('details')
@@ -31,26 +28,17 @@ export const Navbar = () => {
     }
   }, [closeDetails])
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await getTopMovies()
-  //     setMovies(data)
-  //   }
-  //   fetchData()
-  // }, [])
-  // console.log(movies)
+  type BackgroundType = {
+    [key: string]: string
+  }
 
-  useEffect(() => {
-    // const data = fetchData()
-    // setMovies(data)
-  }, [])
-
-  const bg1 = require('../assets/images/banner.png')
-  const bg2 = require('../assets/images/bg.jpg')
+  const background: BackgroundType = {
+    '/': require('../assets/images/banner.png'),
+    '/why-us': require('../assets/images/bg.jpg'),
+  }
 
   const location = useLocation()
-  const backgroundImage: any =
-    location.pathname === '/' ? `url(${bg1})` : `url(${bg2})`
+  const backgroundImage: any = `url(${background[location.pathname]})`
 
   return (
     <div className='navbar-container'>
@@ -61,9 +49,9 @@ export const Navbar = () => {
         <div className='navbar-ls'>
           <h1 className='normal-case text-xl'>Ilhan</h1>
           <ul className='navbar-links'>
-            <li>
+            {/* <li>
               <a onClick={() => navigate('/')}>Home</a>
-            </li>
+            </li> */}
             <li>
               <a onClick={() => navigate('/latest')}>Latest</a>
             </li>
@@ -79,14 +67,12 @@ export const Navbar = () => {
           <ul className='menu menu-horizontal gap-2 px-1'>
             <button
               onClick={handleButtonClick}
-              className='btn  btn-ghost btn-circle'
+              className='btn btn-ghost btn-circle'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='h-8 w-8'
-                fill='none'
+                className='magnifying-glass'
                 viewBox='0 0 24 24'
-                stroke='white'
               >
                 <path
                   strokeLinecap='round'
@@ -126,7 +112,6 @@ export const Navbar = () => {
             height='14'
             viewBox='0 0 24 24'
           >
-            ``
             <path d='M0 0h24v24H0z' fill='none'></path>
             <path
               d=' M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z '
