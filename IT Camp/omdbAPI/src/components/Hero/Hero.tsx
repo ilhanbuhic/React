@@ -4,7 +4,7 @@ import './Hero.scss'
 export const Hero = () => {
   return (
     <div className='hero-container'>
-      <div className='hero'></div>
+      <h1 className='banner-title'>Discover the Magic of Cinema</h1>
     </div>
   )
 }

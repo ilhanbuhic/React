@@ -1,38 +1,23 @@
 import React from 'react'
+import Offer from '../Offer'
 import './OfferThree.scss'
 
 export const OfferThree = () => {
   return (
-    <div className='offer_3-container bg-secondary'>
-      <div className='offer_3'>
-        <div className='offer_3-content'>
-          <h3>Enjoy on your TV</h3>
-          <p>
-            Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
-            players, and more.
-          </p>
-        </div>
-        <div className='offer_3-img'>
-          <img
-            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png'
-            alt='dsadsadsa'
-            className='background-image-offerThree'
-          />
-          <video
-            data-uia='nmhp-card-animation-asset-video'
-            autoPlay
-            playsInline
-            muted
-            loop
-            className='overlay-video-offerThree'
-          >
-            <source
-              src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v'
-              type='video/mp4'
-            />
-          </video>
-        </div>
-      </div>
-    </div>
+    <Offer
+      title='Enjoy on your TV'
+      description=' Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray
+      //         players, and more.'
+      imageUrl='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png'
+      videoUrl='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v'
+      alt='/'
+      classNamesContainer='offer_3-container'
+      classNameOffer='offer_3'
+      classNameOfferContent='offer_3-content'
+      classNameOfferImg='offer_3-img'
+      classNameBgImg='background-image-offer_3'
+      classNameOverLayVid='overlay-video-offer_3'
+    />
   )
 }
+``

@@ -1,8 +1,8 @@
-.hero {
+.hero-container {
     margin: 0;
+    // margin-top: -40px;
     padding: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../public/assets/img/banner.png");
-    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/images/banner.png");
     background-size: cover;
     background-position: center;
     height: 100vh;

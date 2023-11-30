@@ -1,21 +1,20 @@
 import React from 'react'
+import Offer from '../Offer'
 import './OfferTwo.scss'
 
 export const OfferTwo = () => {
   return (
-    <div className='offer_2-container bg-secondary'>
-      <div className='offer_2'>
-        <div className='offer_2-content'>
-          <h3>Download your shows to watch offline</h3>
-          <p>Save your favorites easily and always have something to watch.</p>
-        </div>
-        <div className='offer_2-img'>
-          <img
-            src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg'
-            alt='dsadsadsa'
-          />
-        </div>
-      </div>
-    </div>
+    <Offer
+      title='Download your shows to watch offline'
+      description='Save your favorites easily and always have something to watch.'
+      imageUrl='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg'
+      alt='/'
+      classNamesContainer='offer_2-container'
+      classNameOffer='offer_2'
+      classNameOfferContent='offer_2-content'
+      classNameOfferImg='offer_2-img'
+      classNameBgImg='background-image-offer_2'
+      classNameOverLayVid='overlay-video-offer_2'
+    />
   )
 }

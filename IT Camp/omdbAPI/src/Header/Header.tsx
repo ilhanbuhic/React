@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import '../Navbar/Navbar.scss'
+import './header.scss'
 // import { getTopMovies } from '../axios/api'
 import { fetchData } from '../storage/storage'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+  const navigate = useNavigate()
+
   const [movies, setMovies] = useState<any>([])
   const [isInputExtended, setIsInputExtended] = useState(false)
 
@@ -22,7 +25,6 @@ export const Navbar = () => {
         details.open = !closeDetails
       }
     }
-
     window.addEventListener('click', handleWindowClick)
     return () => {
       window.removeEventListener('click', handleWindowClick)
@@ -39,42 +41,37 @@ export const Navbar = () => {
   // console.log(movies)
 
   useEffect(() => {
-    const data = fetchData()
-    setMovies(data)
+    // const data = fetchData()
+    // setMovies(data)
   }, [])
 
-  // ------------------ Loader ------------------
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   const loadingSpinner = document.querySelector<HTMLElement>('.loading')
-  //   const mainApp = document.querySelector<HTMLElement>('.mainApp')
+  const bg1 = require('../assets/images/banner.png')
+  const bg2 = require('../assets/images/bg.jpg')
 
-  //   if (loadingSpinner && mainApp) {
-  //     // Hide the loading spinner after a specified delay (in milliseconds)
-  //     const delay = 2000 // Adjust the delay as needed (e.g., 2000 milliseconds or 2 seconds)
-  //     loadingSpinner.style.display = 'block'
-
-  //     setTimeout(() => {
-  //       loadingSpinner.style.display = 'none'
-  //     }, delay)
-  //   }
-  // })
-
-  // ------------------ Loader ------------------
+  const location = useLocation()
+  const backgroundImage: any =
+    location.pathname === '/' ? `url(${bg1})` : `url(${bg2})`
 
   return (
     <div className='navbar-container'>
-      <div className='navbar p-3 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-md'>
+      <div
+        className={`navbar p-4 bg-cover bg-center rounded-lg shadow-md`}
+        style={{ backgroundImage: backgroundImage, backgroundPosition: 'top' }}
+      >
         <div className='navbar-ls'>
           <h1 className='normal-case text-xl'>Ilhan</h1>
           <ul className='navbar-links'>
             <li>
-              <a>Home</a>
+              <a onClick={() => navigate('/')}>Home</a>
             </li>
             <li>
-              <a>Latest</a>
+              <a onClick={() => navigate('/latest')}>Latest</a>
             </li>
             <li>
-              <a>My List</a>
+              <a onClick={() => navigate('/my-list')}>My List</a>
+            </li>
+            <li>
+              <a onClick={() => navigate('/why-us')}>WHY US</a>
             </li>
           </ul>
         </div>
@@ -108,17 +105,19 @@ export const Navbar = () => {
             />
 
             <li>
-              <details>
-                <summary>Show</summary>
-                <ul className='bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-md'>
-                  <li>
-                    <a>Movies</a>
-                  </li>
-                  <li>
-                    <a>Series</a>
-                  </li>
-                </ul>
-              </details>
+              {location.pathname !== '/why-us' && (
+                <details>
+                  <summary>Show</summary>
+                  <ul className='bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-md'>
+                    <li>
+                      <a onClick={() => navigate('/movies')}>Movies</a>
+                    </li>
+                    <li>
+                      <a onClick={() => navigate('/series')}>Series</a>
+                    </li>
+                  </ul>
+                </details>
+              )}
             </li>
           </ul>
           <svg
@@ -127,6 +126,7 @@ export const Navbar = () => {
             height='14'
             viewBox='0 0 24 24'
           >
+            ``
             <path d='M0 0h24v24H0z' fill='none'></path>
             <path
               d=' M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z '
@@ -140,7 +140,6 @@ export const Navbar = () => {
           </select>
         </div>
       </div>
-      <h1 className='banner-title'>Discover the Magic of Cinema</h1>
     </div>
   )
 }
