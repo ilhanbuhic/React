@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './header.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
+import useHistory from 'react-router-dom'
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -8,6 +9,33 @@ export const Navbar = () => {
   const [movies, setMovies] = useState<any>([])
   const [isInputExtended, setIsInputExtended] = useState(false)
   const [closeDetails, setCloseDetails] = useState(false)
+
+  const HandlingSelectChanges = ({ initOption }: any) => {
+    const [handleSelect, setHandleSelect] = useState(initOption)
+
+    const navigationMap: {[key: string]: string} = {
+      Movies: '/movies',
+      Series: '/series',
+    }
+
+    const HandleSelectChangesFunc = (event: any) => {
+      const selectedValue = event.target.value
+      setHandleSelect(selectedValue)
+
+      const navigationPath = navigationMap[selectedValue]
+      if (navigationPath) {
+        navigate(navigationPath)
+      }
+    }
+  }
+
+  const [handleOption, setHandleOption] = useState('Movies')
+
+  const handleSelectChange = (event: any) => {
+    const selectedValue = event.target.value
+    setHandleOption(selectedValue)
+    selectedValue === 'Movies' ? navigate('movies') : navigate('/series')
+  }
 
   const handleButtonClick = () => {
     setIsInputExtended(!isInputExtended)
@@ -47,7 +75,9 @@ export const Navbar = () => {
         style={{ backgroundImage: backgroundImage, backgroundPosition: 'top' }}
       >
         <div className='navbar-ls'>
-          <h1 className='normal-case text-xl'>Ilhan</h1>
+          <h1 className='normal-case text-xl' onClick={() => navigate('/')}>
+            Ilhan
+          </h1>
           <ul className='navbar-links'>
             {/* <li>
               <a onClick={() => navigate('/')}>Home</a>
@@ -92,17 +122,21 @@ export const Navbar = () => {
 
             <li>
               {location.pathname !== '/why-us' && (
-                <details>
-                  <summary>Show</summary>
-                  <ul className='bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-md'>
-                    <li>
-                      <a onClick={() => navigate('/movies')}>Movies</a>
-                    </li>
-                    <li>
-                      <a onClick={() => navigate('/series')}>Series</a>
-                    </li>
-                  </ul>
-                </details>
+                <select
+                  className='text-[18px] bg-white bg-opacity-0 rounded-lg px-[20px]'
+                  onChange={HandlingSelectChanges}
+                >
+                  <option lang='en' label='Movies' value='Movies'></option>
+                  <option lang='en' label='Series' value='Series'></option>
+                  <option
+                    disabled
+                    selected
+                    hidden
+                    lang='unknown'
+                    label='Show'
+                    value='init-val'
+                  ></option>
+                </select>
               )}
             </li>
           </ul>

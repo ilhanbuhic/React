@@ -8,6 +8,7 @@ import Movies from './pages/Movies'
 import { Loader } from './components/Loader/Loader'
 import { useEffect, useState } from 'react'
 import Series from './pages/Series'
+import MoviePage from './pages/MoviePage'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -30,7 +31,7 @@ function App() {
             <Route path='/latest' element={<Latest />} />
             <Route path='/my-list' element={<MyList />} />
             <Route path='/why-us' element={<WhyUS />} />
-            <Route path='/movies' element={<Movies />} />
+            <Route path='/movies' element={<MoviePage />} />
             <Route path='/series' element={<Series />} />
           </Routes>
         </BrowserRouter>

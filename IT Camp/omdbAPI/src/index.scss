@@ -12,3 +12,7 @@
 body {
     background-color: #232323;
 }
+
+.bar::-webkit-scrollbar {
+    overflow-x: hidden;
+}
