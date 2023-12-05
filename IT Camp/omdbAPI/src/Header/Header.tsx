@@ -1,72 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './header.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
-import useHistory from 'react-router-dom'
+
+type BackgroundType = {
+  [key: string]: string
+}
 
 export const Navbar = () => {
   const navigate = useNavigate()
 
-  const [movies, setMovies] = useState<any>([])
+  // Changing the navbar background
+  const background: BackgroundType = {
+    '/': require('../assets/images/banner.png'),
+    '/why-us': require('../assets/images/bg.jpg'),
+  }
+  // Changing the navbar background
+
+  const location = useLocation()
+  const backgroundImage: any = `url(${background[location.pathname]})`
+
+  // const [movies, setMovies] = useState<any>([])
   const [isInputExtended, setIsInputExtended] = useState(false)
-  const [closeDetails, setCloseDetails] = useState(false)
+  const [handleSelect, setHandleSelect] = useState('')
 
-  const HandlingSelectChanges = ({ initOption }: any) => {
-    const [handleSelect, setHandleSelect] = useState(initOption)
+  const HandlingSelectChanges: React.ChangeEventHandler<HTMLSelectElement> = (
+    event
+  ) => {
+    setHandleSelect(event?.target.value)
 
-    const navigationMap: {[key: string]: string} = {
+    const navigationMap: { [key: string]: string } = {
       Movies: '/movies',
       Series: '/series',
     }
 
-    const HandleSelectChangesFunc = (event: any) => {
-      const selectedValue = event.target.value
-      setHandleSelect(selectedValue)
-
-      const navigationPath = navigationMap[selectedValue]
-      if (navigationPath) {
-        navigate(navigationPath)
-      }
-    }
-  }
-
-  const [handleOption, setHandleOption] = useState('Movies')
-
-  const handleSelectChange = (event: any) => {
     const selectedValue = event.target.value
-    setHandleOption(selectedValue)
-    selectedValue === 'Movies' ? navigate('movies') : navigate('/series')
+    const navigationPath = navigationMap[selectedValue]
+
+    if (navigationPath) {
+      setHandleSelect(selectedValue)
+      navigate(`${navigationPath}`)
+    }
   }
 
   const handleButtonClick = () => {
     setIsInputExtended(!isInputExtended)
   }
-
-  useEffect(() => {
-    const details = document.querySelector('details')
-
-    const handleWindowClick = () => {
-      if (details && details.open) {
-        setCloseDetails(!closeDetails)
-        details.open = !closeDetails
-      }
-    }
-    window.addEventListener('click', handleWindowClick)
-    return () => {
-      window.removeEventListener('click', handleWindowClick)
-    }
-  }, [closeDetails])
-
-  type BackgroundType = {
-    [key: string]: string
-  }
-
-  const background: BackgroundType = {
-    '/': require('../assets/images/banner.png'),
-    '/why-us': require('../assets/images/bg.jpg'),
-  }
-
-  const location = useLocation()
-  const backgroundImage: any = `url(${background[location.pathname]})`
 
   return (
     <div className='navbar-container'>
@@ -79,9 +57,6 @@ export const Navbar = () => {
             Ilhan
           </h1>
           <ul className='navbar-links'>
-            {/* <li>
-              <a onClick={() => navigate('/')}>Home</a>
-            </li> */}
             <li>
               <a onClick={() => navigate('/latest')}>Latest</a>
             </li>
@@ -153,7 +128,10 @@ export const Navbar = () => {
             ></path>
           </svg>
 
-          <select className='select-language bg-white bg-opacity-0 rounded-lg '>
+          <select
+            className='select-language bg-white bg-opacity-0 rounded-lg'
+            onChange={HandlingSelectChanges}
+          >
             <option selected lang='en' label='EN' value='en-RS'></option>
             <option lang='hr' label='HR' value='hr-RS'></option>
           </select>
