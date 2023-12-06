@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import requests from '../components/Request'
+import requests from '../Request'
 // import { fetchData } from '../storage/storage'
 // useEffect(() => {
 //   const data = fetchData()

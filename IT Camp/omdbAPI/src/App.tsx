@@ -9,6 +9,10 @@ import { Loader } from './components/Loader/Loader'
 import { useEffect, useState } from 'react'
 import Series from './pages/Series'
 import MoviePage from './pages/MoviePage'
+import { AuthContextProvider } from './components/context/AuthContext'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Account from './pages/Account'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -22,23 +26,28 @@ function App() {
   }, [])
 
   return (
-    <div className='App bg-primary'>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/latest' element={<Latest />} />
-            <Route path='/my-list' element={<MyList />} />
-            <Route path='/why-us' element={<WhyUS />} />
-            <Route path='/movies' element={<MoviePage />} />
-            <Route path='/series' element={<Series />} />
-          </Routes>
-        </BrowserRouter>
-      )}
-    </div>
+    <AuthContextProvider>
+      <div className='App bg-primary'>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/latest' element={<Latest />} />
+              <Route path='/my-list' element={<MyList />} />
+              <Route path='/why-us' element={<WhyUS />} />
+              <Route path='/movies' element={<MoviePage />} />
+              <Route path='/series' element={<Series />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/signup' element={<Account />} />
+            </Routes>
+          </BrowserRouter>
+        )}
+      </div>
+    </AuthContextProvider>
   )
 }
 

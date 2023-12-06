@@ -1,7 +1,7 @@
 import React from 'react'
 import Movies from './MoviePoster'
 import Row from '../components/Row'
-import requests from '../components/Request'
+import requests from '../Request'
 
 function MoviePage() {
   return (
