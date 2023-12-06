@@ -9,8 +9,9 @@ interface MovieProps {
 
 const Movie = ({ item, key }: MovieProps) => {
   const [like, setLike] = useState(false)
+  const itemCheck = item?.title && item?.backdrop_path
 
-  return (
+  return itemCheck ? (
     <div
       key={key}
       className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
@@ -35,7 +36,7 @@ const Movie = ({ item, key }: MovieProps) => {
         </p>
       </div>
     </div>
-  )
+  ) : null
 }
 
 export default Movie

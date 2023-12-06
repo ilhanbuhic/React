@@ -56,7 +56,9 @@ function Movies() {
           alt={randomMovie?.title}
         />
         <div className='absolute mt-[50px] w-full top-[20%] p-4 md:p-8'>
-          <h1 className='text-3xl md: text-5xl font-bold'>{randomMovie?.title}</h1>
+          <h1 className='text-3xl md: text-5xl font-bold'>
+            {randomMovie?.title}
+          </h1>
           <div className='my-4'>
             <button className='border bg-gray-300 text-black border-gray-300 py-4 px-8 text-[1.2rem]'>
               Play

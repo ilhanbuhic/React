@@ -98,7 +98,7 @@ export const Navbar = () => {
             <li>
               {location.pathname !== '/why-us' && (
                 <select
-                  className='text-[18px] bg-white bg-opacity-0 rounded-lg px-[20px]'
+                  className='text-[18px] bg-white bg-opacity-0 rounded-lg px-[5px]'
                   onChange={HandlingSelectChanges}
                 >
                   <option lang='en' label='Movies' value='Movies'></option>

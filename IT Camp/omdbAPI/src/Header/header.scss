@@ -5,7 +5,6 @@
     background-position: top;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
-    animation: fadeIn 1.5s forwards;
 
     &:before {
         content: "";
@@ -16,6 +15,7 @@
         height: 100%;
         backdrop-filter: blur(10px); // Adjust the blur value
         z-index: -1;
+        animation: fadeIn 2s forwards;
     }
 
     h1 {

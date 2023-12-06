@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage'
 import Latest from './pages/Latest'
 import MyList from './pages/MyList'
 import WhyUS from './pages/WhyUS'
-import Movies from './pages/Movies'
+import Movies from './pages/MoviePoster'
 import { Loader } from './components/Loader/Loader'
 import { useEffect, useState } from 'react'
 import Series from './pages/Series'
@@ -12,11 +12,13 @@ import MoviePage from './pages/MoviePage'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const timeLoading = Math.random() * 1 + 1
+  console.log(timeLoading)
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 1500)
+    }, timeLoading * 1000)
   }, [])
 
   return (
