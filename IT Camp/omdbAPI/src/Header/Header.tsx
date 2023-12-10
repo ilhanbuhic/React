@@ -46,6 +46,8 @@ export const Navbar = () => {
     setIsInputExtended(!isInputExtended)
   }
 
+  const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
+
   return (
     <div className='navbar-container'>
       <div
@@ -53,18 +55,13 @@ export const Navbar = () => {
         style={{ backgroundImage: backgroundImage, backgroundPosition: 'top' }}
       >
         <div className='navbar-ls'>
-          <h1 className='normal-case text-xl' onClick={() => navigate('/')}>
-            Ilhan
-          </h1>
+          <img className='w-[110px] cursor-pointer' src={logo} alt='logo' onClick={() => navigate('/')}/>
           <ul className='navbar-links'>
-            <li>
-              <a onClick={() => navigate('/latest')}>Latest</a>
-            </li>
-            <li>
+            {/* <li>
               <a onClick={() => navigate('/my-list')}>My List</a>
-            </li>
+            </li> */}
             <li>
-              <a onClick={() => navigate('/why-us')}>WHY US</a>
+              <a onClick={() => navigate('/why-us')}>Why Us </a>
             </li>
           </ul>
         </div>
@@ -95,7 +92,7 @@ export const Navbar = () => {
               }`}
             />
 
-            <li>
+            {/* <li>
               {location.pathname !== '/why-us' && (
                 <select
                   className='text-[18px] bg-white bg-opacity-0 rounded-lg px-[5px]'
@@ -113,7 +110,7 @@ export const Navbar = () => {
                   ></option>
                 </select>
               )}
-            </li>
+            </li> */}
           </ul>
           <svg
             xmlns='http://www.w3.org/2000/svg'

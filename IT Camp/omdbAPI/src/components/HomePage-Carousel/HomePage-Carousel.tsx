@@ -1,11 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import './HomePage-Carousel.scss'
-import data from '../data/products.json'
+// import data from '../data/products.json'
 import axios from 'axios'
-// const pic = require('../../assets/images/403880.jpg')
 
 const HomePageCarousel = () => {
+  const [data, setData] = useState<any>([])
+  useEffect(() => {
+    const getJSON = async () => {
+      const json = await axios.get('http://localhost:3001/json')
+      setData(json.data)
+    }
+    getJSON()
+  }, [])
+
+  interface JsonData {
+    imageURL: string
+    title: string
+    description: string
+  }
+
   const handleNextClick = () => {
     let lists = document.querySelectorAll('.item')
     document.getElementById('slide')?.appendChild(lists[0])
@@ -22,15 +36,16 @@ const HomePageCarousel = () => {
     <div className='carousel-container bg-secondary'>
       <div className='container bg-secondary'>
         <div id='slide'>
-          {data.map((item, index) => (
+          {data?.map((item: JsonData, index: number) => (
             <div
               key={index}
               className='item'
               // style={{ backgroundImage: `url(${item.imageURL})` }}
-              style={{ backgroundImage: `url(${item.imageURL})`,
-              backgroundPosition: 'center top',
-              backgroundSize: 'cover'
-            }}
+              style={{
+                backgroundImage: `url(${item.imageURL})`,
+                backgroundPosition: 'center top',
+                backgroundSize: 'cover',
+              }}
             >
               <div className='content'>
                 <div className='name'>{item.title}</div>

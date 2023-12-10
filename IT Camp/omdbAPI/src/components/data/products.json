@@ -3,42 +3,51 @@
     "id": 1,
     "imageURL": "https://images2.alphacoders.com/869/869320.jpg",
     "title": "Spider-Man: Homecoming",
-    "description": "Thrilled by his experience with the Avengers, young Peter Parker returns home to live with his Aunt May. Under the watchful eye of mentor Tony Stark, Parker starts to embrace his newfound identity as Spider-Man."
+    "description": "Thrilled by his experience with the Avengers, young Peter Parker returns home to live with his Aunt May. Under the watchful eye of mentor Tony Stark, Parker starts to embrace his newfound identity as Spider-Man.",
+    "videoURL": "https://www.youtube.com/watch?v=rk-dF1lIbIg"
   },
   {
     "id": 2,
     "imageURL": "https://images7.alphacoders.com/133/1330752.png",
     "title": "Batman",
-    "description": "..."
+    "description": "The Batman is a superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger, and debuted in the 27th issue of the comic book Detective Comics on March 30, 1939.",
+    "videoURL": "https://www.youtube.com/watch?v=mqqft2x_Aa4"
   },
   {
     "id": 3,
     "imageURL": "https://images7.alphacoders.com/113/1134920.jpg",
     "title": "The Avengers",
-    "description": "When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth."
+    "description": "When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth.",
+    "videoURL": "https://www.youtube.com/watch?v=eOrNdBpGMv8&t=19s"
   },
   {
     "id": 4,
     "imageURL": "https://images5.alphacoders.com/352/352134.jpg",
     "title": "Iron Man",
-    "description": "A billionaire industrialist and genius inventor, Tony Stark (Robert Downey Jr.), is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon. Instead, he builds an armored suit and upends his captors. Returning to America, Stark refines the suit and uses it to combat crime and terrorism."
+    "description": "A billionaire industrialist and genius inventor, Tony Stark (Robert Downey Jr.), is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon. Instead, he builds an armored suit and upends his captors. Returning to America, Stark refines the suit and uses it to combat crime and terrorism.",
+    "videoURL": "https://www.youtube.com/watch?v=Ke1Y3P9D0Bc"
   },
   {
     "id": 5,
     "imageURL": "https://images6.alphacoders.com/857/857752.png",
     "title": "Black Panther",
-    "description": "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk."
+    "description": "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk.",
+    "videoURL": "https://www.youtube.com/watch?v=dxWvtMOGAhw"
   },
   {
     "id": 6,
     "imageURL": "https://images3.alphacoders.com/932/932825.jpg",
     "title": "Venom",
-    "description": "Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage, Venom tries to control the new and dangerous abilities that Eddie finds so intoxicating."
+    "description": "Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage, Venom tries to control the new and dangerous abilities that Eddie finds so intoxicating.",
+    "videoURL": "https://www.youtube.com/watch?v=u9Mv98Gr5pY"
+
   },
   {
     "id": 7,
     "imageURL": "https://images.alphacoders.com/699/699582.jpg",
     "title": "Doctor Strange",
-    "description": "Dr. Stephen Strange's (Benedict Cumberbatch) life changes after a car accident robs him of the use of his hands. When traditional medicine fails him, he looks for healing, and hope, in a mysterious enclave. He quickly learns that the enclave is at the front line of a battle against unseen dark forces bent on destroying reality."
+    "description": "Dr. Stephen Strange's (Benedict Cumberbatch) life changes after a car accident robs him of the use of his hands. When traditional medicine fails him, he looks for healing, and hope, in a mysterious enclave. He quickly learns that the enclave is at the front line of a battle against unseen dark forces bent on destroying reality.",
+    "videoURL": "https://www.youtube.com/watch?v=aWzlQ2N6qqg"
+
   }
 ]
