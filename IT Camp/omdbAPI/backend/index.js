@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const json = require('../src/components/data/products.json')
 const fs = require('fs')
 const mongo = require('mongodb')
 const MongoClient = mongo.MongoClient
@@ -23,9 +22,6 @@ app.get('/json', async (req, res) => {
 
       const result = await collection.find({}).toArray()
 
-      if (!result) {
-        const jsonData = fs.readFileSync(json)
-      }
 
       await client.close()
       return result
