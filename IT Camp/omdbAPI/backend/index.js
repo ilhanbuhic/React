@@ -22,7 +22,6 @@ app.get('/json', async (req, res) => {
 
       const result = await collection.find({}).toArray()
 
-a
       await client.close()
       return result
     } catch (error) {
