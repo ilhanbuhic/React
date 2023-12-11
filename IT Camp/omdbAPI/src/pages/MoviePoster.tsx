@@ -64,9 +64,9 @@ function Movies() {
             {randomMovie?.title}
           </h1>
           
-          <div className='mt-[10px] flex align-middle'>
-          <StarRating fillPercentage={50} />
-          <p className='text-2xl text-gray-400 mr-[15px] inline'>
+          <div className='mt-[10px] flex items-center'>
+            <StarRating fillPercentage={0.8}/>
+          <p className='text-2xl text-gray-400 mx-[10px] inline'>
             {releaseDate}
           </p>
           <div className='text-[2.1rem] font-fahkwang tracking-[1.5px] text-black  bg-[#c2c2c2] rounded-[2px] w-[120px] inline-flex justify-center align-middle gap-[2px]'>

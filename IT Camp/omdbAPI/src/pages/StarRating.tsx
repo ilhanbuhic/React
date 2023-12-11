@@ -1,20 +1,25 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+import { IoIosStarOutline, IoIosStar } from 'react-icons/io';
 
-const StarRating = ({ fillPercentage }) => {
-  // Ensure fillPercentage is within the range [0, 100]
-  const normalizedPercentage = Math.min(100, Math.max(0, fillPercentage));
+const StarRating = ({ fillPercentage }: any) => {
+  // Ensure fillPercentage is within the range [0, 1]
+  const normalizedPercentage = Math.min(1, Math.max(0, fillPercentage));
 
-  return (
-    <div className="star-rating">
-      <FontAwesomeIcon icon={faStarRegular} className="star-icon" />
-      <div className="star-fill" style={{ width: `${normalizedPercentage}%` }}>
-        <FontAwesomeIcon icon={faStar} className="star-icon filled" />
-      </div>
-    </div>
-  );
+  const stars = [];
+  const starCount = 5; // Total number of stars
+
+  for (let i = 0; i < starCount; i++) {
+    // Determine whether to show a filled or outlined star based on the fillPercentage
+    const isFilled = i / starCount < normalizedPercentage;
+
+    stars.push(
+      <span key={i}>
+        {isFilled ? <IoIosStar style={{fontSize: '1.3rem', margin: 0, fill: 'red'}}/> : <IoIosStarOutline style={{fontSize: '1.3rem', margin: 0}}/>}
+      </span>
+    );
+  }
+
+  return <div className="flex gap-1">{stars}</div>;
 };
 
 export default StarRating;
