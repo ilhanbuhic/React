@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import requests from '../Request'
+import StarRating from './StarRating'
 // import { fetchData } from '../storage/storage'
 // useEffect(() => {
 //   const data = fetchData()
@@ -10,9 +11,12 @@ import requests from '../Request'
 function Movies() {
   const [movies, setMovies] = useState<any>([])
   const [randomMovie, setRandomMovie] = useState<any>(null)
+  const releaseDate = randomMovie ? new Date (randomMovie.release_date).getFullYear() : null
 
   useEffect(() => {
     axios.get(requests.requestPopular).then((response) => {
+      console.log(response.data.results)
+
       setMovies(response.data.results)
       setRandomMovie(
         response.data.results[
@@ -59,6 +63,17 @@ function Movies() {
           <h1 className='text-3xl md: text-5xl font-bold'>
             {randomMovie?.title}
           </h1>
+          
+          <div className='mt-[10px] flex align-middle'>
+          <StarRating fillPercentage={50} />
+          <p className='text-2xl text-gray-400 mr-[15px] inline'>
+            {releaseDate}
+          </p>
+          <div className='text-[2.1rem] font-fahkwang tracking-[1.5px] text-black  bg-[#c2c2c2] rounded-[2px] w-[120px] inline-flex justify-center align-middle gap-[2px]'>
+          <span className='font-[400]'>ULTRA </span><span className='font-bold'> HD 4K</span>
+          </div>
+          <p className='text-[1.5rem] font-[500] font-fahkwang  text-black bg-[#c2c2c2] rounded-[2px] w-[32px] text-center ml-[10px]'>5.1</p>
+          </div>
           <div className='my-4'>
             <button className='border bg-gray-300 text-black border-gray-300 py-4 px-8 text-[1.2rem]'>
               Play
@@ -67,9 +82,7 @@ function Movies() {
               Watch Later
             </button>
           </div>
-          <p className='text-xl text-gray-400'>
-            Released: {randomMovie?.release_date}
-          </p>
+
           <p className='w-full text-[1.7rem] mt-10 md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>
             {TruncateString(randomMovie?.overview, 150)}
           </p>
