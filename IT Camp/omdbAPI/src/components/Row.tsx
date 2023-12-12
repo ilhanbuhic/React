@@ -29,7 +29,7 @@ function Row({ title, fetchURL, rowID }: RowProps) {
 
   return (
     <>
-      <h2 className='text-white bg-black font-bold md:text-[20px] p-4'>
+      <h2 className='text-white text-[16px] bg-black font-bold md:text-[20px] p-4'>
         {title}
       </h2>
       <div className='relative bg-black flex items-center justify-center group'>

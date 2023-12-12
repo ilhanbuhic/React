@@ -2,11 +2,12 @@ import React from 'react'
 import Movies from './MoviePoster'
 import Row from '../components/Row'
 import requests from '../Request'
+import MoviePoster from './MoviePoster'
 
 function MoviePage() {
   return (
     <>
-      <Movies />
+      <MoviePoster />
       <Row rowID='1' title='Up Coming' fetchURL={requests.requestUpcoming} />
       <Row rowID='2' title='Popular' fetchURL={requests.requestPopular} />
       <Row rowID='3' title='Trending' fetchURL={requests.requestTrending} />

@@ -8,10 +8,15 @@ import StarRating from './StarRating'
 //   setMovies(data)
 // }, [])
 
-function Movies() {
+function MoviePoster() {
   const [movies, setMovies] = useState<any>([])
   const [randomMovie, setRandomMovie] = useState<any>(null)
   const releaseDate = randomMovie ? new Date (randomMovie.release_date).getFullYear() : null
+
+  const logFillPercentage = (fillPercentage: number | undefined): React.ReactNode => {
+    console.log('Logging the fillPercentage:', fillPercentage);
+    return null
+  };
 
   useEffect(() => {
     axios.get(requests.requestPopular).then((response) => {
@@ -58,14 +63,16 @@ function Movies() {
           className='w-full h-full object-cover object-top'
           src={`https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}`}
           alt={randomMovie?.title}
+          
         />
         <div className='absolute mt-[50px] w-full top-[20%] p-4 md:p-8'>
-          <h1 className='text-3xl md: text-5xl font-bold'>
+          <h1 className='text-3xl mb-[15px] md:text-5xl font-bold'>
             {randomMovie?.title}
           </h1>
           
-          <div className='mt-[10px] flex items-center'>
-            <StarRating fillPercentage={0.8}/>
+          <div className='mt-[10px] flex items-center mb-[30px]'>
+            <StarRating starRating={randomMovie?.vote_average * 0.5}/>
+            {logFillPercentage(randomMovie?.vote_average * 0.5)}
           <p className='text-2xl text-gray-400 mx-[10px] inline'>
             {releaseDate}
           </p>
@@ -92,4 +99,4 @@ function Movies() {
   )
 }
 
-export default Movies
+export default MoviePoster
