@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './Header/Header'
 import HomePage from './pages/HomePage'
 import MyList from './pages/MyList'
@@ -11,10 +11,15 @@ import { AuthContextProvider } from './components/context/AuthContext'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Account from './pages/Account'
+import {
+  LoaderContextProvider,
+  useLoader,
+} from './components/context/LoadingContext'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
   const timeLoading = Math.random() * 1 + 1
+  const { isLoading, setIsLoading } = useLoader()
 
   useEffect(() => {
     setTimeout(() => {

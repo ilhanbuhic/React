@@ -10,12 +10,12 @@ export function LoaderContextProvider({ children }) {
   }
 
   return (
-    <LoaderContext.Provider value={{ isLoading, displayLoader }}>
+    <LoaderContext.Provider value={{ isLoading, displayLoader, setIsLoading }}>
       {children}
     </LoaderContext.Provider>
   )
 }
 
-export function Loader() {
-    return useContext(LoaderContext)
+export function useLoader() {
+  return useContext(LoaderContext)
 }

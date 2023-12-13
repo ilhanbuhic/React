@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './header.scss'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 
 type BackgroundType = {
   [key: string]: string
@@ -55,13 +55,19 @@ export const Navbar = () => {
         style={{ backgroundImage: backgroundImage, backgroundPosition: 'top' }}
       >
         <div className='navbar-ls'>
-          <img className='w-[110px] cursor-pointer' src={logo} alt='logo' onClick={() => navigate('/')}/>
+          <img
+            className='w-[110px] cursor-pointer'
+            src={logo}
+            alt='logo'
+            onClick={() => navigate('/')}
+          />
           <ul className='navbar-links'>
             {/* <li>
               <a onClick={() => navigate('/my-list')}>My List</a>
             </li> */}
             <li>
-              <a onClick={() => navigate('/why-us')}>Why Us </a>
+              {/* <a onClick={() => navigate('/why-us')}>Why Us </a> */}
+              <a href='/why-us'>Why Us </a>
             </li>
           </ul>
         </div>
@@ -111,6 +117,13 @@ export const Navbar = () => {
                 </select>
               )}
             </li> */}
+            <Link to = '/login'>
+            <button className='text-white pr-4'>Sign In</button>
+            </Link>
+            <Link to = '/signup'>
+              <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>Sign Up</button>
+            </Link>
+
           </ul>
           <svg
             xmlns='http://www.w3.org/2000/svg'
