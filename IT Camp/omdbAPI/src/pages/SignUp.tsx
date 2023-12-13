@@ -14,7 +14,11 @@ const SignUp = () => {
             <div className='max-w-[450px] h-[700px] mx-auto bg-black/75 text-white'>
               <div className='max-w-[320px] mx-auto py-16'>
                 <h1 className='text-3xl font-bold'>Sign Up</h1>
-                
+                <form className='w-full flex flex-col py-4'>
+                  <input className='p-8 my-2 bg-gray-300' type="email" placeholder='Email' autoComplete='email'/>
+                  <input className='p-8 my-2 bg-gray-300' type="password" placeholder='Password' autoCapitalize='current-password'/>
+                  <button className='bg-red-600 pt-3 my-6 rounded font-bold'>Sign Up</button>
+                </form>
               </div>
             </div>
           </div>
