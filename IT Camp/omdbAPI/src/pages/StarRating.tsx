@@ -1,20 +1,14 @@
 import React from 'react'
 import { IoIosStarOutline, IoIosStar, IoIosStarHalf } from 'react-icons/io'
 
-const StarRating = ({ starRating }) => {
-  const normalizedPercentage = Math.min(1, Math.max(0, starRating))
+const StarRating = ({ starRating }: { starRating: number }) => {
+  const stars: JSX.Element[] = []
+  const starCount: number = 5
 
-  const normalizedScore = normalizedPercentage * 0.5
-
-  const stars = []
-  const starCount = 5
-
-  const filledStars = Math.floor(starRating)
-  const hasHalfStar = starRating - filledStars >= 0.5
+  const filledStars: number = Math.floor(starRating)
+  const hasHalfStar: boolean = starRating - filledStars >= 0.5
 
   for (let i = 0; i < starCount; i++) {
-    const isFilled = i / starCount < normalizedScore
-
     if (i < filledStars) {
       stars.push(
         <IoIosStar
@@ -40,5 +34,3 @@ const StarRating = ({ starRating }) => {
 }
 
 export default StarRating
-
-

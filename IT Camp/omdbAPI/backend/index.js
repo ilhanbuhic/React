@@ -19,7 +19,7 @@ app.get('/', async (req, res) => {
       const database = client.db('ilhan-database')
       const collection = database.collection('ilhan-json')
 
-      const JSONPayload = await collection.find({}).toArray()``
+      const JSONPayload = await collection.find({}).toArray()
 
       await client.close()
       return JSONPayload
