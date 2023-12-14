@@ -17,7 +17,6 @@ import {
 } from './components/context/LoadingContext'
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true)
   const timeLoading = Math.random() * 1 + 1
   const { isLoading, setIsLoading } = useLoader()
 

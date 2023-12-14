@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './header.scss'
 import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { UserAuth } from '../components/context/AuthContext'
+const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
 
 type BackgroundType = {
   [key: string]: string
@@ -8,21 +10,38 @@ type BackgroundType = {
 
 export const Navbar = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const { user, logOut } = UserAuth()
+  console.log(user)
+
+  const handleLogout = async () => {
+    try {
+      await logOut
+      console.log('logged out');
+      navigate('/login')
+    } catch(error) {
+      console.error(error)
+    }
+  }
 
   // Changing the navbar background
   const background: BackgroundType = {
     '/': require('../assets/images/banner.png'),
     '/why-us': require('../assets/images/bg.jpg'),
   }
+  const backgroundImage: string = `url(${background[location.pathname]})`
   // Changing the navbar background
 
-  const location = useLocation()
-  const backgroundImage: any = `url(${background[location.pathname]})`
-
   // const [movies, setMovies] = useState<any>([])
+  // Handling extension of magnifier input
   const [isInputExtended, setIsInputExtended] = useState(false)
+  const handleButtonClick = () => {
+    setIsInputExtended(!isInputExtended)
+  }
+  // Handling extension of magnifier input
+  
+  // Dynamic event handler
   const [handleSelect, setHandleSelect] = useState('')
-
   const HandlingSelectChanges: React.ChangeEventHandler<HTMLSelectElement> = (
     event
   ) => {
@@ -41,12 +60,7 @@ export const Navbar = () => {
       navigate(`${navigationPath}`)
     }
   }
-
-  const handleButtonClick = () => {
-    setIsInputExtended(!isInputExtended)
-  }
-
-  const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
+  // Dynamic event handler
 
   return (
     <div className='navbar-container'>
@@ -117,13 +131,29 @@ export const Navbar = () => {
                 </select>
               )}
             </li> */}
-            <Link to = '/login'>
-            <button className='text-white pr-4'>Sign In</button>
-            </Link>
-            <Link to = '/signup'>
-              <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>Sign Up</button>
-            </Link>
-
+            {user ? (
+              <>
+                <Link to='/login'>
+                  <button className='text-white pr-4'>Account</button>
+                </Link>
+                {/* <Link to='/signup'> */}
+                  <button onClick={handleLogout} className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>
+                    Logout
+                  </button>
+                {/* </Link> */}
+              </>
+            ) : (
+              <>
+                <Link to='/login'>
+                  <button className='text-white pr-4'>Sign In</button>
+                </Link>
+                <Link to='/signup'>
+                  <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            )}
           </ul>
           <svg
             xmlns='http://www.w3.org/2000/svg'

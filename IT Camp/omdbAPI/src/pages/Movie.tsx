@@ -22,7 +22,7 @@ const Movie = ({ item, key }: MovieProps) => {
         alt={item?.title}
       />
       <div className='absolute top-0 left-0 w-full h-full hover:bg-black/60 opacity-0 hover:opacity-100  text-white'>
-        <p className='white-space-normal text-[10px] tracking-[1.2px] font-[500] md:text-[15px] flex justify-center items-center h-full text-center'>
+        <p className='whitespace-normal max-w-full text-[10px] tracking-[1.2px] font-[500] md:text-[15px] flex justify-center items-center h-full text-center'>
           {item?.title}
         </p>
         <p

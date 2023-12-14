@@ -17,3 +17,10 @@ body {
 .bar::-webkit-scrollbar {
     overflow-x: hidden;
 }
+
+input {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}
