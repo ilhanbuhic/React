@@ -54,7 +54,7 @@ const SignUp = () => {
                     <input className='mr-2 w-7' type='checkbox' />
                     Remember me
                   </p>
-                  <p className='text-[12px]'>Need Help?</p>
+                  <p className='text-[12px] cursor-pointer'>Need Help?</p>
                 </div>
                 <p className='mt-5'>
                   <span className='text-gray-600 mr-2 text-[12px]'>
