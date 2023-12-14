@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
+const loginImg = require('../assets/images/login.jpg')
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -23,7 +24,7 @@ const SignUp = () => {
       <div className='w-full h-[92vh] relative'>
         <img
           className='hidden sm:block absolute w-full h-full object-cover'
-          src='https://assets.nflxext.com/ffe/siteui/vlv3/ca6a7616-0acb-4bc5-be25-c4deef0419a7/7e44df74-b1b2-4de5-9b5e-2991922160d2/RS-en-20231211-popsignuptwoweeks-perspective_alpha_website_small.jpg'
+          src={loginImg}
           alt='image'
         />
         <div className='bg-black/60 fixed w-full h-[92vh]'></div>

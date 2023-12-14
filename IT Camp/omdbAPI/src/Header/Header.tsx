@@ -68,7 +68,7 @@ export const Navbar = () => {
         className={`navbar p-4 bg-cover bg-center rounded-lg shadow-md`}
         style={{ backgroundImage: backgroundImage, backgroundPosition: 'top' }}
       >
-        <div className='navbar-ls'>
+        <div className='ml-[20px]'>
           <img
             className='w-[110px] cursor-pointer'
             src={logo}
@@ -81,12 +81,17 @@ export const Navbar = () => {
             </li> */}
             <li>
               {/* <a onClick={() => navigate('/why-us')}>Why Us </a> */}
-              <a href='/why-us' className='display items-center ml-[30px] text-[15px]'>Why Us</a>
+              <a
+                href='/why-us'
+                className='display items-center ml-[30px] text-[15px]'
+              >
+                Why Us
+              </a>
             </li>
           </ul>
         </div>
         <div className='navbar-rs'>
-          <ul className='menu menu-horizontal gap-2 px-1'>
+          <ul className='flex items-center gap-2'>
             {user ? (
               <>
                 <li>
@@ -119,10 +124,16 @@ export const Navbar = () => {
               </>
             ) : (
               <>
-                <button className='text-white text-[14px] mr-4'>Sign In</button>
-                <button className='bg-red-600 px-8 py-4 rounded cursor-pointer text-[14px] text-white'>
-                  Sign Up
-                </button>
+                <Link to='/login'>
+                  <button className='text-white text-[14px] mr-4'>
+                    Sign In
+                  </button>
+                </Link>
+                <Link to='/signup'>
+                  <button className='bg-red-600 px-8 py-4 rounded cursor-pointer text-[14px] text-white'>
+                    Sign Up
+                  </button>
+                </Link>
               </>
             )}
           </ul>
@@ -132,6 +143,7 @@ export const Navbar = () => {
               width='14'
               height='14'
               viewBox='0 0 24 24'
+              className='ml-[50px]'
             >
               <path d='M0 0h24v24H0z' fill='none'></path>
               <path

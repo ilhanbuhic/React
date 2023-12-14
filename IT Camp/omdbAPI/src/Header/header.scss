@@ -33,23 +33,6 @@
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .navbar-ls {
-        justify-content: space-between;
-        margin-left: 20px;
-        // min-width: 35%;
-        ul {
-            gap: 25px;
-        }
-        li {
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.08);
-                backdrop-filter: blur(16px);
-                border-radius: 8px;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
-            }
-        }
-    }
 }
 
 .banner-title {
@@ -66,53 +49,6 @@
     // animation: 1s ease-in-out 2s forwards;
 }
 
-.search-bar-input {
-    box-sizing: content-box;
-    box-sizing: border-box;
-    font-size: 1.3rem;
-    width: 0px;
-    height: 25px;
-    cursor: pointer;
-    transition: width 0.5s;
-
-    &.extended {
-        width: 120px;
-    }
-
-    &:focus {
-        width: 120px;
-    }
-}
-
-svg {
-    margin-left: 3rem;
-    color: #fff;
-}
-
-.magnifying-glass {
-    margin: 0;
-    color: #fff;
-    stroke: #dedede;
-    stroke-width: 1px;
-    fill: transparent;
-    width: 22px;
-    height: 22px;
-}
-
-.select-language {
-}
-
-.select-language:focus {
-    border: none;
-    outline: none;
-}
-
-.language-select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1.5rem;
-}
 
 @keyframes fadeIn {
     0% {
