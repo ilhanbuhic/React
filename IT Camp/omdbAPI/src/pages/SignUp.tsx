@@ -21,15 +21,15 @@ const SignUp = () => {
 
   return (
     <>
-      <div className='w-full h-[92vh] relative'>
+      <div className='w-full h-screen relative'>
         <img
           className='hidden sm:block absolute w-full h-full object-cover'
           src={loginImg}
           alt='image'
         />
-        <div className='bg-black/60 fixed w-full h-[92vh]'></div>
-        <div className='fixed w-full mt-[100px] px-4 z-50'>
-          <div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white'>
+        <div className='bg-black/60 fixed w-full h-screen'></div>
+        <div className='fixed w-full mt-[150px] px-4 z-50'>
+          <div className='max-w-[450px] h-[600px] mx-auto bg-black/70 text-white'>
             <div className='max-w-[320px] mx-auto py-[100px]'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
               <form onSubmit={handleSubmit} className='w-full flex flex-col py-4'>
