@@ -104,7 +104,7 @@ export const Navbar = () => {
                         lang='unknown'
                         label='Show'
                         value='init-val'
-                      ></option>
+                      ></option>.
                     </select>
                   )}
                 </li>
