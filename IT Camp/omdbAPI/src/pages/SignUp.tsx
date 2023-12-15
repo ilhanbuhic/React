@@ -121,3 +121,9 @@
 // }
 
 // export default SignUp
+
+const smtn = () => {
+  return (
+    <div></div>
+  )
+}
