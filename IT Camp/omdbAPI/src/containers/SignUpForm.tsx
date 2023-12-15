@@ -4,7 +4,7 @@ import { Formik, Form, Field } from 'formik'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
-import { SignupSchema } from '../utils'
+import { SignupSchema } from '../utils/AuthSchema'
 
 const SignUpForm = () => {
   const { user, signUp } = UserAuth()

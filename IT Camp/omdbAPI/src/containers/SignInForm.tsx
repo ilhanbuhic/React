@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Formik, Form, Field } from 'formik'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
-import { SignupSchema } from '../utils'
+// import { SigninSchema } from '../utils'
 
 const SignInForm = () => {
   const { user, logIn } = UserAuth()
@@ -38,7 +38,7 @@ const SignInForm = () => {
           email: '',
           password: '',
         }}
-        validationSchema={SignupSchema}
+        // validationSchema={SigninSchema}
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
