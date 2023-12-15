@@ -8,7 +8,7 @@
 //   const [email, setEmail] = useState('')
 //   const [password, setPassword] = useState('')
 //   const [error, setError] = useState('')
-//   const [hidePassword, setHidePassword] = useState(false)
+//   const [hidePassw`ord, setHidePassword] = useState(false)
 //   const { user, logIn } = UserAuth()
 //   const navigate = useNavigate()
 
