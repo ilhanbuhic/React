@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
+import { ValidationSchemaExample } from '../components/Validation'
 const loginImg = require('../assets/images/login.jpg')
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [hidePassword, setHidePassword] = useState(false)
   const { user, signUp } = UserAuth()
   const navigate = useNavigate()
 
@@ -32,6 +35,10 @@ const SignUp = () => {
     }
   }
 
+  const hidePasswordFunc = () => {
+    setHidePassword(!hidePassword)
+  }
+
   return (
     <>
       <Toaster position='top-center' reverseOrder={false} />
@@ -46,7 +53,7 @@ const SignUp = () => {
           <div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white'>
             <div className='max-w-[320px] mx-auto py-[100px]'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
-              <form
+              {/* <form
                 onSubmit={handleSubmit}
                 className='w-full flex flex-col py-4'
               >
@@ -57,13 +64,35 @@ const SignUp = () => {
                   placeholder='Email'
                   autoComplete='email'
                 />
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  className='p-7 my-2 text-2xl bg-gray-600'
-                  type='password'
-                  placeholder='Password'
-                  autoCapitalize='current-password'
-                />
+                <div className='relative'>
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    className='p-7 w-full my-2 text-2xl bg-gray-600'
+                    type={hidePassword ? 'text' : 'password'}
+                    placeholder='Password'
+                    autoCapitalize='current-password'
+                    title='Minimum 6 characters, 1 uppercase letter, 1 number'
+                    pattern='^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$'
+                    aria-describedby='passwordRequirements'
+                    required
+                  />
+                  <div id='passwordRequirements' className='visually-hidden'>
+                    <p>Minimum 6 characters</p>
+                    <p>1 uppercase alphabet</p>
+                    <p>1 number</p>
+                  </div>
+                  {hidePassword ? (
+                    <IoMdEyeOff
+                      className='absolute top-9 right-5 cursor-pointer text-[20px]'
+                      onClick={hidePasswordFunc}
+                    />
+                  ) : (
+                    <IoMdEye
+                      className='absolute top-9 right-5 cursor-pointer text-[20px]'
+                      onClick={hidePasswordFunc}
+                    />
+                  )}
+                </div>
                 <button className='bg-red-600 py-3 text-[20px] my-6 rounded font-bold'>
                   Sign Up
                 </button>
@@ -82,7 +111,8 @@ const SignUp = () => {
                     Sign In
                   </a>
                 </p>
-              </form>
+              </form> */}
+              <ValidationSchemaExample buttonName='Sign Up'/>
             </div>
           </div>
         </div>

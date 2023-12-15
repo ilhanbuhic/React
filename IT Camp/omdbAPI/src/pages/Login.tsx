@@ -1,13 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
 import { useState } from 'react'
+import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 const loginImg = require('../assets/images/login.jpg')
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { user, logIn } = UserAuth()
   const [error, setError] = useState('')
+  const [hidePassword, setHidePassword] = useState(false)
+  const { user, logIn } = UserAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +21,10 @@ const Login = () => {
       console.error(error)
       setError('Wrong email / password')
     }
+  }
+
+  const hidePasswordFunc = () => {
+    setHidePassword(!hidePassword)
   }
 
   return (
@@ -48,15 +54,27 @@ const Login = () => {
                   className='p-7 my-2 text-2xl bg-gray-600'
                   type='email'
                   placeholder='Email'
-                  autoComplete='email'
                 />
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  className='p-7 my-2 text-2xl bg-gray-600'
-                  type='password'
-                  placeholder='Password'
-                  autoCapitalize='current-password'
-                />
+                <div className='relative'>
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    className='p-7 w-full my-2 text-2xl bg-gray-600'
+                    type='password'
+                    placeholder='Password'
+                  />
+               
+                  {hidePassword ? (
+                    <IoMdEyeOff
+                      className='absolute top-9 right-5 cursor-pointer text-[20px]'
+                      onClick={hidePasswordFunc}
+                    />
+                  ) : (
+                    <IoMdEye
+                      className='absolute top-9 right-5 cursor-pointer text-[20px]'
+                      onClick={hidePasswordFunc}
+                    />
+                  )}
+                </div>
                 <button className='bg-red-600 py-3 text-[20px] my-6 rounded font-bold'>
                   Sign In
                 </button>
@@ -69,9 +87,9 @@ const Login = () => {
                 </div>
                 <p className='mt-5'>
                   <span className='text-gray-600 mr-2 text-[12px]'>
-                    New here?
+                    Don't have an account?
                   </span>
-                  <a className='text-[12px] my-4 cursor-pointer' href="/login">
+                  <a className='text-[12px] my-4 cursor-pointer' href='/login'>
                     Sign Up
                   </a>
                 </p>
