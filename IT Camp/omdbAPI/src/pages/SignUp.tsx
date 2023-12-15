@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
-import { ValidationSchemaExample } from '../components/Validation'
 const loginImg = require('../assets/images/login.jpg')
 
 const SignUp = () => {
@@ -53,7 +52,7 @@ const SignUp = () => {
           <div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white'>
             <div className='max-w-[320px] mx-auto py-[100px]'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
-              {/* <form
+              <form
                 onSubmit={handleSubmit}
                 className='w-full flex flex-col py-4'
               >
@@ -111,8 +110,7 @@ const SignUp = () => {
                     Sign In
                   </a>
                 </p>
-              </form> */}
-              <ValidationSchemaExample buttonName='Sign Up'/>
+              </form>
             </div>
           </div>
         </div>
