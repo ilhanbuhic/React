@@ -15,6 +15,7 @@ import {
   LoaderContextProvider,
   useLoader,
 } from './components/context/LoadingContext'
+import AuthPage from './pages/Login'
 
 function App() {
   const timeLoading = Math.random() * 1 + 1
@@ -40,9 +41,8 @@ function App() {
               <Route path='/why-us' element={<WhyUS />} />
               <Route path='/movies' element={<MoviePage />} />
               <Route path='/series' element={<Series />} />
-              <Route path='/login' element={<SignIn />} />
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/signup' element={<Account />} />
+              <Route path='/login' element={<AuthPage />} />
+              <Route path='/signup' element={<AuthPage />} />
             </Routes>
           </BrowserRouter>
         )}

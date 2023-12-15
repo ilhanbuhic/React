@@ -5,7 +5,7 @@ import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
 import { SignupSchema } from '../utils'
 
-const LoginForm = () => {
+const SignInForm = () => {
   const { user, logIn } = UserAuth()
   const [showPassword, setShowPassword] = useState(false)
   const navigate = useNavigate()
@@ -99,4 +99,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default SignInForm
