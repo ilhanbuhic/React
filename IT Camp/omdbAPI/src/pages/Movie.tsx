@@ -28,8 +28,8 @@ const Movie = ({ item, key }: MovieProps) => {
         <p
           className={
             like
-              ? 'absolute top-4 left-[-18px] text-gray-300 text-[25px]'
-              : 'absolute top-4 left-[-18px] text-gray250 text-[25px]'
+              ? 'absolute top-4 left-[10px] text-gray-300 text-[25px]'
+              : 'absolute top-4 left-[10px] text-gray250 text-[25px]'
           }
         >
           {like ? <FaHeart /> : <FaRegHeart />}

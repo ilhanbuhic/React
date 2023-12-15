@@ -13,10 +13,10 @@ function MoviePoster() {
   const [randomMovie, setRandomMovie] = useState<any>(null)
   const releaseDate = randomMovie ? new Date (randomMovie.release_date).getFullYear() : null
 
-  // const logFillPercentage = (fillPercentage: number | undefined): React.ReactNode => {
-  //   console.log('Logging the fillPercentage:', fillPercentage);
-  //   return null
-  // };
+  const logFillPercentage = (fillPercentage: number | undefined): React.ReactNode => {
+    console.log('Logging the fillPercentage:', fillPercentage);
+    return null
+  };
 
   useEffect(() => {
     axios.get(requests.requestPopular).then((response) => {
@@ -72,7 +72,7 @@ function MoviePoster() {
           
           <div className='mt-[10px] flex items-center mb-[30px]'>
             <StarRating starRating={randomMovie?.vote_average * 0.5}/>
-            {/* {logFillPercentage(randomMovie?.vote_average * 0.5)} */}
+            {logFillPercentage(randomMovie?.vote_average * 0.5)}
           <p className='text-2xl text-gray-400 mx-[10px] inline'>
             {releaseDate}
           </p>

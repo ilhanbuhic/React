@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './header.scss'
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
 const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
 const avatar = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/avatar.png')
@@ -120,7 +120,7 @@ export const Navbar = () => {
                   onClick={toggleProfileDropdown}
                 />
                 {isProfileDropdownOpen && (
-                  <div className='absolute bg-red-700 py-1 text-white rounded right-0 mt-2 w-48 transition-opacity duration-300 ease-in-out opacity-100 '>
+                  <div className='absolute bg-red-700 py-1 text-white rounded right-0 mt-2 w-48'>
                     <ul>
                       <li
                         className='py-2 text-center text-[12px] cursor-pointer'
@@ -128,7 +128,6 @@ export const Navbar = () => {
                       >
                         Log Out
                       </li>
-                      {/* Add more menu items as needed */}
                     </ul>
                   </div>
                 )}
@@ -136,14 +135,14 @@ export const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to='/login'>
+              <a href="/login">
                 <button className='text-white text-[14px] mr-4'>Sign In</button>
-              </Link>
-              <Link to='/signup'>
+                </a>
+              <a href="/signup">
                 <button className='bg-red-600 px-8 py-4 rounded cursor-pointer text-[14px] text-white'>
                   Sign Up
                 </button>
-              </Link>
+                </a>
             </>
           )}
         </ul>

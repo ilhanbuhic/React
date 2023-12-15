@@ -30,8 +30,8 @@ const Login = () => {
           alt='image'
         />
         <div className='bg-black/60 fixed w-full h-screen'></div>
-        <div className='fixed w-full mt-[150px] px-4 py24 z-50'>
-          <div className='max-w-[450px] h-[600px] mx-auto bg-black/70 text-white'>
+        <div className='fixed w-full mt-[80px] px-4 py-24 z-50'>
+          <div className='max-w-[450px] h-[70vh] mx-auto bg-black/70 text-white'>
             <div className='max-w-[320px] mx-auto py-[100px]'>
               <h1 className='text-3xl font-bold'>Sign In</h1>
               {error ? (
@@ -71,12 +71,9 @@ const Login = () => {
                   <span className='text-gray-600 mr-2 text-[12px]'>
                     New here?
                   </span>
-                  <Link
-                    className='text-[12px] my-4 cursor-pointer'
-                    to='/signup'
-                  >
+                  <a className='text-[12px] my-4 cursor-pointer' href="/login">
                     Sign Up
-                  </Link>
+                  </a>
                 </p>
               </form>
             </div>
