@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react'
 import Series from './pages/Series'
 import MoviePage from './pages/MoviePage'
 import { AuthContextProvider } from './components/context/AuthContext'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
+import SignIn from './containers/SignInForm'
+import SignUp from './containers/SignUpForm'
 import Account from './pages/Account'
 import {
   LoaderContextProvider,
@@ -40,7 +40,7 @@ function App() {
               <Route path='/why-us' element={<WhyUS />} />
               <Route path='/movies' element={<MoviePage />} />
               <Route path='/series' element={<Series />} />
-              <Route path='/login' element={<Login />} />
+              <Route path='/login' element={<SignIn />} />
               <Route path='/signup' element={<SignUp />} />
               <Route path='/signup' element={<Account />} />
             </Routes>

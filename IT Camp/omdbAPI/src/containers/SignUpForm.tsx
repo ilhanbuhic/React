@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { Formik, Form, Field } from 'formik'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
+import toast, { Toaster } from 'react-hot-toast'
 import { SignupSchema } from '../utils'
 
-const LoginForm = () => {
-  const { user, logIn } = UserAuth()
+const SignUpForm = () => {
+  const { user, signUp } = UserAuth()
   const [showPassword, setShowPassword] = useState(false)
   const navigate = useNavigate()
 
@@ -18,9 +19,21 @@ const LoginForm = () => {
     password: string
   }) => {
     try {
-      await logIn(email, password)
-      navigate('/')
+      await signUp(email, password)
+      toast.success('Sign-up successfully!', {
+        style: {
+          fontSize: '20px',
+        },
+      })
+      setTimeout(() => {
+        navigate('/')
+      }, 2000)
     } catch (error) {
+      toast.error('Sign-up failed. Please try again.', {
+        style: {
+          fontSize: '20px',
+        },
+      })
       console.error(error)
     }
   }
@@ -31,7 +44,7 @@ const LoginForm = () => {
 
   return (
     <div className='max-w-[320px] mx-auto py-[100px]'>
-      <h1 className='text-3xl font-bold'>Sign In</h1>
+      <h1 className='text-3xl font-bold'>Sign Up</h1>
 
       <Formik
         initialValues={{
@@ -75,7 +88,7 @@ const LoginForm = () => {
               <div className='text-red-500 text-xl'>{errors.password}</div>
             ) : null}
             <button className='bg-red-600 py-3 text-[20px] my-6 rounded font-bold'>
-              Sign In
+              Sign Up
             </button>{' '}
             <div className='flex justify-between items-center text-2xl text-gray-600'>
               <p className='text-[12px]'>
@@ -86,10 +99,10 @@ const LoginForm = () => {
             </div>
             <p className='mt-5'>
               <span className='text-gray-600 mr-2 text-[12px]'>
-                Don't have an account?
+                Already subscribed?
               </span>
               <a className='text-[12px] my-4 cursor-pointer' href='/login'>
-                Sign Up
+                Sign In
               </a>
             </p>
           </Form>
@@ -99,4 +112,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default SignUpForm
