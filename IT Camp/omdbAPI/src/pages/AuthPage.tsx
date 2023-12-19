@@ -19,7 +19,11 @@ const AuthPage = () => {
         <div className='bg-black/60 fixed w-full h-screen'></div>
         <div className='fixed w-full mt-[80px] px-4 py-24 z-50'>
           <div className='max-w-[450px] h-[70vh] mx-auto bg-black/70 text-white'>
-            {window.location.href.includes('/login') ? <SignInForm /> : <SignUpForm />}
+            {window.location.href.includes('/login') ? (
+              <SignInForm />
+            ) : (
+              <SignUpForm />
+            )}
           </div>
         </div>
       </div>
@@ -28,5 +32,3 @@ const AuthPage = () => {
 }
 
 export default AuthPage
-
-
