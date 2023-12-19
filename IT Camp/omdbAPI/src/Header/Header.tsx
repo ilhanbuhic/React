@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
 import SignInForm from '../containers/SignInForm'
 import SignUpForm from '../containers/SignUpForm'
-import Login from '../pages/Login'
+import Login from '../pages/AuthPage'
 const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
 const avatar = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/avatar.png')
 
@@ -138,14 +138,19 @@ export const Navbar = () => {
             </>
           ) : (
             <>
-              <a href="/login">
-                <button onClick={Login} className='text-white text-[14px] mr-4'>Sign In</button>
-                </a>
-              <a href="/signup">
-                <button onClick={Login} className='bg-red-600 px-8 py-4 rounded cursor-pointer text-[14px] text-white'>
+              <a href='/login'>
+                <button onClick={Login} className='text-white text-[14px] mr-4'>
+                  Sign In
+                </button>
+              </a>
+              <a href='/signup'>
+                <button
+                  onClick={Login}
+                  className='bg-red-600 px-8 py-4 rounded cursor-pointer text-[14px] text-white'
+                >
                   Sign Up
                 </button>
-                </a>
+              </a>
             </>
           )}
         </ul>

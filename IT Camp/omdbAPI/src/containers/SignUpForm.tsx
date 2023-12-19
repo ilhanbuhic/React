@@ -20,14 +20,13 @@ const SignUpForm = () => {
   }) => {
     try {
       await signUp(email, password)
-      toast.success('Sign-up successfully!', {
-        style: {
-          fontSize: '20px',
-        },
-      })
+      toast.success('You signed-up successfully', {style: {
+        fontSize: '20px'
+      }})
       setTimeout(() => {
         navigate('/')
-      }, 2000)
+        window.location.reload()
+      }, 2500)
     } catch (error) {
       toast.error('Sign-up failed. Please try again.', {
         style: {
@@ -45,6 +44,7 @@ const SignUpForm = () => {
   return (
     <div className='max-w-[320px] mx-auto py-[100px]'>
       <h1 className='text-3xl font-bold'>Sign Up</h1>
+      <Toaster position='top-center' reverseOrder={false} toastOptions={{ style: { marginTop: '70px' } }} />
 
       <Formik
         initialValues={{

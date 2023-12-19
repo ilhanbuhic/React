@@ -8,14 +8,13 @@ import { useEffect, useState } from 'react'
 import Series from './pages/Series'
 import MoviePage from './pages/MoviePage'
 import { AuthContextProvider } from './components/context/AuthContext'
-import SignIn from './containers/SignInForm'
-import SignUp from './containers/SignUpForm'
 import Account from './pages/Account'
+import Toaster from 'react-hot-toast'
 import {
   LoaderContextProvider,
   useLoader,
 } from './components/context/LoadingContext'
-import AuthPage from './pages/Login'
+import AuthPage from './pages/AuthPage'
 
 function App() {
   const timeLoading = Math.random() * 1 + 1

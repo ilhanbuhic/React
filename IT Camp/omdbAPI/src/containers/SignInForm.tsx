@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Formik, Form, Field } from 'formik'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
+import toast, { Toaster } from 'react-hot-toast'
 // import { SigninSchema } from '../utils'
 
 const SignInForm = () => {
@@ -19,8 +20,21 @@ const SignInForm = () => {
   }) => {
     try {
       await logIn(email, password)
-      navigate('/')
+      toast.success('You signed-in successfully', {
+        style: {
+          fontSize: '20px',
+        },
+      })
+      // setTimeout(() => {
+        navigate('/')
+        // window.location.reload()
+      // }, 2500)
     } catch (error) {
+      toast.error('Sign-in failed. Please try again.', {
+        style: {
+          fontSize: '20px',
+        },
+      })
       console.error(error)
     }
   }
@@ -32,6 +46,11 @@ const SignInForm = () => {
   return (
     <div className='max-w-[320px] mx-auto py-[100px]'>
       <h1 className='text-3xl font-bold'>Sign In</h1>
+      <Toaster
+        position='top-center'
+        reverseOrder={false}
+        toastOptions={{ style: { marginTop: '70px' } }}
+      />
 
       <Formik
         initialValues={{
