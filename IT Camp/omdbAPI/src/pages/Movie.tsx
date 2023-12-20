@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { UserAuth } from '../components/context/AuthContext'
 import { db } from '../firebase.config'
-import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 
 interface MovieProps {
   item: [object] | any
@@ -13,11 +13,11 @@ interface MovieProps {
 const Movie = ({ item, key }: MovieProps) => {
   const [like, setLike] = useState(false)
   const [saved, setSaved] = useState(false)
-  const {user} = UserAuth()
+  const { user } = UserAuth()
   const movieID = doc(db, 'users', `${user?.email}`)
   const itemCheck = item?.title && item?.backdrop_path
 
-  const saveShow = async() => {
+  const saveShow = async () => {
     if (user) {
       setLike(!like)
       setSaved(true)
@@ -25,8 +25,8 @@ const Movie = ({ item, key }: MovieProps) => {
         savedMovies: arrayUnion({
           id: item.id,
           title: item.title,
-          img: item.backdrop_path
-        })
+          img: item.backdrop_path,
+        }),
       })
     }
   }
@@ -46,13 +46,14 @@ const Movie = ({ item, key }: MovieProps) => {
           {item?.title}
         </p>
         <p
+          onClick={saveShow}
           className={
             like
               ? 'absolute top-4 left-[10px] text-gray-300 text-[25px]'
               : 'absolute top-4 left-[10px] text-gray250 text-[25px]'
           }
         >
-          {like ? <FaHeart /> : <FaRegHeart />}
+          {like ? <FaHeart style={{fill: '#df0000'}}/> : <FaRegHeart />}
         </p>
       </div>
     </div>

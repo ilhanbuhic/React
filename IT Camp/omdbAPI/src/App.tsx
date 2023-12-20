@@ -3,6 +3,7 @@ import Header from './Header/Header'
 import HomePage from './pages/HomePage'
 import MyList from './pages/MyList'
 import WhyUS from './pages/WhyUS'
+import Account from './pages/Account'
 import { Loader } from './components/Loader/Loader'
 import { useEffect, useState } from 'react'
 import Series from './pages/Series'
@@ -43,6 +44,7 @@ function App() {
                 }
               />
               <Route path='/series' element={<Series />} />
+              <Route path='/account' element={<Account />} />
               <Route path='/login' element={<AuthPage />} />
               <Route path='/signup' element={<AuthPage />} />
             </Routes>
