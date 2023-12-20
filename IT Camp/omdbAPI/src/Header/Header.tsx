@@ -94,7 +94,7 @@ export const Navbar = () => {
       </div>
       <div className='navbar-rs'>
         <ul className='flex items-center gap-2'>
-          {user ? (
+          { user ? (
             <>
               <li>
                 {location.pathname !== '/why-us' && (

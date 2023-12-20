@@ -5,10 +5,12 @@ import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
 import { SignupSchema } from '../utils/AuthSchema'
+import { useLoader } from '../components/context/LoadingContext'
 
 const SignUpForm = () => {
   const { user, signUp } = UserAuth()
   const [showPassword, setShowPassword] = useState(false)
+  const { displayLoader } = useLoader()
   const navigate = useNavigate()
 
   const handleSubmit = async ({
@@ -19,14 +21,14 @@ const SignUpForm = () => {
     password: string
   }) => {
     try {
+      displayLoader(true)
       await signUp(email, password)
-      toast.success('You signed-up successfully', {style: {
-        fontSize: '20px'
-      }})
-      setTimeout(() => {
-        navigate('/')
-        window.location.reload()
-      }, 2500)
+      toast.success('You signed-up successfully', {
+        style: {
+          fontSize: '20px',
+        },
+      })
+      navigate('/')
     } catch (error) {
       toast.error('Sign-up failed. Please try again.', {
         style: {
@@ -34,6 +36,8 @@ const SignUpForm = () => {
         },
       })
       console.error(error)
+    } finally {
+      displayLoader(false)
     }
   }
 
@@ -44,7 +48,11 @@ const SignUpForm = () => {
   return (
     <div className='max-w-[320px] mx-auto py-[100px]'>
       <h1 className='text-3xl font-bold'>Sign Up</h1>
-      <Toaster position='top-center' reverseOrder={false} toastOptions={{ style: { marginTop: '70px' } }} />
+      <Toaster
+        position='top-center'
+        reverseOrder={false}
+        toastOptions={{ style: { marginTop: '70px' } }}
+      />
 
       <Formik
         initialValues={{

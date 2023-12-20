@@ -8,13 +8,9 @@ import { useEffect, useState } from 'react'
 import Series from './pages/Series'
 import MoviePage from './pages/MoviePage'
 import { AuthContextProvider } from './components/context/AuthContext'
-import Account from './pages/Account'
-import Toaster from 'react-hot-toast'
-import {
-  LoaderContextProvider,
-  useLoader,
-} from './components/context/LoadingContext'
+import { useLoader } from './components/context/LoadingContext'
 import AuthPage from './pages/AuthPage'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   const timeLoading = Math.random() * 1 + 1
@@ -38,7 +34,14 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/my-list' element={<MyList />} />
               <Route path='/why-us' element={<WhyUS />} />
-              <Route path='/movies' element={<MoviePage />} />
+              <Route
+                path='/movies'
+                element={
+                  <ProtectedRoute>
+                    <MoviePage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path='/series' element={<Series />} />
               <Route path='/login' element={<AuthPage />} />
               <Route path='/signup' element={<AuthPage />} />

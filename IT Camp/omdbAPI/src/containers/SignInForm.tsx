@@ -4,11 +4,13 @@ import { Formik, Form, Field } from 'formik'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
+import { useLoader } from '../components/context/LoadingContext'
 // import { SigninSchema } from '../utils'
 
 const SignInForm = () => {
   const { user, logIn } = UserAuth()
   const [showPassword, setShowPassword] = useState(false)
+  const {displayLoader} = useLoader()
   const navigate = useNavigate()
 
   const handleSubmit = async ({
@@ -19,16 +21,14 @@ const SignInForm = () => {
     password: string
   }) => {
     try {
+      displayLoader(true)
       await logIn(email, password)
       toast.success('You signed-in successfully', {
         style: {
           fontSize: '20px',
         },
       })
-      // setTimeout(() => {
-        navigate('/')
-        // window.location.reload()
-      // }, 2500)
+      navigate('/')
     } catch (error) {
       toast.error('Sign-in failed. Please try again.', {
         style: {
@@ -36,6 +36,8 @@ const SignInForm = () => {
         },
       })
       console.error(error)
+    } finally {
+      displayLoader(false)
     }
   }
 

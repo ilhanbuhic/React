@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { UserAuth } from '../components/context/AuthContext'
+import { db } from '../firebase.config'
+import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
 
 interface MovieProps {
   item: [object] | any
@@ -9,7 +12,24 @@ interface MovieProps {
 
 const Movie = ({ item, key }: MovieProps) => {
   const [like, setLike] = useState(false)
+  const [saved, setSaved] = useState(false)
+  const {user} = UserAuth()
+  const movieID = doc(db, 'users', `${user?.email}`)
   const itemCheck = item?.title && item?.backdrop_path
+
+  const saveShow = async() => {
+    if (user) {
+      setLike(!like)
+      setSaved(true)
+      await updateDoc(movieID, {
+        savedMovies: arrayUnion({
+          id: item.id,
+          title: item.title,
+          img: item.backdrop_path
+        })
+      })
+    }
+  }
 
   return itemCheck ? (
     <div
