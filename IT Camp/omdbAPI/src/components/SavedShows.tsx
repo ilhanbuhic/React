@@ -18,7 +18,16 @@ const SavedShows = () => {
     slider.scrollLeft = slider?.scrollLeft + 500
   }
 
- 
+  useEffect(() => {
+    if (user?.email) {
+      const unsubscribe = onSnapshot(doc(db, 'users', user.email), (snapshot) => {
+        setMovies(snapshot.data()?.savedMovies || []);
+      });
+
+      // Cleanup the subscription when the component unmounts
+      return () => unsubscribe();
+    }
+  }, [user?.email]);
     
   return (
     <div>
