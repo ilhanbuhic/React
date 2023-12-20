@@ -10,7 +10,7 @@ import { useLoader } from '../components/context/LoadingContext'
 const SignInForm = () => {
   const { user, logIn } = UserAuth()
   const [showPassword, setShowPassword] = useState(false)
-  const {displayLoader} = useLoader()
+  const { displayLoader } = useLoader()
   const navigate = useNavigate()
 
   const handleSubmit = async ({
@@ -21,14 +21,16 @@ const SignInForm = () => {
     password: string
   }) => {
     try {
-      displayLoader(true)
       await logIn(email, password)
       toast.success('You signed-in successfully', {
         style: {
           fontSize: '20px',
         },
       })
-      navigate('/')
+      setTimeout(() => {
+        displayLoader(true)
+        navigate('/')
+      }, 2000)
     } catch (error) {
       toast.error('Sign-in failed. Please try again.', {
         style: {

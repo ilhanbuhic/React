@@ -44,7 +44,14 @@ function App() {
                 }
               />
               <Route path='/series' element={<Series />} />
-              <Route path='/account' element={<Account />} />
+              <Route
+                path='/account'
+                element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+                }
+              />
               <Route path='/login' element={<AuthPage />} />
               <Route path='/signup' element={<AuthPage />} />
             </Routes>

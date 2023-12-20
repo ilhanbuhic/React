@@ -30,7 +30,7 @@ const SavedShows = () => {
   }, [user?.email]);
     
   return (
-    <div>
+    <div className=''>
       <h2 className='text-white text-[16px] bg-black font-bold md:text-[20px] p-4'>
         My Shows
       </h2>
