@@ -35,7 +35,7 @@ function Row({ title, fetchURL, rowID }: RowProps) {
       <div className='relative bg-black flex items-center justify-center group'>
         <MdChevronLeft
           onClick={slideLeft}
-          className='bg-white left-0 text-black rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block '
+          className='bg-white left-10 text-black rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block '
           size={40}
         />
         <div

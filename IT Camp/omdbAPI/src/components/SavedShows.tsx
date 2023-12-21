@@ -1,13 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
+import { AiOutlineClose } from 'react-icons/ai'
 import { UserAuth } from './context/AuthContext'
 import { db } from '../firebase.config'
-import { updateDoc, doc, onSnapshot } from 'firebase/firestore'
+import {
+  updateDoc,
+  doc,
+  onSnapshot,
+  onSnapshotsInSync,
+  CollectionReference,
+} from 'firebase/firestore'
 
 const SavedShows = () => {
   const [movies, setMovies] = useState([])
   const { user } = UserAuth()
+  const movieRef = doc(db, 'users', `${user?.email}`)
+
+
 
   const slideLeft = () => {
     let slider: any = document.getElementById('slider')
@@ -20,15 +30,18 @@ const SavedShows = () => {
 
   useEffect(() => {
     if (user?.email) {
-      const unsubscribe = onSnapshot(doc(db, 'users', user.email), (snapshot) => {
-        setMovies(snapshot.data()?.savedMovies || []);
-      });
+      const unsubscribe = onSnapshot(
+        doc(db, 'users', user.email),
+        (snapshot) => {
+          setMovies(snapshot.data()?.savedMovies || [])
+        }
+      )
 
       // Cleanup the subscription when the component unmounts
-      return () => unsubscribe();
+      return () => unsubscribe()
     }
-  }, [user?.email]);
-    
+  }, [user?.email])
+
   return (
     <div className=''>
       <h2 className='text-white text-[16px] bg-black font-bold md:text-[20px] p-4'>
@@ -37,7 +50,7 @@ const SavedShows = () => {
       <div className='relative bg-black flex items-center justify-center group'>
         <MdChevronLeft
           onClick={slideLeft}
-          className='bg-white left-0 text-black rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block '
+          className='bg-white left-10 text-black rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block '
           size={40}
         />
         <div
@@ -57,6 +70,12 @@ const SavedShows = () => {
               <div className='absolute top-0 left-0 w-full h-full hover:bg-black/60 opacity-0 hover:opacity-100  text-white'>
                 <p className='whitespace-normal max-w-full text-[10px] tracking-[1.2px] font-[500] md:text-[15px] flex justify-center items-center h-full text-center'>
                   {item?.title}
+                </p>
+                <p
+                  onClick={() => deleteMovie(item.id)}
+                  className='absolute text-[28px] text-gray-300 top-4 right-4'
+                >
+                  <AiOutlineClose />
                 </p>
               </div>
             </div>

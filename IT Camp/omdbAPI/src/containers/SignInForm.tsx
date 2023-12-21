@@ -28,7 +28,7 @@ const SignInForm = () => {
         },
       })
       setTimeout(() => {
-        displayLoader(true)
+        window.location.reload()
         navigate('/')
       }, 2000)
     } catch (error) {
