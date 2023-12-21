@@ -6,7 +6,11 @@ export function LoaderContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false)
 
 
-
+  const displayLoader = async () => {
+    setIsLoading(!isLoading)
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    setIsLoading(isLoading)
+  }
 
   return (
     <LoaderContext.Provider value={{ isLoading, displayLoader, setIsLoading }}>
