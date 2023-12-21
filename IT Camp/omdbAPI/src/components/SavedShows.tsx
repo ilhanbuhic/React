@@ -8,8 +8,6 @@ import {
   updateDoc,
   doc,
   onSnapshot,
-  onSnapshotsInSync,
-  CollectionReference,
 } from 'firebase/firestore'
 
 const SavedShows = () => {
@@ -52,7 +50,7 @@ const SavedShows = () => {
         doc(db, 'users', user.email),
         (snapshot) => {
           setMovies(snapshot.data()?.savedMovies || [])
-        }
+        } 
       )
 
       // Cleanup the subscription when the component unmounts

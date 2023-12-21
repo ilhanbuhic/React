@@ -28,7 +28,7 @@ function MonsterHunt() {
         <div className='hero'>
           <div className='wrapper'>
             <h1 className='hero__title'>
-              <span>Gear up!</span> We're going monster hunting!
+              <span>Why us?</span> Find out why we are the best!
             </h1>
           </div>
         </div>
