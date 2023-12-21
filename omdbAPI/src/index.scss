@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Fahkwang:wght@200;300;400;500;600;700&family=Genos:wght@200;300;400;500;600&display=swap");
+@layer utilities {
+    .scroll-snap-x-mandatory {
+        scroll-snap-type: x mandatory;
+    }
+    .scroll-snap-align-center {
+        scroll-snap-align: center;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #232323;
+}
+
+form {
+    outline: none;
+    border: none;
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+.bar::-webkit-scrollbar {
+    overflow-x: hidden;
+}
+
+input {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}

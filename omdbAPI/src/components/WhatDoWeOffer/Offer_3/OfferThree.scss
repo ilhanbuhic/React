@@ -1,0 +1,54 @@
+.offer_3-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.2rem;
+    height: 70svh;
+}
+
+.offer_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    flex-grow: 1;
+    max-width: 95%;
+
+    .offer_3-content {
+        min-width: 40%;
+        width: 500px;
+    }
+
+    h3 {
+        font-size: clamp(4rem, 5.2vw, 5rem);
+        font-weight: 800;
+    }
+
+    p {
+        font-size: clamp(1.2rem, 2.7vw, 2.5rem);
+        font-weight: 400;
+    }
+
+    img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+.offer_3-img {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    z-index: 1;
+}
+
+.background-image-offer_3 {
+    z-index: 0;
+}
+
+.overlay-video-offer_3 {
+    position: absolute;
+    top: 11%;
+    left: 15.5%;
+    width: 50%;
+    z-index: -1;
+}
