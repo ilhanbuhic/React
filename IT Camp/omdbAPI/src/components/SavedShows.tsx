@@ -17,7 +17,25 @@ const SavedShows = () => {
   const { user } = UserAuth()
   const movieRef = doc(db, 'users', `${user?.email}`)
 
+  interface Movie {
+    id:string | number
+  }
 
+  const deleteMovie = async (passedID: number) => {
+    try {
+      if (!movies) {
+        console.error('Movies array inside DB is undefined')
+        return
+      }
+
+      const result = movies.filter((movie: Movie) => movie.id !== passedID)
+      await updateDoc(movieRef, {
+        savedMovies: result
+      })
+    } catch(error) {
+      console.error('Error while updating DOC', error)
+    }
+  }
 
   const slideLeft = () => {
     let slider: any = document.getElementById('slider')
