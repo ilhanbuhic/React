@@ -31,6 +31,9 @@ const SignUpForm = () => {
         },
       })
 
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+      await displayLoader()
+      navigate('/')
     } catch (error) {
       toast.error('Sign-up failed. Please try again.', {
         style: {
