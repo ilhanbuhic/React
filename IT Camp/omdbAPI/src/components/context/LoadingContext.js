@@ -3,10 +3,13 @@ import { createContext, useContext, useState } from 'react'
 const LoaderContext = createContext()
 
 export function LoaderContextProvider({ children }) {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const displayLoader = (loader) => {
-    setIsLoading(loader)
+
+  const displayLoader = async () => {
+    setIsLoading(!isLoading)
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    setIsLoading(isLoading)
   }
 
   return (
