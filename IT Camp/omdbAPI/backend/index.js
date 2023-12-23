@@ -32,8 +32,9 @@ app.get('/', async (req, res) => {
 })
 
 try {
-  app.listen(3001, () => {
-    console.log('Server is listening on port 3001')
+  PORT = process.env.PORT
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`)
   })
 } catch (error) {
   throw new SyntaxError('Error starting the server', error)

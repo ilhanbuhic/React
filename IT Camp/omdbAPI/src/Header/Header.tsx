@@ -34,14 +34,12 @@ export const Navbar = () => {
   }
 
   // Changing the navbar background
-  const background: BackgroundType = {
-    '/': require('../assets/images/banner.png'),
-    '/why-us': require('../assets/images/bg.jpg'),
-  }
-  const backgroundImage: string = `url(${background[location.pathname]})`
+  // const background: BackgroundType = {
+  //   '/': require('../assets/images/banner.png'),
+  //   '/why-us': require('../assets/images/bg.jpg'),
+  // }
+  // const backgroundImage: string = `url(${background[location.pathname]})`
   // Changing the navbar background
-
-  // const [movies, setMovies] = useState<any>([])
 
   // Dynamic event handler
   const [handleSelect, setHandleSelect] = useState('')

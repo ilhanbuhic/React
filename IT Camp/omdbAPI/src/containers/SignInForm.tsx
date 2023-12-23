@@ -5,7 +5,7 @@ import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
 import { UserAuth } from '../components/context/AuthContext'
 import toast, { Toaster } from 'react-hot-toast'
 import { useLoader } from '../components/context/LoadingContext'
-// import { SigninSchema } from '../utils'
+// import { SignupSchema } from '../utils/AuthSchema'
 
 const SignInForm = () => {
   const { user, logIn } = UserAuth()
