@@ -16,7 +16,6 @@ export const Navbar = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const { user, logOut } = UserAuth()
-  console.log(user)
 
   const handleLogout = async () => {
     try {
@@ -92,7 +91,7 @@ export const Navbar = () => {
       </div>
       <div className='navbar-rs'>
         <ul className='flex items-center gap-2'>
-          { user ? (
+          {user ? (
             <>
               <li>
                 {location.pathname !== '/why-us' && (
@@ -121,10 +120,16 @@ export const Navbar = () => {
                   onClick={toggleProfileDropdown}
                 />
                 {isProfileDropdownOpen && (
-                  <div className='absolute bg-red-700 py-1 text-white rounded right-0 mt-2 w-48'>
+                  <div className='absolute py-1 text-white right-0 mt-2 w-48'>
                     <ul>
                       <li
-                        className='py-2 text-center text-[12px] cursor-pointer'
+                        className='py-2 bg-gray-700 hover:bg-gray-600 rounded text-center text-[12px] cursor-pointer'
+                        onClick={() => navigate('/account')}
+                      >
+                        Account
+                      </li>
+                      <li
+                        className='py-2 bg-red-700  hover:bg-red-600 rounded text-center text-[12px] cursor-pointer'
                         onClick={handleLogout}
                       >
                         Log Out
