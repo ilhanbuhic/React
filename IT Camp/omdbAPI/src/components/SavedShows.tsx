@@ -60,7 +60,7 @@ const SavedShows = () => {
 
   return (
     <div className=''>
-      <h2 className='text-white text-[16px] bg-black font-bold md:text-[20px] p-4'>
+      <h2 className='text-white text-[16px] bg-black rounded font-bold md:text-[20px] p-4'>
         My Shows
       </h2>
       <div className='relative bg-black flex items-center justify-center group'>

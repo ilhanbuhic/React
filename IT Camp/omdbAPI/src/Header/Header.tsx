@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import './header.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../components/context/AuthContext'
-import SignInForm from '../containers/SignInForm'
-import SignUpForm from '../containers/SignUpForm'
 import Login from '../pages/AuthPage'
 const logo = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/ilhan_logo.png')
 const avatar = require('/Users/ilhanbuhic/Desktop/Git/React/IT Camp/omdbAPI/src/assets/images/avatar.png')
