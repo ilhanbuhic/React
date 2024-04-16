@@ -1,5 +1,5 @@
 export interface SidebarFormProp {
-  className?: string
+  classNameInputExtender: string
   labelName: string
   inputPlaceholder: string
 }

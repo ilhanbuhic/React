@@ -4,16 +4,16 @@ import { SidebarFormProp } from '../utils/interface'
 // const [hidden, setHidden] = useState<string>('none')
 
 export const SidebarForm: React.FC<SidebarFormProp> = ({
-  className,
+  classNameInputExtender,
   labelName,
   inputPlaceholder,
 }) => {
   return (
     <>
-      <div className={`form__row ${className}`}>
+      <div className={`form__row`}>
         <label className={`form__label`}>{labelName}</label>
         <input
-          className={`form__input form__input--${className}`}
+          className={`form__input form__input--${classNameInputExtender}`}
           placeholder={inputPlaceholder}
         />
       </div>

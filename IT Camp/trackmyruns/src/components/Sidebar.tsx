@@ -1,4 +1,5 @@
 import React from 'react'
+import { SidebarForm } from './SidebarForm'
 
 const Sidebar = () => {
   return (
@@ -14,35 +15,59 @@ const Sidebar = () => {
               <option value='cycling'>Cycling</option>
             </select>
           </div>
-          <div className='form__row'>
+          <SidebarForm
+            classNameInputExtender='distance'
+            labelName='Distance'
+            inputPlaceholder='km'
+          />
+          {/* <div className='form__row'>
             <label className='form__label'>Distance</label>
             <input
               className='form__input form__input--distance'
               placeholder='km'
             />
-          </div>
-          <div className='form__row'>
+          </div> */}
+
+          <SidebarForm
+            classNameInputExtender='duration'
+            labelName='Duration'
+            inputPlaceholder='min'
+          />
+
+          {/* <div className='form__row'>
             <label className='form__label'>Duration</label>
             <input
               className='form__input form__input--duration'
               placeholder='min'
             />
-          </div>
+          </div> */}
 
-          <div className='form__row'>
+          <SidebarForm
+            classNameInputExtender='cadence'
+            labelName='Cadence'
+            inputPlaceholder='step/min'
+          />
+
+          {/* <div className='form__row'>
             <label className='form__label'>Cadence</label>
             <input
               className='form__input form__input--cadence'
               placeholder='step/min'
             />
-          </div>
-          <div className='form__row form__row--hidden'>
+          </div> */}
+
+          <SidebarForm classNameInputExtender='elevation'
+          labelName='Elev Gain'
+          inputPlaceholder='Elev Gain'
+          />
+
+          {/* <div className='form__row form__row--hidden'>
             <label className='form__label'>Elev Gain</label>
             <input
               className='form__input form__input--elevation'
               placeholder='meters'
             />
-          </div>
+          </div> */}
           <button className='form__btn'>OK</button>
         </form>
 
