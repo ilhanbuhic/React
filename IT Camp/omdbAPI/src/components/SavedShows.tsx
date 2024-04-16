@@ -4,11 +4,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UserAuth } from './context/AuthContext'
 import { db } from '../firebase.config'
-import {
-  updateDoc,
-  doc,
-  onSnapshot,
-} from 'firebase/firestore'
+import { updateDoc, doc, onSnapshot } from 'firebase/firestore'
 
 const SavedShows = () => {
   const [movies, setMovies] = useState([])
@@ -16,7 +12,7 @@ const SavedShows = () => {
   const movieRef = doc(db, 'users', `${user?.email}`)
 
   interface Movie {
-    id:string | number
+    id: string | number
   }
 
   const deleteMovie = async (passedID: number) => {
@@ -28,9 +24,9 @@ const SavedShows = () => {
 
       const result = movies.filter((movie: Movie) => movie.id !== passedID)
       await updateDoc(movieRef, {
-        savedMovies: result
+        savedMovies: result,
       })
-    } catch(error) {
+    } catch (error) {
       console.error('Error while updating DOC', error)
     }
   }
@@ -50,7 +46,7 @@ const SavedShows = () => {
         doc(db, 'users', user.email),
         (snapshot) => {
           setMovies(snapshot.data()?.savedMovies || [])
-        } 
+        }
       )
 
       // Cleanup the subscription when the component unmounts
@@ -59,8 +55,8 @@ const SavedShows = () => {
   }, [user?.email])
 
   return (
-    <div className=''>
-      <h2 className='text-white text-[16px] bg-black rounded font-bold md:text-[20px] p-4'>
+    <div className=' bg-black'>
+      <h2 className='text-white text-[16px] mb-[10px] bg-black rounded font-bold md:text-[20px] p-4'>
         My Shows
       </h2>
       <div className='relative bg-black flex items-center justify-center group'>
