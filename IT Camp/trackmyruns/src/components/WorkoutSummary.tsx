@@ -19,7 +19,7 @@ export const WorkoutSummary: React.FC<WorkoutSummaryProp> = ({
         <span className='workout__unit'>km</span>
       </div>
       <div className='workout__details'>
-        <span className='workout__icon'>⏱</span>
+        <span className='workout__icon'>⏱</span>±
         <span className='workout__value'>24</span>
         <span className='workout__unit'>min</span>
       </div>
@@ -29,7 +29,7 @@ export const WorkoutSummary: React.FC<WorkoutSummaryProp> = ({
         <span className='workout__unit'>min/km</span>
       </div>
       <div className='workout__details'>
-        <span className='workout__icon'>🦶🏼</span>
+        <span className='workout__icon'>🦶🏼</span>ç
         <span className='workout__value'>178</span>
         <span className='workout__unit'>spm</span>
       </div>

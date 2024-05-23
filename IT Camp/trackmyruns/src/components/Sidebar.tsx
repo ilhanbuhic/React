@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { SidebarForm } from './SidebarForm'
 import { logo } from '../assets/images/index'
+import L, { map } from 'leaflet'
 
 const Sidebar = () => {
   const months = [
@@ -21,21 +22,36 @@ const Sidebar = () => {
   const [activeCandence, setActiveCandence] = useState('')
 
   useEffect(() => {
-    if (navigator.geolocation)
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          const { latitude } = position.coords
-          const { longitude } = position.coords
-          console.log(`https://www.google.com/maps/@${latitude},${longitude}`)
-        },
-        function () {
-          alert('Could not get your position')
-        }
-      )
+  if (navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const { latitude } = position.coords
+        const { longitude } = position.coords
+        console.log(`https://www.google.com/maps/@${latitude},${longitude}`)
+        const coords = L.latLng(latitude, longitude)
+
+        // if (!L.DomUtil.get('map')) {
+        const map = L.map('map').setView(coords, 13)
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map)
+
+        L.marker(coords)
+          .addTo(map)
+          .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+          .openPopup()
+        // }
+      },
+      function () {
+        alert('Could not get your position')
+      }
+    )
   }, [])
 
   return (
-    <>
+    <div className='body'>
       <div className='sidebar'>
         <img src={logo} alt='Logo' className='logo' />
 
@@ -173,8 +189,8 @@ const Sidebar = () => {
           as your own.
         </p>
       </div>
-      <div className='map'></div>
-    </>
+      <div id='map'></div>
+    </div>
   )
 }
 
