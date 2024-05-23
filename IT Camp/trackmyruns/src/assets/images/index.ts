@@ -1,3 +1,3 @@
-import icon from '../images/icon.png'
+import logo from '../images/logo.png'
 
-export { icon }
+export { logo }

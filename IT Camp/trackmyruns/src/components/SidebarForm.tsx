@@ -13,7 +13,7 @@ export const SidebarForm: React.FC<SidebarFormProp> = ({
       <div className={`form__row`}>
         <label className={`form__label`}>{labelName}</label>
         <input
-          className={`form__input form__input--${classNameInputExtender}`}
+          className={`form_input form_input--${classNameInputExtender}`}
           placeholder={inputPlaceholder}
         />
       </div>
