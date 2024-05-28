@@ -1,17 +1,14 @@
 import L from 'leaflet'
 
 import logo from '../images/logo.png'
+import marker from '../images/marker.png'
 
-const marker = L.icon({
-  iconUrl:
-    'https://www.pikpng.com/pngl/m/509-5093828_map-marker-car-icon-free-icon-download-svg.png',
-  //   iconSize: [38, 95],
-  iconSize: [35, 55],
-  iconAnchor: [22, 94],
+const markerIcon = L.icon({
+  iconUrl: marker,
+  iconSize: [26, 40],
+  iconAnchor: [17, 50],
   popupAnchor: [-3, -76],
   shadowUrl: '/',
-  shadowSize: [35, 55],
-  shadowAnchor: [22, 94],
 })
 
-export { logo, marker }
+export { logo, markerIcon }
