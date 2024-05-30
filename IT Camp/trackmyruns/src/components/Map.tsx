@@ -4,10 +4,12 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { markerIcon } from '../assets/images'
 import { LocationMarkerHandler } from '../hooks/LocationMarkerHandler'
 import { spinnerIcon } from '../assets/images/index'
+import { CoordsProp } from '../App'
 
 export const Map: React.FC<{
   setIsFormVisible: React.Dispatch<React.SetStateAction<boolean>>
-}> = ({ setIsFormVisible }) => {
+  setMarkerCoords: React.Dispatch<React.SetStateAction<CoordsProp | undefined>>
+}> = ({ setIsFormVisible, setMarkerCoords }) => {
   const [coords, setCoords] = useState<[number, number] | null>(null)
   const [markers, setMarkers] = useState<[number, number][]>([])
 
@@ -37,6 +39,7 @@ export const Map: React.FC<{
           <LocationMarkerHandler
             setIsFormVisible={setIsFormVisible}
             setMarkers={setMarkers}
+            setCoords={setMarkerCoords}
           />
           {markers.map((markerCoords, index) => (
             <Marker key={index} position={markerCoords} icon={markerIcon}>

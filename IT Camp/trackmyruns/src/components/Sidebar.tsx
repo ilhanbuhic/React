@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { SidebarForm } from './SidebarForm'
 import { logo } from '../assets/images/index'
+import { CoordsProp } from '../App'
 
-const Sidebar: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
+const Sidebar: React.FC<{ isFormVisible: boolean; coords?: CoordsProp }> = ({
+  isFormVisible,
+  coords,
+}) => {
   const months = [
     'January',
     'February',
@@ -18,20 +22,22 @@ const Sidebar: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
     'December',
   ]
 
-  const [activeCandence, setActiveCandence] = useState('')
+  // const [activeCandence, setActiveCandence] = useState('')
 
   return (
     <div className='sidebar'>
       <img src={logo} alt='Logo' className='logo' />
 
       <ul className='workouts'>
-        <form className={`form ${isVisible ? '' : 'hidden'}`}>
+        <form className={`form ${isFormVisible ? '' : 'hidden'}`}>
           <div className='form__row'>
             <label className='form__label'>Type</label>
             <select className='form__input form__input--type'>
               <option value='running'>Running</option>
               <option value='cycling'>Cycling</option>
             </select>
+            latitude: {coords?.lat}
+            lng: {coords?.lng}
           </div>
           <SidebarForm
             classNameInputExtender='distance'
