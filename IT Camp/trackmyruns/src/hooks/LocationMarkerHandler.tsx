@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'leaflet/dist/leaflet.css'
 import { useMapEvents } from 'react-leaflet'
 
 export const LocationMarkerHandler: React.FC<{
   setMarkers: React.Dispatch<React.SetStateAction<[number, number][]>>
-}> = ({ setMarkers }) => {
+  setIsFormVisible: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ setMarkers, setIsFormVisible }) => {
   useMapEvents({
     click(event) {
       const { lat, lng } = event.latlng
+      setIsFormVisible(true)
       setMarkers((prevMarkers) => [...prevMarkers, [lat, lng]])
     },
   })

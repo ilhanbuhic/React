@@ -206,6 +206,10 @@ a:visited {
   background-color: var(--color-light--1);
 }
 
+.my-popup {
+  border: 2px solid red;
+}
+
 /* Popup width is defined in JS using options */
 .leaflet-popup .leaflet-popup-content-wrapper {
   background-color: var(--color-dark--1);
