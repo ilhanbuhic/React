@@ -1,23 +1,20 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Sidebar from './components/Sidebar'
 import { Map } from './components/Map'
 import { Coords } from 'leaflet'
 
-export interface CoordsProp {
-  lat: number
-  lng: number
-}
 function App() {
   const [isFormVisible, setIsFormVisible] = useState(false)
-
-  const [coords, setCoords] = useState<CoordsProp | undefined>()
-
-  console.log(isFormVisible)
+  const [isInputFocus, setIsInputFocus] = useState(false)
 
   return (
     <div className='App body'>
-      <Sidebar isFormVisible={isFormVisible} coords={coords} />
-      <Map setIsFormVisible={setIsFormVisible} setMarkerCoords={setCoords} />
+      <Sidebar isFormVisible={isFormVisible} />
+
+      <Map
+        setIsFormVisible={setIsFormVisible}
+        setIsInputFocus={setIsInputFocus}
+      />
     </div>
   )
 }

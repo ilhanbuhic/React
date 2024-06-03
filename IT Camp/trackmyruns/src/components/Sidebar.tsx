@@ -1,12 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { SidebarForm } from './SidebarForm'
 import { logo } from '../assets/images/index'
-import { CoordsProp } from '../App'
 
-const Sidebar: React.FC<{ isFormVisible: boolean; coords?: CoordsProp }> = ({
-  isFormVisible,
-  coords,
-}) => {
+const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
   const months = [
     'January',
     'February',
@@ -36,14 +32,13 @@ const Sidebar: React.FC<{ isFormVisible: boolean; coords?: CoordsProp }> = ({
               <option value='running'>Running</option>
               <option value='cycling'>Cycling</option>
             </select>
-            latitude: {coords?.lat}
-            lng: {coords?.lng}
           </div>
           <SidebarForm
             classNameInputExtender='distance'
             labelName='Distance'
             inputPlaceholder='km'
             value={'...'}
+            isInputFocus={isFormVisible}
           />
           {/* <div className='form__row'>
             <label className='form__label'>Distance</label>

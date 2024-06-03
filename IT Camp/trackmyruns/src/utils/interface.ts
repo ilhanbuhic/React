@@ -3,6 +3,7 @@ export interface SidebarFormProp {
   labelName: string
   inputPlaceholder: string
   value: string | number
+  isInputFocus?: boolean
 }
 
 export interface WorkoutSummaryProp {
