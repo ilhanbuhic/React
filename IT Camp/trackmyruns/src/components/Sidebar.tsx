@@ -19,9 +19,11 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
   ]
 
   const initialFormData = {
+    type: 'running',
     duration: '',
     distance: '',
     cadence: '',
+    elevation: '',
   }
 
   const [formData, setFormData] = useState(initialFormData)
@@ -30,9 +32,7 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
     e.preventDefault()
     const newFormData = new FormData(e.currentTarget)
     let formValues = {
-      duration: '',
-      distance: '',
-      cadence: '',
+      ...initialFormData,
     }
 
     newFormData.forEach((value, key) => {
@@ -62,7 +62,13 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
         >
           <div className='form__row'>
             <label className='form__label'>Type</label>
-            <select name='type' className='form__input form__input--type'>
+            <select
+              name='type'
+              className='form__input form__input--type'
+              onChange={(e) =>
+                setFormData({ ...formData, type: e.target.value })
+              }
+            >
               <option value='running'>Running</option>
               <option value='cycling'>Cycling</option>
             </select>
@@ -81,19 +87,22 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
             inputPlaceholder='min'
             value={formData.duration}
           />
-
-          <SidebarForm
-            classNameInputExtender='cadence'
-            labelName='Cadence'
-            inputPlaceholder='step/min'
-            value={formData.cadence}
-          />
-          {/* <SidebarForm
+          {formData.type === 'running' && (
+            <SidebarForm
+              classNameInputExtender='cadence'
+              labelName='Cadence'
+              inputPlaceholder='step/min'
+              value={formData.cadence}
+            />
+          )}
+          {formData.type === 'cycling' && (
+            <SidebarForm
               classNameInputExtender='elevation'
               labelName='Elev Gain'
               inputPlaceholder='Elev Gain'
-              value={'...'}
-            /> */}
+              value={formData.elevation}
+            />
+          )}
           {/* <div className='form__row form__row--hidden'>
             <label className='form__label'>Elev Gain</label>
             <input
