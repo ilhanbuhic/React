@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { FormEvent, useEffect, useRef, useState } from 'react'
 import { SidebarForm } from './SidebarForm'
 import { logo } from '../assets/images/index'
 
@@ -18,17 +18,51 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
     'December',
   ]
 
-  // const [activeCandence, setActiveCandence] = useState('')
+  const initialFormData = {
+    duration: '',
+    distance: '',
+    cadence: '',
+  }
+
+  const [formData, setFormData] = useState(initialFormData)
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const newFormData = new FormData(e.currentTarget)
+    let formValues = {
+      duration: '',
+      distance: '',
+      cadence: '',
+    }
+
+    newFormData.forEach((value, key) => {
+      // Check if the key exists in initialFormData before assigning
+      if (key in initialFormData) {
+        formValues[key as keyof typeof initialFormData] = value.toString()
+      }
+    })
+
+    setFormData(formValues)
+
+    e.currentTarget.reset()
+  }
+
+  useEffect(() => {
+    console.log(formData)
+  }, [formData])
 
   return (
     <div className='sidebar'>
       <img src={logo} alt='Logo' className='logo' />
 
       <ul className='workouts'>
-        <form className={`form ${isFormVisible ? '' : 'hidden'}`}>
+        <form
+          onSubmit={(e) => onSubmit(e)}
+          className={`form ${isFormVisible ? '' : 'hidden'}`}
+        >
           <div className='form__row'>
             <label className='form__label'>Type</label>
-            <select className='form__input form__input--type'>
+            <select name='type' className='form__input form__input--type'>
               <option value='running'>Running</option>
               <option value='cycling'>Cycling</option>
             </select>
@@ -37,44 +71,23 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
             classNameInputExtender='distance'
             labelName='Distance'
             inputPlaceholder='km'
-            value={'...'}
+            value={formData.distance}
             isInputFocus={isFormVisible}
           />
-          {/* <div className='form__row'>
-            <label className='form__label'>Distance</label>
-            <input
-            value={nekiStajte}
-            onChange={(e) => setNekiStejt(e)}
-              className='form__input form__input--distance'
-              placeholder='km'
-            />
-          </div> */}
+
           <SidebarForm
             classNameInputExtender='duration'
             labelName='Duration'
             inputPlaceholder='min'
-            value={'...'}
+            value={formData.duration}
           />
-          {/* <div className='form__row'>
-            <label className='form__label'>Duration</label>
-            <input
-              className='form__input form__input--duration'
-              placeholder='min'
-            />
-          </div> */}
+
           <SidebarForm
             classNameInputExtender='cadence'
             labelName='Cadence'
             inputPlaceholder='step/min'
-            value={'...'}
+            value={formData.cadence}
           />
-          {/* <div className='form__row'>
-            <label className='form__label'>Cadence</label>
-            <input
-              className='form__input form__input--cadence'
-              placeholder='step/min'
-            />
-          </div> */}
           {/* <SidebarForm
               classNameInputExtender='elevation'
               labelName='Elev Gain'
@@ -88,7 +101,9 @@ const Sidebar: React.FC<{ isFormVisible: boolean }> = ({ isFormVisible }) => {
               placeholder='meters'
             />
           </div> */}
-          <button className='form__btn'>OK</button>
+          <button type='submit' className='form__btn'>
+            OK
+          </button>
         </form>
 
         <li className='workout workout--running' data-id='1234567890'>

@@ -18,3 +18,13 @@ export interface WorkoutDetails {
   workoutValue: number
   workoutUnit: string
 }
+
+export interface CoordsProp {
+  lat: number
+  lng: number
+}
+
+export interface MarkerContextProp {
+  markers: number[]
+  setMarkers: React.Dispatch<React.SetStateAction<any[]>>
+}
