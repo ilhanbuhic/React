@@ -24,7 +24,7 @@ function Footer() {
             <li>
               <a href='#'>Contact</a>
             </li>
-          </ul>
+          </ul>``
         </div>
         <div className='footer-section'>
           <h3>Contact info</h3>
