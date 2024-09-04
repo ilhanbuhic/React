@@ -7,26 +7,29 @@ interface Item {
   id: number
 }
 
-function Form() {
+interface FormProp {
+  onAddItems: (item: Item) => void
+}
+
+function Form({ onAddItems }: FormProp) {
   const [description, setDescription] = useState('')
   const [quantity, setQuantity] = useState(1)
-  const [items, setItems] = useState<Item[]>([])
-
-  function handleAddItems(item: Item) {
-    setQuantity((items) => [...items, item])
-  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     if (!description) return
 
-    const newItem = {
+    const newItem: Item = {
       description,
       quantity,
       packed: false,
-      id: items.length + 1,
+      id: Date.now(),
     }
+    onAddItems(newItem)
+
+    setDescription('')
+    setQuantity(1)
   }
 
   return (

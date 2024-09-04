@@ -1,25 +1,44 @@
 import React from 'react'
 import data from '../../data/dummyData.json'
 
-const PackingList: React.FC = () => {
+interface Item {
+  description: string
+  quantity: number
+  packed: boolean
+  id: number
+}
+
+interface PackingListProp {
+  items: Item[]
+  onDeleteItem: (id: number) => void
+}
+
+const PackingList: React.FC<PackingListProp> = ({ items, onDeleteItem }) => {
   return (
     <div className='list'>
       <ul>
-        {data.map((item) => (
-          <Item key={item.id} item={item} />
+        {items.map((item) => (
+          <ItemComponent
+            key={item.id}
+            item={item}
+            onDeleteItem={onDeleteItem}
+          />
         ))}
       </ul>
     </div>
   )
 }
 
-function Item({ item }: any) {
+const ItemComponent: React.FC<{
+  item: Item
+  onDeleteItem: (id: number) => void
+}> = ({ item, onDeleteItem }) => {
   return (
     <li>
       <span>
         {item.quantity} {item.description}
       </span>
-      <button>❌</button>
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   )
 }
