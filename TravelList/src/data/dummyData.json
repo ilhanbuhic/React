@@ -1,6 +1,0 @@
-[
-  { "id": 1, "description": "Pasos", "quantity": 2, "packed": false },
-  { "id": 2, "description": "Carape", "quantity": 12, "packed": false },
-  { "id": 3, "description": "Mleko za kupanje", "quantity": 1, "packed": false },
-  { "id": 4, "description": "Garnier", "quantity": 12, "packed": true }
-]
