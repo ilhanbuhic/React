@@ -1,14 +1,12 @@
 import React from 'react'
 import data from '../../data/dummyData.json'
 
-type Props = {}
-
-const PackingList = (props: Props) => {
+const PackingList: React.FC = () => {
   return (
     <div className='list'>
       <ul>
-        {data.map((item, index) => (
-          <Item key={index} item={item} />
+        {data.map((item) => (
+          <Item key={item.id} item={item} />
         ))}
       </ul>
     </div>
