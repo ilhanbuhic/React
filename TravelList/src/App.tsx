@@ -22,11 +22,25 @@ function App() {
     setItems((items) => items.filter((item) => item.id !== id))
   }
 
+  function handleTogglePacked(id: number) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    )
+    console.log(items);
+    
+  }
+
   return (
     <div className='app'>
       <Header />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} onDeleteItem={handleDeleteItem} />
+      <PackingList
+        items={items}
+        onDeleteItem={handleDeleteItem}
+        onTogglePacked={handleTogglePacked}
+      />
       <Footer />
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface Item {
   description: string
@@ -10,9 +10,14 @@ interface Item {
 interface PackingListProp {
   items: Item[]
   onDeleteItem: (id: number) => void
+  onTogglePacked: (id: number) => void
 }
 
-const PackingList: React.FC<PackingListProp> = ({ items, onDeleteItem }) => {
+const PackingList: React.FC<PackingListProp> = ({
+  items,
+  onDeleteItem,
+  onTogglePacked,
+}) => {
   return (
     <div className='list'>
       <ul>
@@ -21,6 +26,7 @@ const PackingList: React.FC<PackingListProp> = ({ items, onDeleteItem }) => {
             key={item.id}
             item={item}
             onDeleteItem={onDeleteItem}
+            onTogglePacked={onTogglePacked}
           />
         ))}
       </ul>
@@ -31,10 +37,16 @@ const PackingList: React.FC<PackingListProp> = ({ items, onDeleteItem }) => {
 const ItemComponent: React.FC<{
   item: Item
   onDeleteItem: (id: number) => void
-}> = ({ item, onDeleteItem }) => {
+  onTogglePacked: (id: number) => void
+}> = ({ item, onDeleteItem, onTogglePacked }) => {
   return (
     <li>
-      <span>
+      <input
+        type='checkbox'
+        checked={item.packed}
+        onChange={() => onTogglePacked(item.id)}
+      />
+      <span style={item.packed ? { textDecoration: 'line-through' } : {}}>
         {item.quantity} {item.description}
       </span>
       <button onClick={() => onDeleteItem(item.id)}>❌</button>

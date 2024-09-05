@@ -39,7 +39,6 @@ function Form({ onAddItems }: FormProp) {
         value={quantity}
         onChange={(e) => {
           setQuantity(Number(e.target.value))
-          console.log(quantity)
         }}
       >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
@@ -54,7 +53,6 @@ function Form({ onAddItems }: FormProp) {
         value={description}
         onChange={(e) => {
           setDescription(e.target.value)
-          console.log(description)
         }}
       />
       <button>Add</button>
