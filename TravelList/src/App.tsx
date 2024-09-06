@@ -28,8 +28,7 @@ function App() {
         item.id === id ? { ...item, packed: !item.packed } : item
       )
     )
-    console.log(items);
-    
+    console.log(items)
   }
 
   return (
@@ -41,7 +40,7 @@ function App() {
         onDeleteItem={handleDeleteItem}
         onTogglePacked={handleTogglePacked}
       />
-      <Footer />
+      <Footer items={items} />
     </div>
   )
 }
