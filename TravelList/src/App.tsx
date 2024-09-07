@@ -31,6 +31,10 @@ function App() {
     console.log(items)
   }
 
+  function handleClearList() {
+    setItems([])
+  }
+
   return (
     <div className='app'>
       <Header />
@@ -39,6 +43,7 @@ function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         onTogglePacked={handleTogglePacked}
+        onClearList={handleClearList}
       />
       <Footer items={items} />
     </div>
